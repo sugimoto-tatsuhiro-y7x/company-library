@@ -13,6 +13,7 @@
     "core-js": "^3.8.3",
     "pinia": "^2.0.23",
     "roboto-fontface": "*",
+    "swrv": "^1.0.3",
     "vue": "^3.2.13",
     "vue-router": "^4.0.0",
     "vuetify": "^3.0.0",
@@ -24,6 +25,7 @@
     "eslint-plugin-vue": "^9.3.0",
     "sass": "^1.55.0",
     "vite": "^3.1.9",
+    "vite-plugin-vue-component-preview": "^0.3.4",
     "vite-plugin-vuetify": "^1.0.0-alpha.12"
   }
 }
