@@ -2,10 +2,11 @@
   <p>
     <router-link to="/foo">Foo</router-link>|
     <router-link to="/bar">Bar</router-link>
+    <router-link to="/BookList">本一覧画面</router-link>
   </p>
-  <HelloWorld />
+  <!-- <HelloWorld /> -->
 </template>
 
 <script setup>
-  import HelloWorld from '@/components/HelloWorld.vue'
+import HelloWorld from '@/components/HelloWorld.vue'
 </script>
