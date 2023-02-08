@@ -4,6 +4,8 @@
         "id": "YXJHEAAAQBAJ",
         "etag": "qqhnZVMJQqw",
         "selfLink": "https://www.googleapis.com/books/v1/volumes/YXJHEAAAQBAJ",
+        "status": true,
+        "location": "3F",
         "volumeInfo": {
             "title": "Kubernetes CI/CDパイプラインの実装",
             "authors": [
@@ -100,6 +102,8 @@
         "id": "2OnYzQEACAAJ",
         "etag": "mZ+UqsbmQfw",
         "selfLink": "https://www.googleapis.com/books/v1/volumes/2OnYzQEACAAJ",
+        "status": false,
+        "location": "100F",
         "volumeInfo": {
             "title": "CircleCI実践入門",
             "subtitle": "CI/CDがもたらす開発速度と品質の両立",
@@ -172,6 +176,8 @@
         "id": "wLhTEAAAQBAJ",
         "etag": "RZedp0COhR4",
         "selfLink": "https://www.googleapis.com/books/v1/volumes/wLhTEAAAQBAJ",
+        "status": false,
+        "location": "10F",
         "volumeInfo": {
             "title": "Drupal 9 おいしいレシピ集",
             "publisher": "インプレスR&D",
@@ -265,6 +271,8 @@
         "id": "rD4QAQAAMAAJ",
         "etag": "pROR2S5CLNQ",
         "selfLink": "https://www.googleapis.com/books/v1/volumes/rD4QAQAAMAAJ",
+        "status": true,
+        "location": "13F",
         "volumeInfo": {
             "title": "和英医学用語大辞典",
             "publishedDate": "1990",
