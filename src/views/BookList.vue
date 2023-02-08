@@ -32,7 +32,7 @@ import HelloWorld from '@/components/HelloWorld.vue'
 
 
         <div v-for="book in books" :key="book">
-            <v-card class="mx-auto" elevation="2" max-width="700px" @click.stop="dialog = true">
+            <v-card class="mx-auto" elevation="2" max-width="700px" @click=open(book)>
                 <v-card-actions>
                     <v-container class="grey lighten-5">
                         <v-row :align="align">
@@ -82,7 +82,7 @@ import HelloWorld from '@/components/HelloWorld.vue'
                 </v-col>
                 <v-col class="my-auto" >
                     <v-card-text >
-                    名前：　広辞苑（第七版）<br>
+                    名前： {{this.postItem.volumeInfo.title}}<br>
                     ステータス：　貸出可能　<v-icon x-small color="green darken-2">mdi-moon-full</v-icon><br>
                     在庫数：　2 冊
                     </v-card-text>
@@ -145,6 +145,7 @@ export default {
     return {
       dialog: false,
       books: books,
+      postItem: "",
       items: [
         {
           avatar: 'https://cdn.vuetifyjs.com/images/lists/1.jpg',
@@ -179,8 +180,9 @@ export default {
     };
   },
   methods: {
-    open: function() {
+    open: function(book) {
       this.dialog = true;
+      this.postItem = book;
     },
     close: function() {
       this.dialog = false;
