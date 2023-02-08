@@ -1,8 +1,59 @@
-<!-- メモとして残してます↓ -->
-<!-- <script setup>
-import HelloWorld from '@/components/HelloWorld.vue'
-</script> -->
+<script setup>
+import { ref, reactive } from 'vue'
+import books from '../assets/bookData'
 
+const searchString = ref("")
+
+const dialog = ref(false)
+
+const postItem = reactive({
+    book: {}
+})
+
+const items = [
+    {
+        avatar: 'https://cdn.vuetifyjs.com/images/lists/1.jpg',
+        title: 'Brunch this weekend?',
+        subtitle: `<span class="text--primary">Ali Connors</span> &mdash; I'll be in your neighborhood doing errands this weekend. Do you want to hang out?`,
+    },
+    { divider: true, inset: true },
+    {
+        avatar: 'https://cdn.vuetifyjs.com/images/lists/2.jpg',
+        title: 'Summer BBQ <span class="grey--text text--lighten-1">4</span>',
+        subtitle: `<span class="text--primary">to Alex, Scott, Jennifer</span> &mdash; Wish I could come, but I'm out of town this weekend.`,
+    },
+    { divider: true, inset: true },
+    {
+        avatar: 'https://cdn.vuetifyjs.com/images/lists/3.jpg',
+        title: 'Oui oui',
+        subtitle: '<span class="text--primary">Sandra Adams</span> &mdash; Do you have Paris recommendations? Have you ever been?',
+    },
+    { divider: true, inset: true },
+    {
+        avatar: 'https://cdn.vuetifyjs.com/images/lists/4.jpg',
+        title: 'Birthday gift',
+        subtitle: '<span class="text--primary">Trevor Hansen</span> &mdash; Have any ideas about what we should get Heidi for her birthday?',
+    },
+    { divider: true, inset: true },
+    {
+        avatar: 'https://cdn.vuetifyjs.com/images/lists/5.jpg',
+        title: 'Recipe to try',
+        subtitle: '<span class="text--primary">Britta Holt</span> &mdash; We should eat this: Grate, Squash, Corn, and tomatillo Tacos.',
+    },
+]
+
+// 本詳細ダイアログオープン関数
+const openDialog = (book) => {
+    dialog.value = true;
+    postItem.book = book;
+}
+
+// 本詳細ダイアログclose関数
+const closeDialog = () => {
+    dialog.value = false;
+}
+
+</script>
 
 <template>
     <v-container>
@@ -32,7 +83,7 @@ import HelloWorld from '@/components/HelloWorld.vue'
 
 
         <div v-for="book in books" :key="book">
-            <v-card class="mx-auto" elevation="2" max-width="700px" @click=open(book)>
+            <v-card class="mx-auto" elevation="2" max-width="700px" @click=openDialog(book)>
                 <v-card-actions>
                     <v-container class="grey lighten-5">
                         <v-row :align="align">
@@ -49,7 +100,6 @@ import HelloWorld from '@/components/HelloWorld.vue'
                                     <v-card-text>
                                         <v-list lines="one">
                                             <v-list-item title="貸出ステータス">
-                                                <!-- TODO 色を変える -->
                                                 <v-icon x-small :color="book.status ? 'green' : 'red' + ' darken-2'">
                                                     mdi-moon-full
                                                 </v-icon>
@@ -74,23 +124,23 @@ import HelloWorld from '@/components/HelloWorld.vue'
                 <v-card-title>
                     <span>書籍詳細</span>
                 </v-card-title>
+
                 <v-row>
-                <v-col>
-                    <v-img
-                    class = "ml-auto my-auto"
-                    max-height="200"
-                    max-width="200"
-                    :src="postItem.volumeInfo.imageLinks.smallThumbnail"
-                    ></v-img>
-                </v-col>
-                <v-col class="my-auto" >
-                    <v-card-text >
-                    名前： {{this.postItem.volumeInfo.title}}<br>
-                    ステータス：　貸出可能　<v-icon x-small color="green darken-2">mdi-moon-full</v-icon><br>
-                    在庫数：　2 冊
-                    </v-card-text>
-                </v-col>
-                
+                    <v-col>
+                        <v-img class="ml-auto my-auto" max-height="200" max-width="200"
+                            :src="postItem.book.volumeInfo.imageLinks.smallThumbnail">
+                        </v-img>
+                    </v-col>
+                    <v-col class="my-auto">
+                        <v-card-text>
+                            名前： {{ postItem.book.volumeInfo.title }}<br>
+                            ステータス： {{ postItem.book.status ? "貸出可能" : "貸出不可" }}
+                            <v-icon x-small :color="postItem.book.status ? 'green' : 'red' + ' darken-2'">
+                                mdi-moon-full
+                            </v-icon><br>
+                            在庫数： 2 冊
+                        </v-card-text>
+                    </v-col>
                 </v-row>
 
                 <v-list class="my-3" max-height="200">
@@ -113,10 +163,10 @@ import HelloWorld from '@/components/HelloWorld.vue'
                 <v-divider></v-divider>
                 <v-card-actions justify='center'>
                     <v-col cols="6">
-                        <v-btn @click="close" color="blue darken-1">閉じる</v-btn>
+                        <v-btn @click="closeDialog" color="blue darken-1">閉じる</v-btn>
                     </v-col>
                     <v-col cols="6">
-                        <v-btn @click="close" color="blue darken-1">借りる</v-btn>
+                        <v-btn @click="closeDialog" color="blue darken-1">借りる</v-btn>
                     </v-col>
                 </v-card-actions>
 
@@ -125,110 +175,3 @@ import HelloWorld from '@/components/HelloWorld.vue'
     </v-container>
 </template>
 
-<script>
-import { ref } from 'vue'
-import books from '../assets/bookData'
-// const books = ref(["a", "b", "d", "e", "f", "g", "h",])
-const searchString = ref("")
-let dialog = ref(false)
-
-const closeDialog = () => {
-    dialog.value = false
-}
-
-export default {
-  data() {
-    return {
-      dialog: false,
-      books: books,
-      postItem: "",
-      items: [
-        {
-          avatar: 'https://cdn.vuetifyjs.com/images/lists/1.jpg',
-          title: 'Brunch this weekend?',
-          subtitle: `<span class="text--primary">Ali Connors</span> &mdash; I'll be in your neighborhood doing errands this weekend. Do you want to hang out?`,
-        },
-        { divider: true, inset: true },
-        {
-          avatar: 'https://cdn.vuetifyjs.com/images/lists/2.jpg',
-          title: 'Summer BBQ <span class="grey--text text--lighten-1">4</span>',
-          subtitle: `<span class="text--primary">to Alex, Scott, Jennifer</span> &mdash; Wish I could come, but I'm out of town this weekend.`,
-        },
-        { divider: true, inset: true },
-        {
-          avatar: 'https://cdn.vuetifyjs.com/images/lists/3.jpg',
-          title: 'Oui oui',
-          subtitle: '<span class="text--primary">Sandra Adams</span> &mdash; Do you have Paris recommendations? Have you ever been?',
-        },
-        { divider: true, inset: true },
-        {
-          avatar: 'https://cdn.vuetifyjs.com/images/lists/4.jpg',
-          title: 'Birthday gift',
-          subtitle: '<span class="text--primary">Trevor Hansen</span> &mdash; Have any ideas about what we should get Heidi for her birthday?',
-        },
-        { divider: true, inset: true },
-        {
-          avatar: 'https://cdn.vuetifyjs.com/images/lists/5.jpg',
-          title: 'Recipe to try',
-          subtitle: '<span class="text--primary">Britta Holt</span> &mdash; We should eat this: Grate, Squash, Corn, and tomatillo Tacos.',
-        },
-      ],
-    };
-  },
-  methods: {
-    open: function(book) {
-      this.dialog = true;
-      this.postItem = book;
-    },
-    close: function() {
-      this.dialog = false;
-    }
-  }
-    data() {
-        return {
-            dialog: false,
-            books: books,
-            items: [
-                {
-                    avatar: 'https://cdn.vuetifyjs.com/images/lists/1.jpg',
-                    title: 'Brunch this weekend?',
-                    subtitle: `<span class="text--primary">Ali Connors</span> &mdash; I'll be in your neighborhood doing errands this weekend. Do you want to hang out?`,
-                },
-                { divider: true, inset: true },
-                {
-                    avatar: 'https://cdn.vuetifyjs.com/images/lists/2.jpg',
-                    title: 'Summer BBQ <span class="grey--text text--lighten-1">4</span>',
-                    subtitle: `<span class="text--primary">to Alex, Scott, Jennifer</span> &mdash; Wish I could come, but I'm out of town this weekend.`,
-                },
-                { divider: true, inset: true },
-                {
-                    avatar: 'https://cdn.vuetifyjs.com/images/lists/3.jpg',
-                    title: 'Oui oui',
-                    subtitle: '<span class="text--primary">Sandra Adams</span> &mdash; Do you have Paris recommendations? Have you ever been?',
-                },
-                { divider: true, inset: true },
-                {
-                    avatar: 'https://cdn.vuetifyjs.com/images/lists/4.jpg',
-                    title: 'Birthday gift',
-                    subtitle: '<span class="text--primary">Trevor Hansen</span> &mdash; Have any ideas about what we should get Heidi for her birthday?',
-                },
-                { divider: true, inset: true },
-                {
-                    avatar: 'https://cdn.vuetifyjs.com/images/lists/5.jpg',
-                    title: 'Recipe to try',
-                    subtitle: '<span class="text--primary">Britta Holt</span> &mdash; We should eat this: Grate, Squash, Corn, and tomatillo Tacos.',
-                },
-            ],
-        };
-    },
-    methods: {
-        open: function () {
-            this.dialog = true;
-        },
-        close: function () {
-            this.dialog = false;
-        }
-    }
-};
-
-</script>
