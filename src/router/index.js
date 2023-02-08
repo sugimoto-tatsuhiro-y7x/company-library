@@ -46,7 +46,7 @@ const routes = [
   },
   {
     path: '/UserDetail',
-    component: () => import('@/layouts/default/Default.vue'),
+    // component: () => import('@/layouts/default/Default.vue'),
     children: [
       {
         path: '',
