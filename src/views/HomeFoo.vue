@@ -1,8 +1,9 @@
 <template>
   <p>
-    <router-link to="/foo">Foo</router-link>|
+    <router-link to="/">Home</router-link>|
     <router-link to="/bar">Bar</router-link>
   </p>
+  <h1>Foo</h1>
   <HelloWorld />
 </template>
 
