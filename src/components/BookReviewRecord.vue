@@ -5,14 +5,14 @@
       <div>職種: {{ occupation }}</div>
       <div>入社年分: {{ joinedYear }}</div> 
       <div>コメント: {{ comment }}</div>
-      <div class="text-center mt-12">
+    </div>
+    <div class="text-center mt-12">
         <v-rating
           v-model="rating"
           color="yellow darken-3"
           background-color="grey darken-1"
           large
         ></v-rating>
-      </div>
     </div>
   </template>
 
