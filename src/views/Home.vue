@@ -2,6 +2,7 @@
   <p>
     <router-link to="/foo">Foo</router-link>|
     <router-link to="/bar">Bar</router-link>
+    <router-link to="/UserDetail">UserDetail</router-link>
   </p>
   <HelloWorld />
 </template>
