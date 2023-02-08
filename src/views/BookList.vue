@@ -11,6 +11,11 @@ const closeDialog = () => {
 
 </script>
 
+<!-- メモとして残してます↓ -->
+<!-- <script setup>
+import HelloWorld from '@/components/HelloWorld.vue'
+</script> -->
+
 
 <template>
     <v-container>
@@ -19,8 +24,14 @@ const closeDialog = () => {
                 <h1>社内図書システム</h1>
             </v-col>
             <v-col>
+                    <router-link to="/foo">書籍詳細ダイアログ</router-link>|
+                    <router-link to="/UserDetail">UserDetail</router-link>|
+                    <router-link to="/">本一覧画面</router-link>
+            </v-col>
+            <v-col>
                 <v-avatar color="primary" size="56">TS</v-avatar>
             </v-col>
+
         </v-row>
 
         <v-form>
