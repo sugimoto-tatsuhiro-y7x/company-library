@@ -36,17 +36,32 @@ import HelloWorld from '@/components/HelloWorld.vue'
                 <v-card-actions>
                     <v-container class="grey lighten-5">
                         <v-row :align="align">
-                            <v-col>
+                            <v-col cols="2">
                                 <v-img width="100" v-bind:src="book.volumeInfo.imageLinks.smallThumbnail"></v-img>
                             </v-col>
-                            <v-card-title class="text-h5">
-                                {{ book.volumeInfo.title }}
-                            </v-card-title>
-                            <v-col>
-                                <v-btn elevation="2">借りる</v-btn>
+                            <v-col cols="10">
+                                <v-row>
+                                    <v-card-title class="text-h5">
+                                        {{ book.volumeInfo.title }}
+                                    </v-card-title>
+                                </v-row>
+                                <v-row>
+                                    <v-card-text>
+                                        <v-list lines="one">
+                                            <v-list-item title="貸出ステータス">
+                                                <v-icon x-small color="green darken-2">mdi-moon-full</v-icon>
+                                            </v-list-item>
+                                            <v-list-item title="場所" subtitle="3F"></v-list-item>
+                                        </v-list>
+                                    </v-card-text>
+                                </v-row>
                             </v-col>
                         </v-row>
                     </v-container>
+                </v-card-actions>
+
+                <v-card-actions>
+                    <v-btn elevation="2">借りる</v-btn>
                 </v-card-actions>
             </v-card>
         </div>
