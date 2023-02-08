@@ -1,0 +1,327 @@
+[
+    {
+        "kind": "books#volume",
+        "id": "YXJHEAAAQBAJ",
+        "etag": "qqhnZVMJQqw",
+        "selfLink": "https://www.googleapis.com/books/v1/volumes/YXJHEAAAQBAJ",
+        "volumeInfo": {
+            "title": "Kubernetes CI/CDパイプラインの実装",
+            "authors": [
+                "北山 晋吾"
+            ],
+            "publisher": "インプレス",
+            "publishedDate": "2021-10-19",
+            "description": "Kubernetesを活用したアプリケーションライフサイクルの自動化ノウハウを解説。 近年、アプリケーションの実行環境として“Kubernetes”を採用している企業が急速に増えています。Kubernetes上でのコンテナ開発は、これまでのアプリケーション開発とは大きく異なるため、どこから手を付けていけばよいのかと不安に感じている方も少なくありません。こうした状況を踏まえ、本書では、1つのアプリケーションライフサイクルの実装を通して「いかに少ない労力で開発プロセスを運用し続けるか」という改善案を提示します。 単にコンテナを導入し、Kubernetesを活用するだけでは運用負担の軽減や、迅速なサービス展開といったビジネスメリットを得るのは簡単ではありません。継続的インテグレーションや継続的デリバリの実装にとどまらず、開発プロセスに関わる開発者やレビューアの役割を見直す必要があります。本書ではこの点にも焦点を当て、ツールの使い方以上に、クラウドネイティブな開発プロセスの変化を理解し、実践しながらアプリケーションライフサイクルの改善ノウハウを解説します。 発行：インプレス",
+            "industryIdentifiers": [
+                {
+                    "type": "ISBN_13",
+                    "identifier": "9784295012757"
+                },
+                {
+                    "type": "ISBN_10",
+                    "identifier": "4295012750"
+                }
+            ],
+            "readingModes": {
+                "text": false,
+                "image": true
+            },
+            "pageCount": 400,
+            "printType": "BOOK",
+            "categories": [
+                "Computers"
+            ],
+            "maturityRating": "NOT_MATURE",
+            "allowAnonLogging": false,
+            "contentVersion": "preview-1.0.0",
+            "panelizationSummary": {
+                "containsEpubBubbles": false,
+                "containsImageBubbles": false
+            },
+            "imageLinks": {
+                "smallThumbnail": "http://books.google.com/books/content?id=YXJHEAAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+                "thumbnail": "http://books.google.com/books/content?id=YXJHEAAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+            },
+            "language": "ja",
+            "previewLink": "http://books.google.co.jp/books?id=YXJHEAAAQBAJ&pg=PA47&dq=cicd&hl=&cd=1&source=gbs_api",
+            "infoLink": "https://play.google.com/store/books/details?id=YXJHEAAAQBAJ&source=gbs_api",
+            "canonicalVolumeLink": "https://play.google.com/store/books/details?id=YXJHEAAAQBAJ"
+        },
+        "saleInfo": {
+            "country": "JP",
+            "saleability": "FOR_SALE",
+            "isEbook": true,
+            "listPrice": {
+                "amount": 3960,
+                "currencyCode": "JPY"
+            },
+            "retailPrice": {
+                "amount": 3564,
+                "currencyCode": "JPY"
+            },
+            "buyLink": "https://play.google.com/store/books/details?id=YXJHEAAAQBAJ&rdid=book-YXJHEAAAQBAJ&rdot=1&source=gbs_api",
+            "offers": [
+                {
+                    "finskyOfferType": 1,
+                    "listPrice": {
+                        "amountInMicros": 3960000000,
+                        "currencyCode": "JPY"
+                    },
+                    "retailPrice": {
+                        "amountInMicros": 3564000000,
+                        "currencyCode": "JPY"
+                    }
+                }
+            ]
+        },
+        "accessInfo": {
+            "country": "JP",
+            "viewability": "PARTIAL",
+            "embeddable": true,
+            "publicDomain": false,
+            "textToSpeechPermission": "ALLOWED",
+            "epub": {
+                "isAvailable": false
+            },
+            "pdf": {
+                "isAvailable": true,
+                "acsTokenLink": "http://books.google.co.jp/books/download/Kubernetes_CI_CD%E3%83%91%E3%82%A4%E3%83%97%E3%83%A9%E3%82%A4%E3%83%B3%E3%81%AE%E5%AE%9F-sample-pdf.acsm?id=YXJHEAAAQBAJ&format=pdf&output=acs4_fulfillment_token&dl_type=sample&source=gbs_api"
+            },
+            "webReaderLink": "http://play.google.com/books/reader?id=YXJHEAAAQBAJ&hl=&source=gbs_api",
+            "accessViewStatus": "SAMPLE",
+            "quoteSharingAllowed": false
+        },
+        "searchInfo": {
+            "textSnippet": "別のユーザーが使用しているプロジェクト ID と同じプロジェクト ID は使用できないため、ここでは自身のプ-プロジェクト ID: cloudnative-\u003cb\u003ecicd\u003c/b\u003e -プロジェクト名: Cloud Native \u003cb\u003eCICD\u003c/b\u003e ◎ GCP のプロジェクト作成##必ず自身の固有プロジェクト ID を確保&nbsp;..."
+        }
+    },
+    {
+        "kind": "books#volume",
+        "id": "2OnYzQEACAAJ",
+        "etag": "mZ+UqsbmQfw",
+        "selfLink": "https://www.googleapis.com/books/v1/volumes/2OnYzQEACAAJ",
+        "volumeInfo": {
+            "title": "CircleCI実践入門",
+            "subtitle": "CI/CDがもたらす開発速度と品質の両立",
+            "authors": [
+                "浦井誠人",
+                "大竹智也",
+                "金洋国"
+            ],
+            "publishedDate": "2020-09",
+            "description": "高速、安全、スケーラブル手軽に導入でき大規模開発にも使える。ビルド/テスト/デプロイ自動化の設定例や活用法を徹底収録。",
+            "industryIdentifiers": [
+                {
+                    "type": "ISBN_10",
+                    "identifier": "4297114119"
+                },
+                {
+                    "type": "ISBN_13",
+                    "identifier": "9784297114114"
+                }
+            ],
+            "readingModes": {
+                "text": false,
+                "image": false
+            },
+            "pageCount": 416,
+            "printType": "BOOK",
+            "maturityRating": "NOT_MATURE",
+            "allowAnonLogging": false,
+            "contentVersion": "preview-1.0.0",
+            "panelizationSummary": {
+                "containsEpubBubbles": false,
+                "containsImageBubbles": false
+            },
+            "imageLinks": {
+                "smallThumbnail": "http://books.google.com/books/content?id=2OnYzQEACAAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api",
+                "thumbnail": "http://books.google.com/books/content?id=2OnYzQEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api"
+            },
+            "language": "ja",
+            "previewLink": "http://books.google.co.jp/books?id=2OnYzQEACAAJ&dq=cicd&hl=&cd=2&source=gbs_api",
+            "infoLink": "http://books.google.co.jp/books?id=2OnYzQEACAAJ&dq=cicd&hl=&source=gbs_api",
+            "canonicalVolumeLink": "https://books.google.com/books/about/CircleCI%E5%AE%9F%E8%B7%B5%E5%85%A5%E9%96%80.html?hl=&id=2OnYzQEACAAJ"
+        },
+        "saleInfo": {
+            "country": "JP",
+            "saleability": "NOT_FOR_SALE",
+            "isEbook": false
+        },
+        "accessInfo": {
+            "country": "JP",
+            "viewability": "NO_PAGES",
+            "embeddable": false,
+            "publicDomain": false,
+            "textToSpeechPermission": "ALLOWED",
+            "epub": {
+                "isAvailable": false
+            },
+            "pdf": {
+                "isAvailable": false
+            },
+            "webReaderLink": "http://play.google.com/books/reader?id=2OnYzQEACAAJ&hl=&source=gbs_api",
+            "accessViewStatus": "NONE",
+            "quoteSharingAllowed": false
+        },
+        "searchInfo": {
+            "textSnippet": "高速、安全、スケーラブル手軽に導入でき大規模開発にも使える。ビルド/テスト/デプロイ自動化の設定例や活用法を徹底収録。"
+        }
+    },
+    {
+        "kind": "books#volume",
+        "id": "wLhTEAAAQBAJ",
+        "etag": "RZedp0COhR4",
+        "selfLink": "https://www.googleapis.com/books/v1/volumes/wLhTEAAAQBAJ",
+        "volumeInfo": {
+            "title": "Drupal 9 おいしいレシピ集",
+            "publisher": "インプレスR&D",
+            "publishedDate": "2021-12-17",
+            "description": "本書はオープンソースCMSのDrupalについて、それぞれ独立した1章完結のオムニバス形式で実践的な活用に役立つノウハウやテクニックをまとめています。合計7ページの4コマ漫画付きでわかりやすい解説書です。 【目次】 第1章 GitLab.comで手軽に始めるCI環境構築 第2章 オンプレミスで自分だけのCI環境構築 第3章 モジュール開発でCI実践 第4章 Drushとサイトエイリアスで楽々サイト管理 第5章 Groupモジュールで会員限定サイトを構築 第6章 JamstackでヘッドレスDrupalを爆速構築 第7章 Webformで簡単フォーム作成 第8章 MauticとDrupalで行う自動連携",
+            "industryIdentifiers": [
+                {
+                    "type": "ISBN_13",
+                    "identifier": "9784295600091"
+                },
+                {
+                    "type": "ISBN_10",
+                    "identifier": "4295600091"
+                }
+            ],
+            "readingModes": {
+                "text": true,
+                "image": true
+            },
+            "printType": "BOOK",
+            "categories": [
+                "Technology & Engineering"
+            ],
+            "maturityRating": "NOT_MATURE",
+            "allowAnonLogging": false,
+            "contentVersion": "1.1.1.0.preview.3",
+            "panelizationSummary": {
+                "containsEpubBubbles": false,
+                "containsImageBubbles": false
+            },
+            "imageLinks": {
+                "smallThumbnail": "http://books.google.com/books/content?id=wLhTEAAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+                "thumbnail": "http://books.google.com/books/content?id=wLhTEAAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+            },
+            "language": "ja",
+            "previewLink": "http://books.google.co.jp/books?id=wLhTEAAAQBAJ&pg=PT43&dq=cicd&hl=&cd=3&source=gbs_api",
+            "infoLink": "https://play.google.com/store/books/details?id=wLhTEAAAQBAJ&source=gbs_api",
+            "canonicalVolumeLink": "https://play.google.com/store/books/details?id=wLhTEAAAQBAJ"
+        },
+        "saleInfo": {
+            "country": "JP",
+            "saleability": "FOR_SALE",
+            "isEbook": true,
+            "listPrice": {
+                "amount": 1760,
+                "currencyCode": "JPY"
+            },
+            "retailPrice": {
+                "amount": 1584,
+                "currencyCode": "JPY"
+            },
+            "buyLink": "https://play.google.com/store/books/details?id=wLhTEAAAQBAJ&rdid=book-wLhTEAAAQBAJ&rdot=1&source=gbs_api",
+            "offers": [
+                {
+                    "finskyOfferType": 1,
+                    "listPrice": {
+                        "amountInMicros": 1760000000,
+                        "currencyCode": "JPY"
+                    },
+                    "retailPrice": {
+                        "amountInMicros": 1584000000,
+                        "currencyCode": "JPY"
+                    }
+                }
+            ]
+        },
+        "accessInfo": {
+            "country": "JP",
+            "viewability": "PARTIAL",
+            "embeddable": true,
+            "publicDomain": false,
+            "textToSpeechPermission": "ALLOWED",
+            "epub": {
+                "isAvailable": true,
+                "acsTokenLink": "http://books.google.co.jp/books/download/Drupal_9_%E3%81%8A%E3%81%84%E3%81%97%E3%81%84%E3%83%AC%E3%82%B7%E3%83%94%E9%9B%86-sample-epub.acsm?id=wLhTEAAAQBAJ&format=epub&output=acs4_fulfillment_token&dl_type=sample&source=gbs_api"
+            },
+            "pdf": {
+                "isAvailable": true,
+                "acsTokenLink": "http://books.google.co.jp/books/download/Drupal_9_%E3%81%8A%E3%81%84%E3%81%97%E3%81%84%E3%83%AC%E3%82%B7%E3%83%94%E9%9B%86-sample-pdf.acsm?id=wLhTEAAAQBAJ&format=pdf&output=acs4_fulfillment_token&dl_type=sample&source=gbs_api"
+            },
+            "webReaderLink": "http://play.google.com/books/reader?id=wLhTEAAAQBAJ&hl=&source=gbs_api",
+            "accessViewStatus": "SAMPLE",
+            "quoteSharingAllowed": false
+        },
+        "searchInfo": {
+            "textSnippet": "いったん、GitLab上にdev01ユーザーでログインして、「Create blank project」から\u003cb\u003ecicd\u003c/b\u003e-drupal9という名前の空プロジェクトを作ります。そして、リモートリポジトリーの設定をご自身が構築している\u003cb\u003eCI/CD\u003c/b\u003eサーバーのURLへ$ git remote -v origin&nbsp;..."
+        }
+    },
+    {
+        "kind": "books#volume",
+        "id": "rD4QAQAAMAAJ",
+        "etag": "pROR2S5CLNQ",
+        "selfLink": "https://www.googleapis.com/books/v1/volumes/rD4QAQAAMAAJ",
+        "volumeInfo": {
+            "title": "和英医学用語大辞典",
+            "publishedDate": "1990",
+            "industryIdentifiers": [
+                {
+                    "type": "OTHER",
+                    "identifier": "UOM:39015036200296"
+                }
+            ],
+            "readingModes": {
+                "text": false,
+                "image": false
+            },
+            "pageCount": 1378,
+            "printType": "BOOK",
+            "categories": [
+                "Japanese language"
+            ],
+            "maturityRating": "NOT_MATURE",
+            "allowAnonLogging": false,
+            "contentVersion": "0.2.3.0.preview.0",
+            "panelizationSummary": {
+                "containsEpubBubbles": false,
+                "containsImageBubbles": false
+            },
+            "imageLinks": {
+                "smallThumbnail": "http://books.google.com/books/content?id=rD4QAQAAMAAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api",
+                "thumbnail": "http://books.google.com/books/content?id=rD4QAQAAMAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api"
+            },
+            "language": "ja",
+            "previewLink": "http://books.google.co.jp/books?id=rD4QAQAAMAAJ&q=cicd&dq=cicd&hl=&cd=4&source=gbs_api",
+            "infoLink": "http://books.google.co.jp/books?id=rD4QAQAAMAAJ&dq=cicd&hl=&source=gbs_api",
+            "canonicalVolumeLink": "https://books.google.com/books/about/%E5%92%8C%E8%8B%B1%E5%8C%BB%E5%AD%A6%E7%94%A8%E8%AA%9E%E5%A4%A7%E8%BE%9E%E5%85%B8.html?hl=&id=rD4QAQAAMAAJ"
+        },
+        "saleInfo": {
+            "country": "JP",
+            "saleability": "NOT_FOR_SALE",
+            "isEbook": false
+        },
+        "accessInfo": {
+            "country": "JP",
+            "viewability": "NO_PAGES",
+            "embeddable": false,
+            "publicDomain": false,
+            "textToSpeechPermission": "ALLOWED",
+            "epub": {
+                "isAvailable": false
+            },
+            "pdf": {
+                "isAvailable": false
+            },
+            "webReaderLink": "http://play.google.com/books/reader?id=rD4QAQAAMAAJ&hl=&source=gbs_api",
+            "accessViewStatus": "NONE",
+            "quoteSharingAllowed": false
+        },
+        "searchInfo": {
+            "textSnippet": "\u003cb\u003eCICD\u003c/b\u003e-389. 7D ; anacusia(n) No.&amp;.] \u003cb\u003eCICD\u003c/b\u003e-389. 7] ¡anacusis (n) [NoU ; deaf (n) HR*] \u003cb\u003eCICD\u003c/b\u003e-389. 7] ; deafmutism(n) [£.*] CSN0MED-D8846 ICD- 389.7) ; deafness (n) No*1 CSNOMED-FX6000 ICD-389.9) ; surditas(n) [«*] \u003cb\u003eCICD\u003c/b\u003e-389."
+        }
+    }
+]
