@@ -18,7 +18,7 @@
         <v-list-item-subtitle v-html="item.subtitle"></v-list-item-subtitle>
       </v-list-item-content>
     </v-list-item>
-  </template>
+</template>
 
 <script>
 export default {
