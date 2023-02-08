@@ -2,8 +2,28 @@
 import { ref } from 'vue'
 import books from '../assets/bookData'
 import BookListItem from '@/components/BookListItem.vue';
+import useSWRV from 'swrv'
 
 const searchString = ref("")
+
+const fetcher = (search) => {
+    let url = new URL("https://www.googleapis.com/books/v1/volumes")
+
+    const param = {
+        q: search
+    }
+
+
+    url.search = new URLSearchParams(param).toString()
+    fetch(url)
+        .then((res) => {
+            return res && res.json()
+        }).then((data) => {
+            return data
+        })
+}
+
+// const { data, error } = useSWRV("cicd", fetcher)
 
 </script>
 
@@ -35,8 +55,12 @@ const searchString = ref("")
         </v-form>
 
         <!-- 本一覧 -->
-        <div v-for="book in books" :key="book">
-            <BookListItem :book=book />
+        <div v-if="error">failed to load</div>
+        <div v-if="!books">loading...</div>
+        <div v-else>
+            <div v-for="book in books" :key="book">
+                <BookListItem :book=book />
+            </div>
         </div>
 
     </v-container>
