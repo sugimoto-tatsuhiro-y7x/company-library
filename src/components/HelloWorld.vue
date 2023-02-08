@@ -70,6 +70,7 @@
             Community
           </v-btn>
         </v-col>
+
       </v-row>
     </v-responsive>
   </v-container>
