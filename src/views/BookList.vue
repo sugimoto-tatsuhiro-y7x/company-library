@@ -77,7 +77,7 @@ import HelloWorld from '@/components/HelloWorld.vue'
                     class = "ml-auto my-auto"
                     max-height="200"
                     max-width="200"
-                    src="https://img.honto.jp/item/2/265/360/28756330_1.webp"
+                    :src="postItem.volumeInfo.imageLinks.smallThumbnail"
                     ></v-img>
                 </v-col>
                 <v-col class="my-auto" >
