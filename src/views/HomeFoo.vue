@@ -1,7 +1,6 @@
 <template>
   <p>
-    <router-link to="/">Home</router-link>|
-    <router-link to="/bar">Bar</router-link>
+    <router-link to="/">BookList</router-link>
   </p>
   <v-btn @click="open">ダイアログを開く</v-btn>
   <v-dialog v-model="dialog" max-width="500px" max-height="600px">
