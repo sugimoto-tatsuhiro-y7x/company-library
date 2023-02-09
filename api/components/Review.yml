@@ -1,0 +1,12 @@
+type: object
+properties:
+  id:
+    type: integer
+  stars:
+    type: integer
+  bookId:
+    type: integer
+  userId:
+    type: integer
+  comment:
+    type: string

@@ -1,0 +1,15 @@
+type: object
+properties:
+  bookId:
+    type: integer
+    description: |
+      "書籍ID"
+  name:
+    type: string
+    description: "書籍名"
+  imageLink:
+    type: string
+    description: "画像URL"
+  stock:
+    type: integer
+    description: "在庫数"

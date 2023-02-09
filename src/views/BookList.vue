@@ -15,7 +15,7 @@ const fetcher = (search) => {
 
 
     url.search = new URLSearchParams(param).toString()
-    fetch(url)
+    return fetch(url)
         .then((res) => {
             return res && res.json()
         }).then((data) => {
@@ -23,7 +23,7 @@ const fetcher = (search) => {
         })
 }
 
-// const { data, error } = useSWRV("cicd", fetcher)
+const { data, error } = useSWRV("cicd", fetcher)
 
 </script>
 
@@ -55,13 +55,17 @@ const fetcher = (search) => {
         </v-form>
 
         <!-- 本一覧 -->
-        <div v-if="error">failed to load</div>
-        <div v-if="!books">loading...</div>
+
+        <div v-for="book in books" :key="book">
+            <BookListItem :book=book />
+        </div>
+        <!-- <div v-if="error">failed to load</div>
+        <div v-if="!data">loading...</div>
         <div v-else>
-            <div v-for="book in books" :key="book">
+            <div v-for="book in data.items" :key="book">
                 <BookListItem :book=book />
             </div>
-        </div>
+        </div> -->
 
     </v-container>
 </template>
