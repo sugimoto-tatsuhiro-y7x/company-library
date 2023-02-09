@@ -101,7 +101,7 @@
                                 </v-container>
                             </v-card-actions>
                             <v-card-actions>
-                                <v-btn elevation="2">返す</v-btn>
+                                <v-btn disabled="false" elevation="2">返す</v-btn>
                             </v-card-actions>
                         </v-card>
                     </div>
