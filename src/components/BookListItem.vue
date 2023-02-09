@@ -115,14 +115,12 @@ const closeReserveDialog = () => {
                                     <!-- <v-card-actions>
                                         <v-btn elevation="2" @click=openRentalDialog(book)>{{ book.status ? "借りる" : "予約する" }}</v-btn>
                                     </v-card-actions> -->
-                                </v-col>     
+                                </v-col>
                             </v-row>
                         </v-col>
                     </v-row>
                 </v-container>
             </v-card-actions>
-
-            
         </v-card>
 
         <!-- 本詳細dialog -->
@@ -181,7 +179,7 @@ const closeReserveDialog = () => {
                     <v-container>
                         <v-row>
                             <v-col cols="3"></v-col>
-                            <v-col cols="3" >
+                            <v-col cols="3">
                                 <v-btn @click="closeDialog" variant="flat" color="red">CLOSE</v-btn>
                             </v-col>
                             <v-col cols="3" v-if="postItem.book.status">
@@ -193,7 +191,7 @@ const closeReserveDialog = () => {
                             <v-col cols="3"></v-col>
                         </v-row>
                     </v-container>
-                    
+
                 </v-card-actions>
 
             </v-card>
@@ -212,7 +210,7 @@ const closeReserveDialog = () => {
                         <h4>以下の書籍で正しいかご確認ください。</h4>
                     </v-col>
                     <v-col cols="2"></v-col>
-                </v-row>   
+                </v-row>
 
                 <v-row>
                     <v-col>
@@ -237,7 +235,7 @@ const closeReserveDialog = () => {
                     <v-container>
                         <v-row>
                             <v-col cols="3"></v-col>
-                            <v-col cols="3" >
+                            <v-col cols="3">
                                 <v-btn @click="closeRentalDialog" variant="flat" color="red">CLOSE</v-btn>
                             </v-col>
                             <v-col cols="3">
@@ -246,7 +244,7 @@ const closeReserveDialog = () => {
                             <v-col cols="3"></v-col>
                         </v-row>
                     </v-container>
-                    
+
                 </v-card-actions>
             </v-card>
         </v-dialog>
@@ -264,7 +262,7 @@ const closeReserveDialog = () => {
                         <h4>以下の貸出可能予定になります。問題ないかご確認ください。</h4>
                     </v-col>
                     <v-col cols="2"></v-col>
-                </v-row>   
+                </v-row>
 
                 <v-row>
                     <v-col>
@@ -276,8 +274,9 @@ const closeReserveDialog = () => {
                         <v-card-text>
                             名前： {{ postItem.book.volumeInfo.title }}<br><br>
                             貸出待ち人数： 5人 <br>
-                            <v-icon>mdi-human-child</v-icon><v-icon>mdi-human-child</v-icon><v-icon>mdi-human-child</v-icon><v-icon>mdi-human-child</v-icon><v-icon>mdi-human-child</v-icon> <br><br>
-                            貸出可能日：2023/03/14(火) 
+                            <v-icon>mdi-human-child</v-icon><v-icon>mdi-human-child</v-icon><v-icon>mdi-human-child</v-icon><v-icon>mdi-human-child</v-icon><v-icon>mdi-human-child</v-icon>
+                            <br><br>
+                            貸出可能日：2023/03/14(火)
                         </v-card-text>
                     </v-col>
                 </v-row>
@@ -287,7 +286,7 @@ const closeReserveDialog = () => {
                     <v-container>
                         <v-row>
                             <v-col cols="3"></v-col>
-                            <v-col cols="3" >
+                            <v-col cols="3">
                                 <v-btn @click="closeReserveDialog" variant="flat" color="red">CLOSE</v-btn>
                             </v-col>
                             <v-col cols="3">
@@ -296,7 +295,7 @@ const closeReserveDialog = () => {
                             <v-col cols="3"></v-col>
                         </v-row>
                     </v-container>
-                    
+
                 </v-card-actions>
             </v-card>
         </v-dialog>
