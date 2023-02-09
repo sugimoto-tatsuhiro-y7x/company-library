@@ -1,27 +1,21 @@
 <template>
-    <div>
-        <h1>{{ title }}</h1>
-        <p>{{ text }}</p>
-    </div>
+  <v-row>
+    <v-col>
+      <h1>社内図書システム</h1>
+    </v-col>
+    <v-col>
+      <router-link to="/foo">書籍詳細ダイアログ</router-link>|
+      <router-link to="/UserDetail">UserDetail</router-link>|
+      <router-link to="/">本一覧画面</router-link>
+    </v-col>
+    <v-col>
+      <router-link to="/UserDetail">
+        <v-avatar size="56">
+          <v-img src="../assets/kanako.png"></v-img>
+        </v-avatar>
+      </router-link>
+    </v-col>
+  </v-row>
 </template>
 
-<script>
-export default {
-    data: () => ({
-        title: "Header",
-        text: "会社図書館"
-    }),
-}
-</script>
-
-<style scoped>
-div{
-    border: 1px solid blue
-}
-h1{
-    color: blue
-}
-p{
-    color:blue
-}
-</style>
+<script setup></script>

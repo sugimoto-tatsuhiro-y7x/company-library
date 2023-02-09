@@ -1,6 +1,7 @@
 <script setup>
 import { ref } from "vue";
 import books from "../assets/bookData";
+import Header from "@/components/Header.vue";
 import BookListItem from "@/components/BookListItem.vue";
 import BookCarousel from "@/components/BookCarousel.vue";
 import useSWRV from "swrv";
@@ -41,23 +42,7 @@ const { data, error } = useSWRV("cicd", fetcher);
 <template>
   <v-container>
     <!-- Header -->
-    <v-row>
-      <v-col>
-        <h1>社内図書システム</h1>
-      </v-col>
-      <v-col>
-        <router-link to="/foo">書籍詳細ダイアログ</router-link>|
-        <router-link to="/UserDetail">UserDetail</router-link>|
-        <router-link to="/">本一覧画面</router-link>
-      </v-col>
-      <v-col>
-        <router-link to="/UserDetail">
-          <v-avatar size="56">
-            <v-img src="../assets/kanako.png"></v-img>
-          </v-avatar>
-        </router-link>
-      </v-col>
-    </v-row>
+    <Header></Header>
 
     <!-- 検索フォーム -->
     <v-row no-gutters>
@@ -68,8 +53,13 @@ const { data, error } = useSWRV("cicd", fetcher);
       </v-col>
       <v-col :cols="searching ? 10 : 11">
         <v-form>
-          <v-text-field prepend-inner-icon="mdi-magnify" label="書籍検索" placeholder="書籍名等を入力してください"
-            clear-icon="mdi-close-circle" clearable></v-text-field>
+          <v-text-field
+            prepend-inner-icon="mdi-magnify"
+            label="書籍検索"
+            placeholder="書籍名等を入力してください"
+            clear-icon="mdi-close-circle"
+            clearable
+          ></v-text-field>
         </v-form>
       </v-col>
       <v-col cols="1">
