@@ -1,4 +1,5 @@
 <script setup>
+// TODO BookListに追加する
 // <BookDetailDialog :book=book :dialog=dialog v-on:emitCloseDialog="closeDialog"></BookDetailDialog>
 
 import BookReviewRecord from "@/components/BookReviewRecord.vue";

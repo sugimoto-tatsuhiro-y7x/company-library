@@ -11,21 +11,7 @@ servers:
   - url: http://localhost:8080
 paths:
   /books:
-    get:
-      description: "本一覧を取得するエンドポイント"
-      operationId: books
-      tags:
-        - "books"
-      responses:
-        "200":
-          description: OK
-          content:
-            application/json:
-              schema:
-                type: array
-                items:
-                  $ref: "#/components/schemas/Book"
-
+    $ref: "./paths/get-books.yml"
 components:
   schemas:
     $ref: "./components/index.yml"
