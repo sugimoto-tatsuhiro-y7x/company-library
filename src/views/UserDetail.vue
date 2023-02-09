@@ -34,6 +34,42 @@
         </v-tabs>
         <v-window v-model="tab">
             <v-window-item v-for="item in items" :key="item" :value="item">
+                <div v-if="item === '予約中'">
+                    <div v-for="book in reserved" :key="book">
+                        <v-card elevation="2">
+                            <v-card-actions>
+                                <v-container class="grey lighten-5">
+                                    <v-row>
+                                        <v-col>
+                                            <v-img width="100"
+                                                v-bind:src="book.volumeInfo.imageLinks.smallThumbnail"></v-img>
+                                        </v-col>
+                                        <v-col cols="10">
+                                            <v-row>
+                                                <v-card-title class="text-h5">
+                                                    {{ book.volumeInfo.title }}
+                                                </v-card-title>
+                                            </v-row>
+                                            <v-row>
+                                                <v-card-text>
+                                                    貸出日：{{ borrowedBook.from }}
+                                                </v-card-text>
+                                            </v-row>
+                                            <v-row>
+                                                <v-card-text>
+                                                    返却期限：{{ borrowedBook.to }}
+                                                </v-card-text>
+                                            </v-row>
+                                        </v-col>
+                                    </v-row>
+                                </v-container>
+                            </v-card-actions>
+                            <v-card-actions>
+                                <v-btn elevation="2">返す</v-btn>
+                            </v-card-actions>
+                        </v-card>
+                    </div>
+                </div>
                 <div v-if="item === '貸出中'">
                     <div v-for="book in onLoan" :key="book">
                         <v-card elevation="2">
@@ -121,7 +157,7 @@ export default {
         return {
             tab: '貸出中',
             items: [
-                '貸出中', '返却済',
+                '予約中', '貸出中', '返却済',
             ],
             text: 'aaa',
             name: 'KANA',
@@ -137,9 +173,14 @@ export default {
         }
     },
     computed: {
+        reserved: () => {
+            return books.filter((item) => {
+                return !item.status // 一旦onLoanと被っています
+            })
+        },
         onLoan: () => {
             return books.filter((item) => {
-                return !item.status
+                return !item.status // 一旦reservedと被っています
             })
         },
         returned: () => {
