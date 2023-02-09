@@ -29,9 +29,3 @@ paths:
 components:
   schemas:
     $ref: "./components/index.yml"
-
-  examples:
-    UserExample:
-      value:
-        id: 1
-        name: aaa
