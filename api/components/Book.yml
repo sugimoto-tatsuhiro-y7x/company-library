@@ -2,11 +2,12 @@ type: object
 properties:
   bookId:
     type: integer
-    description: |
-      "書籍ID"
+    description: "書籍ID"
+    example: 22
   name:
     type: string
     description: "書籍名"
+    example: "CICDの基礎"
   imageLink:
     type: string
     description: "画像URL"
