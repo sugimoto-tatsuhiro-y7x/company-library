@@ -6,6 +6,7 @@ const props = defineProps({
 })
 
 const dialog = ref(false)
+const rentalDialog = ref(false)
 
 const postItem = reactive({
     book: {}
@@ -54,6 +55,19 @@ const closeDialog = () => {
     dialog.value = false;
 }
 
+// 貸出確認画面ダイアログオープン関数
+const openRentalDialog = (book) => {
+    rentalDialog.value = true;
+    dialog.value = false;
+}
+
+// 貸出確認画面ダイアログclose関数
+const closeRentalDialog = () => {
+    rentalDialog.value = false;
+}
+
+
+
 </script>
 
 <template>
@@ -85,9 +99,9 @@ const closeDialog = () => {
                                     </v-card-text>
                                 </v-col>
                                 <v-col cols="4" align-self="center">
-                                    <v-card-actions>
-                                        <v-btn elevation="2">{{ postItem.book.status ? "借りる" : "予約する" }}</v-btn>
-                                    </v-card-actions>
+                                    <!-- <v-card-actions>
+                                        <v-btn elevation="2" @click=openRentalDialog(book)>{{ book.status ? "借りる" : "予約する" }}</v-btn>
+                                    </v-card-actions> -->
                                 </v-col>     
                             </v-row>
                         </v-col>
@@ -98,7 +112,7 @@ const closeDialog = () => {
             
         </v-card>
 
-        <!-- dialog -->
+        <!-- 本詳細dialog -->
         <v-dialog v-model="dialog" max-width="500px" max-height="600px">
             <v-card class="mx-auto">
                 <v-card-title>
@@ -149,7 +163,7 @@ const closeDialog = () => {
                                 <v-btn @click="closeDialog" variant="flat" color="red">CLOSE</v-btn>
                             </v-col>
                             <v-col cols="3">
-                                <v-btn @click="closeDialog" variant="flat" color="primary">{{ postItem.book.status ? "借りる" : "予約する" }}</v-btn>
+                                <v-btn @click="openRentalDialog" variant="flat" color="primary">{{ postItem.book.status ? "借りる" : "予約する" }}</v-btn>
                             </v-col>
                             <v-col cols="3"></v-col>
                         </v-row>
@@ -157,6 +171,58 @@ const closeDialog = () => {
                     
                 </v-card-actions>
 
+            </v-card>
+        </v-dialog>
+
+        <!-- 貸出確認dialog -->
+        <v-dialog v-model="rentalDialog" max-width="500">
+            <v-card>
+                <v-card-title>
+                    <span>貸出確認</span>
+                </v-card-title>
+
+                <v-row>
+                    <v-col cols="2"></v-col>
+                    <v-col cols="8">
+                        <h4>以下の書籍で正しいかご確認ください。</h4>
+                    </v-col>
+                    <v-col cols="2"></v-col>
+                </v-row>   
+
+                <v-row>
+                    <v-col>
+                        <v-img max-height="300" max-width="200" class="ml-auto mb-3"
+                            :src="postItem.book.volumeInfo.imageLinks.smallThumbnail">
+                        </v-img>
+                    </v-col>
+                    <v-col>
+                        <v-card-text>
+                            名前： {{ postItem.book.volumeInfo.title }}<br>
+                            ステータス： {{ postItem.book.status ? "貸出可能" : "貸出不可" }}
+                            <v-icon x-small :color="postItem.book.status ? 'green' : 'red' + ' darken-2'">
+                                mdi-moon-full
+                            </v-icon><br>
+                            在庫数： 2 冊
+                        </v-card-text>
+                    </v-col>
+                </v-row>
+
+                <v-divider></v-divider>
+                <v-card-actions color="primary">
+                    <v-container>
+                        <v-row>
+                            <v-col cols="3"></v-col>
+                            <v-col cols="3" >
+                                <v-btn @click="closeRentalDialog" variant="flat" color="red">CLOSE</v-btn>
+                            </v-col>
+                            <v-col cols="3">
+                                <v-btn @click="closeRentalDialog" variant="flat" color="primary">確定</v-btn>
+                            </v-col>
+                            <v-col cols="3"></v-col>
+                        </v-row>
+                    </v-container>
+                    
+                </v-card-actions>
             </v-card>
         </v-dialog>
 
