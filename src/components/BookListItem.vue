@@ -67,30 +67,35 @@ const closeDialog = () => {
                         </v-col>
                         <v-col cols="10">
                             <v-row>
-                                <v-card-title class="text-h5">
+                                <v-card-title class="text-h6">
                                     {{ book.volumeInfo.title }}
                                 </v-card-title>
                             </v-row>
-                            <v-row>
-                                <v-card-text>
-                                    <v-list lines="one">
-                                        <v-list-item title="貸出ステータス">
-                                            <v-icon x-small :color="book.status ? 'green' : 'red' + ' darken-2'">
-                                                mdi-moon-full
-                                            </v-icon>
-                                        </v-list-item>
-                                        <v-list-item title="場所" :subtitle="book.location"></v-list-item>
-                                    </v-list>
-                                </v-card-text>
+                            <v-row class="mt-0">
+                                <v-col cols="8" class="py-0">
+                                    <v-card-text class="py-0">
+                                        <v-list lines="one">
+                                            <v-list-item title="貸出ステータス">
+                                                <v-icon x-small :color="book.status ? 'green' : 'red' + ' darken-2'">
+                                                    mdi-moon-full
+                                                </v-icon>
+                                            </v-list-item>
+                                            <v-list-item title="場所" :subtitle="book.location"></v-list-item>
+                                        </v-list>
+                                    </v-card-text>
+                                </v-col>
+                                <v-col cols="4" align-self="center">
+                                    <v-card-actions>
+                                        <v-btn elevation="2">{{ postItem.book.status ? "借りる" : "予約する" }}</v-btn>
+                                    </v-card-actions>
+                                </v-col>     
                             </v-row>
                         </v-col>
                     </v-row>
                 </v-container>
             </v-card-actions>
 
-            <v-card-actions>
-                <v-btn elevation="2">{{ postItem.book.status ? "借りる" : "予約する" }}</v-btn>
-            </v-card-actions>
+            
         </v-card>
 
         <!-- dialog -->
