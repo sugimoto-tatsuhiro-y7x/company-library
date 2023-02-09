@@ -1,7 +1,6 @@
 <template>
   <v-card
     class="elevation-16 mx-auto"
-    width="800"
   >
     <v-row>
       <v-col cols="1">
