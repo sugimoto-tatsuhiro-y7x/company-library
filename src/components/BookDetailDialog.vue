@@ -51,14 +51,14 @@ const closeReserveDialog = () => {
       <v-row>
         <v-col>
           <v-img class="ml-auto my-auto" max-height="200" max-width="200"
-            :src="postItem.book.volumeInfo.imageLinks.smallThumbnail">
+            :src="book.volumeInfo.imageLinks.smallThumbnail">
           </v-img>
         </v-col>
         <v-col class="my-auto">
           <v-card-text>
-            名前： {{ postItem.book.volumeInfo.title }}<br>
-            ステータス： {{ postItem.book.status ? "貸出可能" : "貸出不可" }}
-            <v-icon x-small :color="postItem.book.status ? 'green' : 'red' + ' darken-2'">
+            名前： {{ book.volumeInfo.title }}<br>
+            ステータス： {{ book.status ? "貸出可能" : "貸出不可" }}
+            <v-icon x-small :color="book.status ? 'green' : 'red' + ' darken-2'">
               mdi-moon-full
             </v-icon><br>
             在庫数： 2 冊
@@ -66,22 +66,6 @@ const closeReserveDialog = () => {
         </v-col>
       </v-row>
 
-      <!-- <v-list class="my-3" max-height="200">
-                    <template v-for="(item, index) in items">
-                        <v-divider v-if="item.divider" :key="index" :inset="item.inset"></v-divider>
-
-                        <v-list-item v-else :key="item.title">
-                            <v-list-item-avatar>
-                                <v-img :src="item.avatar" max-height="50" max-width="50"></v-img>
-                            </v-list-item-avatar>
-
-                            <v-list-item-content>
-                                <v-list-item-title v-html="item.title"></v-list-item-title>
-                                <v-list-item-subtitle v-html="item.subtitle"></v-list-item-subtitle>
-                            </v-list-item-content>
-                        </v-list-item>
-                    </template>
-                </v-list> -->
       <v-list class="my-3" max-height="200">
         <template v-for="(item, index) in items">
           <v-divider v-if="item.divider" :key="index" :inset="item.inset"></v-divider>
@@ -100,7 +84,7 @@ const closeReserveDialog = () => {
             <v-col cols="3">
               <v-btn @click="$emit('notification')" variant="flat" color="red">CLOSE</v-btn>
             </v-col>
-            <v-col cols="3" v-if="postItem.book.status">
+            <v-col cols="3" v-if="book.status">
               <v-btn @click="openRentalDialog" variant="flat" color="success">借りる</v-btn>
             </v-col>
             <v-col cols="3" v-else>
@@ -132,15 +116,14 @@ const closeReserveDialog = () => {
 
       <v-row>
         <v-col>
-          <v-img max-height="300" max-width="200" class="ml-auto mb-3"
-            :src="postItem.book.volumeInfo.imageLinks.smallThumbnail">
+          <v-img max-height="300" max-width="200" class="ml-auto mb-3" :src="book.volumeInfo.imageLinks.smallThumbnail">
           </v-img>
         </v-col>
         <v-col>
           <v-card-text>
-            名前： {{ postItem.book.volumeInfo.title }}<br>
-            ステータス： {{ postItem.book.status ? "貸出可能" : "貸出不可" }}
-            <v-icon x-small :color="postItem.book.status ? 'green' : 'red' + ' darken-2'">
+            名前： {{ book.volumeInfo.title }}<br>
+            ステータス： {{ book.status ? "貸出可能" : "貸出不可" }}
+            <v-icon x-small :color="book.status ? 'green' : 'red' + ' darken-2'">
               mdi-moon-full
             </v-icon><br>
             在庫数： 2 冊
@@ -184,13 +167,12 @@ const closeReserveDialog = () => {
 
       <v-row>
         <v-col>
-          <v-img max-height="300" max-width="200" class="ml-auto mb-3"
-            :src="postItem.book.volumeInfo.imageLinks.smallThumbnail">
+          <v-img max-height="300" max-width="200" class="ml-auto mb-3" :src="book.volumeInfo.imageLinks.smallThumbnail">
           </v-img>
         </v-col>
         <v-col>
           <v-card-text>
-            名前： {{ postItem.book.volumeInfo.title }}<br><br>
+            名前： {{ book.volumeInfo.title }}<br><br>
             貸出待ち人数： 5人 <br>
             <v-icon>mdi-human-child</v-icon><v-icon>mdi-human-child</v-icon><v-icon>mdi-human-child</v-icon><v-icon>mdi-human-child</v-icon><v-icon>mdi-human-child</v-icon>
             <br><br>
