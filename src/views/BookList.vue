@@ -1,6 +1,6 @@
 <script setup>
 import { ref } from 'vue'
-import books from '../assets/bookData'
+// import books from '../assets/bookData'
 import BookListItem from '@/components/BookListItem.vue';
 import useSWRV from 'swrv'
 
@@ -15,7 +15,7 @@ const fetcher = (search) => {
 
 
     url.search = new URLSearchParams(param).toString()
-    fetch(url)
+    return fetch(url)
         .then((res) => {
             return res && res.json()
         }).then((data) => {
@@ -23,7 +23,7 @@ const fetcher = (search) => {
         })
 }
 
-// const { data, error } = useSWRV("cicd", fetcher)
+const { data, error } = useSWRV("cicd", fetcher)
 
 </script>
 
@@ -56,9 +56,9 @@ const fetcher = (search) => {
 
         <!-- 本一覧 -->
         <div v-if="error">failed to load</div>
-        <div v-if="!books">loading...</div>
+        <div v-if="!data">loading...</div>
         <div v-else>
-            <div v-for="book in books" :key="book">
+            <div v-for="book in data.items" :key="book">
                 <BookListItem :book=book />
             </div>
         </div>
