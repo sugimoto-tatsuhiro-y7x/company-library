@@ -89,7 +89,7 @@ const closeDialog = () => {
             </v-card-actions>
 
             <v-card-actions>
-                <v-btn elevation="2">借りる</v-btn>
+                <v-btn elevation="2">{{ postItem.book.status ? "借りる" : "予約する" }}</v-btn>
             </v-card-actions>
         </v-card>
 
@@ -136,13 +136,20 @@ const closeDialog = () => {
                 </v-list>
 
                 <v-divider></v-divider>
-                <v-card-actions justify='center'>
-                    <v-col cols="6">
-                        <v-btn @click="closeDialog" color="blue darken-1">閉じる</v-btn>
-                    </v-col>
-                    <v-col cols="6">
-                        <v-btn @click="closeDialog" color="blue darken-1">借りる</v-btn>
-                    </v-col>
+                <v-card-actions color="primary">
+                    <v-container>
+                        <v-row>
+                            <v-col cols="3"></v-col>
+                            <v-col cols="3" >
+                                <v-btn @click="closeDialog" variant="flat" color="red">CLOSE</v-btn>
+                            </v-col>
+                            <v-col cols="3">
+                                <v-btn @click="closeDialog" variant="flat" color="primary">{{ postItem.book.status ? "借りる" : "予約する" }}</v-btn>
+                            </v-col>
+                            <v-col cols="3"></v-col>
+                        </v-row>
+                    </v-container>
+                    
                 </v-card-actions>
 
             </v-card>
