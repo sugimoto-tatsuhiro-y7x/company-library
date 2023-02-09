@@ -66,7 +66,7 @@ const { data, error } = useSWRV("cicd", fetcher);
           <v-icon>mdi-arrow-left</v-icon>
         </v-btn>
       </v-col>
-      <v-col :cols="searching ? 9 : 10">
+      <v-col :cols="searching ? 10 : 11">
         <v-form>
           <v-text-field
             prepend-inner-icon="mdi-magnify"
@@ -86,6 +86,7 @@ const { data, error } = useSWRV("cicd", fetcher);
       <BookSlideGroups :books="books"></BookSlideGroups>
       <h2>おすすめ</h2>
       <BookSlideGroups :books="books"></BookSlideGroups>
+      <v-divider class="mx-auto my-2"></v-divider>
     </div>
 
     <!-- 本一覧 -->
