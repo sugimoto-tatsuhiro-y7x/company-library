@@ -5,13 +5,12 @@
   </p>
 
   <p>
-    <BookReviewRecord/>
+    <BookReviewRecord />
   </p>
 
 </template>
 
 <script setup>
-  //import HelloWorld from '@/components/HelloWorld.vue'
-  import BookReviewRecord from '@/components/BookReviewRecord.vue'
-  //import BookReviewRecords from '@/components/BookReviewRecords.vue'
+//import HelloWorld from '@/components/HelloWorld.vue'
+import BookReviewRecord from '@/components/BookReviewRecord.vue'
 </script>
