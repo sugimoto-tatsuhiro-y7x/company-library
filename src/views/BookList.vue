@@ -68,13 +68,8 @@ const { data, error } = useSWRV("cicd", fetcher);
       </v-col>
       <v-col :cols="searching ? 10 : 11">
         <v-form>
-          <v-text-field
-            prepend-inner-icon="mdi-magnify"
-            label="書籍検索"
-            placeholder="書籍名等を入力してください"
-            clear-icon="mdi-close-circle"
-            clearable
-          ></v-text-field>
+          <v-text-field prepend-inner-icon="mdi-magnify" label="書籍検索" placeholder="書籍名等を入力してください"
+            clear-icon="mdi-close-circle" clearable></v-text-field>
         </v-form>
       </v-col>
       <v-col cols="1">
