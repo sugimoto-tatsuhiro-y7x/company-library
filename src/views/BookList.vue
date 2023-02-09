@@ -2,7 +2,6 @@
 import { ref } from 'vue'
 import books from '../assets/bookData'
 import BookListItem from '@/components/BookListItem.vue';
-import BookCarousel from '@/components/BookCarousel.vue';
 import useSWRV from 'swrv'
 import BookSlideGroups from '@/components/BookSlideGroups.vue';
 
