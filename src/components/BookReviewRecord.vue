@@ -1,9 +1,10 @@
 <template>
   <v-card
     class="elevation-16 mx-auto"
+    width="400"
   >
     <v-row>
-      <v-col cols="1">
+      <v-col cols="2">
         <v-list-item-avatar>
         <v-img :src="item.avatar" max-height="50" max-width="50"></v-img>
         </v-list-item-avatar>
