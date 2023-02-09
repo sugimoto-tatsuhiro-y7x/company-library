@@ -91,6 +91,7 @@ const { data, error } = useSWRV("cicd", fetcher);
 
     <!-- 本一覧 -->
 
+    <h2>検索結果</h2>
     <div v-for="book in books" :key="book">
       <BookListItem :book="book" />
     </div>
