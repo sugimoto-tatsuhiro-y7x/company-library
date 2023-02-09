@@ -2,7 +2,9 @@
 import { ref } from 'vue'
 import books from '../assets/bookData'
 import BookListItem from '@/components/BookListItem.vue';
+import BookCarousel from '@/components/BookCarousel.vue';
 import useSWRV from 'swrv'
+import BookSlideGroups from '@/components/BookSlideGroups.vue';
 
 const searchString = ref("")
 
@@ -48,11 +50,17 @@ const { data, error } = useSWRV("cicd", fetcher)
             </v-col>
         </v-row>
 
+
         <!-- 検索フォーム -->
         <v-form>
             <v-text-field prepend-inner-icon="mdi-magnify" label="書籍検索" placeholder="書籍名等を入力してください"
                 clear-icon="mdi-close-circle" clearable></v-text-field>
         </v-form>
+
+        <h2>New</h2>
+        <BookSlideGroups :books=books></BookSlideGroups>
+        <h2>おすすめ</h2>
+        <BookSlideGroups :books=books></BookSlideGroups>
 
         <!-- 本一覧 -->
 
