@@ -1,5 +1,6 @@
 <script setup>
 import { ref, reactive } from 'vue'
+import BookReviewRecord from '@/components/BookReviewRecord.vue'
 
 const props = defineProps({
     book: Object
@@ -149,7 +150,7 @@ const closeReserveDialog = () => {
                     </v-col>
                 </v-row>
 
-                <v-list class="my-3" max-height="200">
+                <!-- <v-list class="my-3" max-height="200">
                     <template v-for="(item, index) in items">
                         <v-divider v-if="item.divider" :key="index" :inset="item.inset"></v-divider>
 
@@ -162,6 +163,15 @@ const closeReserveDialog = () => {
                                 <v-list-item-title v-html="item.title"></v-list-item-title>
                                 <v-list-item-subtitle v-html="item.subtitle"></v-list-item-subtitle>
                             </v-list-item-content>
+                        </v-list-item>
+                    </template>
+                </v-list> -->
+                <v-list class="my-3" max-height="200">
+                    <template v-for="(item, index) in items">
+                        <v-divider v-if="item.divider" :key="index" :inset="item.inset"></v-divider>
+
+                        <v-list-item v-else :key="item.title">
+                            <BookReviewRecord></BookReviewRecord>
                         </v-list-item>
                     </template>
                 </v-list>
