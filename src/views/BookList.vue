@@ -1,6 +1,6 @@
 <script setup>
 import { ref } from 'vue'
-// import books from '../assets/bookData'
+import books from '../assets/bookData'
 import BookListItem from '@/components/BookListItem.vue';
 import useSWRV from 'swrv'
 
@@ -55,13 +55,17 @@ const { data, error } = useSWRV("cicd", fetcher)
         </v-form>
 
         <!-- 本一覧 -->
-        <div v-if="error">failed to load</div>
+
+        <div v-for="book in books" :key="book">
+            <BookListItem :book=book />
+        </div>
+        <!-- <div v-if="error">failed to load</div>
         <div v-if="!data">loading...</div>
         <div v-else>
             <div v-for="book in data.items" :key="book">
                 <BookListItem :book=book />
             </div>
-        </div>
+        </div> -->
 
     </v-container>
 </template>
