@@ -8,15 +8,15 @@ defineProps({
 
 const dialog = ref(false)
 
-const postItem = reactive({
-  book: {}
-})
+// const postItem = reactive({
+//   book: {}
+// })
 
 
 // 本詳細ダイアログオープン関数
-const openDialog = (book) => {
+const openDialog = () => {
   dialog.value = true;
-  postItem.book = book;
+  // postItem.book = book;
 }
 
 // 本詳細ダイアログclose関数
@@ -30,7 +30,7 @@ const closeDialog = () => {
 
 <template>
   <div>
-    <v-card class="mx-auto" elevation="2" max-width="700px" @click=openDialog(book) @closeDialogEmit=closeDialog>
+    <v-card class="mx-auto" elevation="2" max-width="700px" @click=openDialog @closeDialogEmit=closeDialog>
       <v-card-actions>
         <v-container class="grey lighten-5">
           <v-row :align="align">
@@ -57,9 +57,6 @@ const closeDialog = () => {
                   </v-card-text>
                 </v-col>
                 <v-col cols="4" align-self="center">
-                  <!-- <v-card-actions>
-                                        <v-btn elevation="2" @click=openRentalDialog(book)>{{ book.status ? "借りる" : "予約する" }}</v-btn>
-                                    </v-card-actions> -->
                 </v-col>
               </v-row>
             </v-col>
@@ -67,11 +64,10 @@ const closeDialog = () => {
         </v-container>
       </v-card-actions>
 
-
     </v-card>
 
     <!-- 本詳細dialog -->
-    <BookDetailDialog :dialog=dialog></BookDetailDialog>
+    <BookDetailDialog :book=book :dialog=dialog v-on:notification="closeDialog"></BookDetailDialog>
 
   </div>
 </template>

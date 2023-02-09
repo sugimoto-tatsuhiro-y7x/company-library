@@ -7,10 +7,18 @@ import BookReviewRecord from '@/components/BookReviewRecord.vue'
 const rentalDialog = ref(false)
 const reserveDialog = ref(false)
 
+const props = defineProps({
+  dialog: Boolean,
+  book: Object
+})
+
+
+const open = computed(() => props.dialog)
+
 // 貸出確認画面ダイアログオープン関数
 const openRentalDialog = (book) => {
   rentalDialog.value = true;
-  dialog = false;
+  open.value = false;
 }
 
 // 貸出確認画面ダイアログclose関数
@@ -21,7 +29,7 @@ const closeRentalDialog = () => {
 // 予約確認画面ダイアログオープン関数
 const openReserveDialog = (book) => {
   reserveDialog.value = true;
-  dialog.value = false;
+  open.value = false;
 }
 
 // 予約確認画面ダイアログclose関数
@@ -29,27 +37,12 @@ const closeReserveDialog = () => {
   reserveDialog.value = false
 }
 
-const emitEvent = () => {
-  emit('childEmit')
-}
-
-const props = defineProps({
-  dialog: Boolean
-})
-const emit = defineEmits([])
-const computedData = computed({
-  get: () => props.visible,
-  set: (value) => {
-    emit("update:dialog", value);
-  },
-});
 
 </script>
 
 <template>
 
-  <v-dialog max-width="500px" max-height="600px">
-    <!-- <v-dialog v-model="dialog" max-width="500px" max-height="600px"> -->
+  <v-dialog v-model="open" max-width="500px" max-height="600px">
     <v-card class="mx-auto">
       <v-card-title>
         <span>書籍詳細</span>
@@ -105,7 +98,7 @@ const computedData = computed({
           <v-row>
             <v-col cols="3"></v-col>
             <v-col cols="3">
-              <v-btn @click="closeDialog" variant="flat" color="red">CLOSE</v-btn>
+              <v-btn @click="$emit('notification')" variant="flat" color="red">CLOSE</v-btn>
             </v-col>
             <v-col cols="3" v-if="postItem.book.status">
               <v-btn @click="openRentalDialog" variant="flat" color="success">借りる</v-btn>
