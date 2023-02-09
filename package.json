@@ -6,7 +6,8 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "lint": "eslint . --fix --ignore-path .gitignore"
+    "lint": "eslint . --fix --ignore-path .gitignore",
+    "mock": "prism mock ./api/company-lib-api.yml -p 8080"
   },
   "dependencies": {
     "@mdi/font": "7.0.96",
@@ -20,6 +21,7 @@
     "webfontloader": "^1.0.0"
   },
   "devDependencies": {
+    "@stoplight/prism-cli": "^4.10.5",
     "@vitejs/plugin-vue": "^3.0.3",
     "eslint": "^8.22.0",
     "eslint-plugin-vue": "^9.3.0",

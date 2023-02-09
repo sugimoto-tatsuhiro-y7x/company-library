@@ -1,0 +1,23 @@
+type: object
+properties:
+  userId:
+    type: integer
+  userName:
+    type: string
+  nickName:
+    type: string
+  labels:
+    type: array
+    items:
+      type: string
+      description: ラベル
+      properties:
+        key: string
+        value: string
+  occupation:
+    type: string
+  affiliation:
+    type: string
+example:
+  id: 0
+  name: aaa

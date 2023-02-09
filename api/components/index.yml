@@ -1,0 +1,6 @@
+Book:
+  $ref: "./Book.yml"
+User:
+  $ref: "./User.yml"
+Review:
+  $ref: "./Review.yml"

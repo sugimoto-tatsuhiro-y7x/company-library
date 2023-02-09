@@ -1,0 +1,22 @@
+openapi: "3.0.3"
+info:
+  title: 社内図書システム
+  version: "1.0"
+servers:
+  - url: http://localhost:8080
+paths:
+  /books:
+    get:
+      responses:
+        "200":
+          description: OK
+
+components:
+  schemas:
+    $ref: "./components/index.yml"
+
+  examples:
+    UserExample:
+      value:
+        id: 1
+        name: aaa

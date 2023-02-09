@@ -17,6 +17,20 @@
 
 今回は使わない。
 
+## コマンド一覧
+
+### 開発サーバ起動
+
+```bash
+npm run dev
+```
+
+### モックAPIサーバ起動
+
+```bash
+npm run mock
+```
+
 ---
 # essentials
 
