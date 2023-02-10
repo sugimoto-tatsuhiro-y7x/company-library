@@ -52,8 +52,13 @@ const fetcher = (search) => {
       </v-col>
       <v-col :cols="searching ? 10 : 11">
         <v-form>
-          <v-text-field prepend-inner-icon="mdi-magnify" label="書籍検索" placeholder="書籍名等を入力してください"
-            clear-icon="mdi-close-circle" clearable></v-text-field>
+          <v-text-field
+            prepend-inner-icon="mdi-magnify"
+            label="書籍検索"
+            placeholder="書籍名等を入力してください"
+            clear-icon="mdi-close-circle"
+            clearable
+          ></v-text-field>
         </v-form>
       </v-col>
       <v-col cols="1">
@@ -63,23 +68,25 @@ const fetcher = (search) => {
     <div v-if="!searching">
       <h2>New</h2>
       <BookSlideGroups :books="books"></BookSlideGroups>
+      <br />
       <h2>おすすめ</h2>
       <BookSlideGroups :books="books"></BookSlideGroups>
       <v-divider class="mx-auto my-2"></v-divider>
     </div>
 
     <!-- 本一覧 -->
-
-    <h2>検索結果</h2>
-    <div v-for="book in books" :key="book">
-      <BookListItem :book="book" />
-    </div>
-    <!-- <div v-if="error">failed to load</div>
+    <div v-if="searching">
+      <h2>検索結果</h2>
+      <div v-for="book in books" :key="book">
+        <BookListItem :book="book" />
+      </div>
+      <!-- <div v-if="error">failed to load</div>
         <div v-if="!data">loading...</div>
         <div v-else>
             <div v-for="book in data.items" :key="book">
                 <BookListItem :book=book />
             </div>
         </div> -->
+    </div>
   </v-container>
 </template>
