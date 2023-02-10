@@ -2,7 +2,7 @@
   <!--ユーザープロフィール表示部-->
   <Header></Header>
   <v-divider></v-divider>
-  <div class="text-center">
+  <div class="text-center mt-5">
     <v-avatar size="250">
       <img src="../assets/userIcon.png" alt="icon" />
       <!-- <img :src="`../assets/${img}.png`"> -->
