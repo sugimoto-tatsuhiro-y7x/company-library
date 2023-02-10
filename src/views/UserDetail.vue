@@ -2,13 +2,25 @@
   <!--ユーザープロフィール表示部-->
 
   <v-container>
+    <!-- ヘッダー -->
     <Header></Header>
+
     <v-divider></v-divider>
+
     <div class="text-center mt-5">
-      <v-avatar size="250">
-        <img src="../assets/userIcon.png" alt="icon" />
-        <!-- <img :src="`../assets/${img}.png`"> -->
-      </v-avatar>
+
+      <v-badge avatar overlap offset-x="10" offset-y="10" color="rgba(0,0,0,0)">
+        <template v-slot:badge>
+          <v-avatar>
+            <v-img src="https://cdn.vuetifyjs.com/images/logos/v.png"></v-img>
+          </v-avatar>
+        </template>
+
+        <v-avatar size="250">
+          <img src="../assets/userIcon.png" alt="icon" />
+        </v-avatar>
+      </v-badge>
+
       <v-card>
         <v-card-title>
           <h1 class="display-1">{{ name }}</h1>
@@ -43,10 +55,7 @@
               <v-container class="grey lighten-5">
                 <v-row>
                   <v-col>
-                    <v-img
-                      width="100"
-                      v-bind:src="book.volumeInfo.imageLinks.smallThumbnail"
-                    ></v-img>
+                    <v-img width="100" v-bind:src="book.volumeInfo.imageLinks.smallThumbnail"></v-img>
                   </v-col>
                   <v-col cols="10">
                     <v-row>
@@ -81,10 +90,7 @@
               <v-container class="grey lighten-5">
                 <v-row>
                   <v-col>
-                    <v-img
-                      width="100"
-                      v-bind:src="book.volumeInfo.imageLinks.smallThumbnail"
-                    ></v-img>
+                    <v-img width="100" v-bind:src="book.volumeInfo.imageLinks.smallThumbnail"></v-img>
                   </v-col>
                   <v-col cols="10">
                     <v-row>
@@ -119,10 +125,7 @@
               <v-container class="grey lighten-5">
                 <v-row>
                   <v-col>
-                    <v-img
-                      width="100"
-                      v-bind:src="book.volumeInfo.imageLinks.smallThumbnail"
-                    ></v-img>
+                    <v-img width="100" v-bind:src="book.volumeInfo.imageLinks.smallThumbnail"></v-img>
                   </v-col>
                   <v-col cols="10">
                     <v-row>
@@ -154,10 +157,44 @@
   </v-window>
 </template>
 
-<script>
-import { createBlockStatement } from "@vue/compiler-core";
-import books from "../assets/bookData";
+<script setup>
+
 import Header from "@/components/Header.vue";
+import { computed } from "vue"
+
+import books from "../assets/bookData";
+
+// 予約中書籍
+const reserved = computed(
+  () => {
+    return books.filter((item) => {
+      return !item.status; // 一旦onLoanと被っています
+    });
+  }
+)
+
+// 借りている書籍
+const onLoan = computed(
+  () => {
+    return books.filter((item) => {
+      return !item.status; // 一旦reservedと被っています
+    });
+  }
+)
+
+// 返却済み書籍
+const returned = computed(
+  () => {
+    return books.filter((item) => {
+      return item.status;
+    });
+  }
+)
+
+</script>
+
+<script>
+
 
 //一旦べた書き
 export default {
@@ -177,24 +214,6 @@ export default {
       },
       books,
     };
-  },
-  components: { Header },
-  computed: {
-    reserved: () => {
-      return books.filter((item) => {
-        return !item.status; // 一旦onLoanと被っています
-      });
-    },
-    onLoan: () => {
-      return books.filter((item) => {
-        return !item.status; // 一旦reservedと被っています
-      });
-    },
-    returned: () => {
-      return books.filter((item) => {
-        return item.status;
-      });
-    },
   },
 };
 </script>
