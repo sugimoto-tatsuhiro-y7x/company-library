@@ -64,6 +64,7 @@ const items = [
 // 貸出確認画面ダイアログオープン関数
 const openRentalDialog = (book) => {
   rentalDialog.value = true;
+  // 親に渡すイベント発火
   emit("emitCloseDialog")
 };
 
@@ -126,6 +127,7 @@ const closeReserveDialog = () => {
           <v-row>
             <v-col cols="3"></v-col>
             <v-col cols="3">
+              <!-- 親に渡すイベント発火 -->
               <v-btn @click="$emit('emitCloseDialog')" variant="flat" color="red">CLOSE</v-btn>
             </v-col>
             <v-col cols="3" v-if="book.status">
