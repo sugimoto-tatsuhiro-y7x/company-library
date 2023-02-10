@@ -1,6 +1,4 @@
 <script setup>
-// TODO BookListに追加する
-// <BookDetailDialog :book=book :dialog=dialog v-on:emitCloseDialog="closeDialog"></BookDetailDialog>
 
 import BookReviewRecord from "@/components/BookReviewRecord.vue";
 
@@ -62,7 +60,7 @@ const items = [
 ];
 
 // 貸出確認画面ダイアログオープン関数
-const openRentalDialog = (book) => {
+const openRentalDialog = () => {
   rentalDialog.value = true;
   // 親に渡すイベント発火
   emit("emitCloseDialog")
@@ -74,7 +72,7 @@ const closeRentalDialog = () => {
 };
 
 // 予約確認画面ダイアログオープン関数
-const openReserveDialog = (book) => {
+const openReserveDialog = () => {
   reserveDialog.value = true;
   emit("emitCloseDialog")
 };
