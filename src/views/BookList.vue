@@ -3,12 +3,11 @@ import { ref } from "vue";
 import books from "../assets/bookData";
 import Header from "@/components/Header.vue";
 import BookListItem from "@/components/BookListItem.vue";
-import BookCarousel from "@/components/BookCarousel.vue";
-import useSWRV from "swrv";
+// import useSWRV from "swrv";
 import BookSlideGroups from "@/components/BookSlideGroups.vue";
 
-const searchString = ref("");
-const searching = ref(true);
+// const searchString = ref("");
+const searching = ref(false);
 
 // 検索実行用の関数
 const Search = () => {
@@ -36,7 +35,7 @@ const fetcher = (search) => {
     });
 };
 
-const { data, error } = useSWRV("cicd", fetcher);
+// const { data, error } = useSWRV("cicd", fetcher);
 </script>
 
 <template>
@@ -53,13 +52,8 @@ const { data, error } = useSWRV("cicd", fetcher);
       </v-col>
       <v-col :cols="searching ? 10 : 11">
         <v-form>
-          <v-text-field
-            prepend-inner-icon="mdi-magnify"
-            label="書籍検索"
-            placeholder="書籍名等を入力してください"
-            clear-icon="mdi-close-circle"
-            clearable
-          ></v-text-field>
+          <v-text-field prepend-inner-icon="mdi-magnify" label="書籍検索" placeholder="書籍名等を入力してください"
+            clear-icon="mdi-close-circle" clearable></v-text-field>
         </v-form>
       </v-col>
       <v-col cols="1">
