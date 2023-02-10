@@ -1,29 +1,32 @@
 <template>
   <!--ユーザープロフィール表示部-->
-  <Header></Header>
-  <v-divider></v-divider>
-  <div class="text-center mt-5">
-    <v-avatar size="250">
-      <img src="../assets/userIcon.png" alt="icon" />
-      <!-- <img :src="`../assets/${img}.png`"> -->
-    </v-avatar>
-    <v-card>
-      <v-card-title>
-        <h1 class="display-1">{{ name }}</h1>
-      </v-card-title>
-      <v-card-text>
-        <p>{{ affiliation }}</p>
-        <p>{{ years }}</p>
-        <p>{{ occupation }}</p>
-        <span v-for="label in labels" :key="label">
-          <v-chip class="ma-2" color="success" outlined>
-            <v-icon left> mdi-tag </v-icon>
-            {{ label }}
-          </v-chip>
-        </span>
-      </v-card-text>
-    </v-card>
-  </div>
+
+  <v-container>
+    <Header></Header>
+    <v-divider></v-divider>
+    <div class="text-center mt-5">
+      <v-avatar size="250">
+        <img src="../assets/userIcon.png" alt="icon" />
+        <!-- <img :src="`../assets/${img}.png`"> -->
+      </v-avatar>
+      <v-card>
+        <v-card-title>
+          <h1 class="display-1">{{ name }}</h1>
+        </v-card-title>
+        <v-card-text>
+          <p>{{ affiliation }}</p>
+          <p>{{ years }}</p>
+          <p>{{ occupation }}</p>
+          <span v-for="label in labels" :key="label">
+            <v-chip class="ma-2" color="success" outlined>
+              <v-icon left> mdi-tag </v-icon>
+              {{ label }}
+            </v-chip>
+          </span>
+        </v-card-text>
+      </v-card>
+    </div>
+  </v-container>
 
   <!--貸出中/履歴表示部-->
   <v-tabs v-model="tab" bg-color="transparent" color="basil" grow>

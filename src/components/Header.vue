@@ -14,7 +14,7 @@
       <v-col cols="1">
         <router-link to="/UserDetail">
           <v-avatar size="56">
-            <v-img src="../assets/kanako.png"></v-img>
+            <v-img src="../assets/userIcon.png"></v-img>
           </v-avatar>
         </router-link>
       </v-col>
