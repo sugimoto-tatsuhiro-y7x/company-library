@@ -9,15 +9,21 @@ import { ref, computed } from "vue"
 const rentalDialog = ref(false);
 const reserveDialog = ref(false);
 
+// 親コンポーネントから受け取るProps定義
 const props = defineProps({
+  // 書籍オブジェクト
   book: Object,
+  // ダイアログのOpen/Closeフラグ
   dialog: Boolean
 })
 
+// 親コンポーネントに投げるEmitを定義
 const emit = defineEmits(
+  // ダイアログを閉じるためのイベント
   ["emitCloseDialog"]
 )
 
+// Propsそのものを更新することはできないので、Computedに代入(propsをv-modelに指定するとエラーになる)
 const dialogComputed = computed(() => props.dialog)
 
 const items = [
