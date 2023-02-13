@@ -1,5 +1,6 @@
 <script setup>
 import BookReviewRecord from "@/components/BookReviewRecord.vue";
+import books from "../assets/bookData";
 
 import { ref, computed } from "vue";
 
@@ -83,39 +84,53 @@ const closeReserveDialog = () => {
 </script>
 
 <template>
-  <!-- 本詳細dialog -->
-  <v-dialog v-model="dialogComputed" max-width="500px" max-height="600px">
-    <v-card class="mx-auto">
+  <!-- ロードマップ詳細dialog -->
+  <v-dialog v-model="dialogComputed" max-width="50%" max-height="700px">
+    <v-card>
       <v-card-title>
-        <span>書籍詳細</span>
+        ロードマップ詳細<br />
+        <strong>CI/CDマスターへの道</strong>
       </v-card-title>
 
-      <v-row>
-        <v-col>
-          <v-img
-            class="ml-auto my-auto"
-            max-height="200"
-            max-width="200"
-            :src="book.volumeInfo.imageLinks.smallThumbnail"
-          >
-          </v-img>
-        </v-col>
-        <v-col class="my-auto">
-          <v-card-text>
-            名前： {{ book.volumeInfo.title }}<br />
-            ステータス： {{ book.status ? "貸出可能" : "貸出不可" }}
-            <v-icon
-              x-small
-              :color="book.status ? 'green' : 'red' + ' darken-2'"
-            >
-              mdi-moon-full </v-icon
-            ><br />
-            在庫数： 2 冊
-          </v-card-text>
-        </v-col>
-      </v-row>
-
-      <v-list class="my-3" max-height="200">
+      <v-timeline side="end" density="comfortable">
+        <v-timeline-item
+          dot-color="teal-lighten-3"
+          size="small"
+          min-width="90%"
+          v-for="book in books"
+          :key="book"
+        >
+          <v-container>
+            <v-row>
+              <v-col cols="5">
+                <v-img
+                  class="ml-auto my-auto"
+                  max-height="150"
+                  max-width="150"
+                  :src="book.volumeInfo.imageLinks.smallThumbnail"
+                >
+                </v-img>
+              </v-col>
+              <v-col cols="7">
+                <div>
+                  <strong>{{ book.volumeInfo.title }}</strong>
+                  <div class="text-caption">
+                    {{ book.status ? "貸出可能" : "貸出不可" }}
+                    <v-icon
+                      x-small
+                      :color="book.status ? 'green' : 'red' + ' darken-2'"
+                    >
+                      mdi-moon-full </v-icon
+                    ><br />
+                  </div>
+                </div>
+              </v-col>
+            </v-row>
+          </v-container>
+        </v-timeline-item>
+      </v-timeline>
+      <v-divider></v-divider>
+      <v-list class="my-3" min-height="300">
         <template v-for="(item, index) in items">
           <v-divider
             v-if="item.divider"
@@ -128,8 +143,9 @@ const closeReserveDialog = () => {
           </v-list-item>
         </template>
       </v-list>
-
-      <v-divider></v-divider>
+    </v-card>
+    <v-divider></v-divider>
+    <v-card min-height="80px">
       <v-card-actions color="primary">
         <v-container>
           <v-row>

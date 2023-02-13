@@ -2,7 +2,7 @@
 import { ref } from "vue";
 import books from "../assets/bookData";
 import Header from "@/components/Header.vue";
-import BookListItem from "@/components/BookListItem.vue";
+import RoadMapListItem from "@/components/RoadMapListItem.vue";
 // import useSWRV from "swrv";
 import BookSlideGroups from "@/components/BookSlideGroups.vue";
 
@@ -54,8 +54,8 @@ const fetcher = (search) => {
         <v-form>
           <v-text-field
             prepend-inner-icon="mdi-magnify"
-            label="書籍検索"
-            placeholder="書籍名等を入力してください"
+            label="ロードマップ検索"
+            placeholder="ロードマップ名等を入力してください"
             clear-icon="mdi-close-circle"
             clearable
           ></v-text-field>
@@ -65,28 +65,13 @@ const fetcher = (search) => {
         <v-btn @click="Search" height="55">Search</v-btn>
       </v-col>
     </v-row>
-    <div v-if="!searching">
-      <h2>New</h2>
-      <BookSlideGroups :books="books"></BookSlideGroups>
-      <br />
-      <h2>おすすめ</h2>
-      <BookSlideGroups :books="books"></BookSlideGroups>
-      <v-divider class="mx-auto my-2"></v-divider>
-    </div>
 
-    <!-- 本一覧 -->
+    <!-- ロードマップ一覧 -->
     <div v-if="searching">
       <h2>検索結果</h2>
       <div v-for="book in books" :key="book">
-        <BookListItem :book="book" />
+        <RoadMapListItem :book="book" />
       </div>
-      <!-- <div v-if="error">failed to load</div>
-        <div v-if="!data">loading...</div>
-        <div v-else>
-            <div v-for="book in data.items" :key="book">
-                <BookListItem :book=book />
-            </div>
-        </div> -->
     </div>
   </v-container>
 </template>
