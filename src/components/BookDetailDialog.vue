@@ -110,24 +110,24 @@ const closeReserveDialog = () => {
             >
               mdi-moon-full </v-icon
             ><br />
-            在庫数： 2 冊
+            在庫数： 2 冊<br />
+            平均評価：<v-rating
+              v-model="book.avarageRating"
+              color="yellow darken-3"
+              background-color="grey darken-1"
+              size="20"
+              readonly="true"
+              large
+            >
+            </v-rating
+            ><br />
+            レビュー件数：{{ book.reviews }}件<br />
           </v-card-text>
         </v-col>
       </v-row>
 
-      <v-list class="my-3" max-height="200">
-        <template v-for="(item, index) in items">
-          <v-divider
-            v-if="item.divider"
-            :key="index"
-            :inset="item.inset"
-          ></v-divider>
-
-          <v-list-item v-else :key="item.title">
-            <BookReviewRecord></BookReviewRecord>
-          </v-list-item>
-        </template>
-      </v-list>
+      <v-divider></v-divider>
+      <BookReviewRecord :bookId="book.id"></BookReviewRecord>
 
       <v-divider></v-divider>
       <v-card-actions color="primary">

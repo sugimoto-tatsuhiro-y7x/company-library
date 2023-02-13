@@ -1,73 +1,85 @@
 [
     {
-        "bookId": "rD4QAQAAMAAJ",
-        "title": "和英医学用語大辞典",
-        "reviewInfo": [
+        "bookId": "YXJHEAAAQBAJ",
+        "title": "Kubernetes CI/CDパイプラインの実装",
+        "reviews": [
             {
                 "reviewId": "rv00001",
                 "userId": "n10000",
+                "userName": "日鉄太郎",
+                "avatar": "https://cdn.vuetifyjs.com/images/lists/1.jpg",
                 "occupation": "営業",
                 "joinedYear": "2020",
                 "reviewDate": "2023/2/10",
-                "stars": "5",
-                "title": "アジャイル開発におすすめの１冊",
-                "commnet": "スクラムという仕事の進め方のフレームワークについて書かれた本。"
+                "rating": "5",
+                "reviewTitle": "k8sのアプリ運用について特化した本",
+                "commnet": "k8sのアプリケーションライフサイクルを考える上で必要な運用（CI/CD）について詳細に述べられています。本書の通りに行えばGKE上で環境作成が出来ます。"
             },
             {
                 "reviewId": "rv00002",
                 "userId": "n10001",
+                "userName": "日鉄次郎",
+                "avatar": "https://cdn.vuetifyjs.com/images/lists/2.jpg",
                 "occupation": "SE",
                 "joinedYear": "2018",
                 "reviewDate": "2023/2/11",
-                "stars": "3",
-                "title": "アジャイル開発におすすめの１冊",
-                "commnet": "スクラムという仕事の進め方のフレームワークについて書かれた本。"
+                "rating": "3",
+                "reviewTitle": "まあまあレベルの高い入門書です",
+                "commnet": "基本の入門書ではなく、実践の入門書なのでJavaScriptのことは基本分かってるところからスタートします。Vueはいろいろと省略記法があって読みにくかったりもしますが、そういうのも読めるように解説はあります。"
             },
             {
                 "reviewId": "rv00003",
                 "userId": "n10002",
+                "userName": "日鉄花子",
+                "avatar": "https://cdn.vuetifyjs.com/images/lists/3.jpg",
                 "reviewDate": "2023/2/12",
                 "occupation": "アーキテクト",
                 "joinedYear": "2019",
-                "stars": "4",
-                "title": "アジャイル開発におすすめの１冊",
-                "commnet": "スクラムという仕事の進め方のフレームワークについて書かれた本。"
+                "rating": "4",
+                "reviewTitle": "アジャイル開発におすすめの１冊",
+                "commnet": "〇５００ページを超えるボリューム　〇説明がわかりやすいです　〇二色刷りで読みやすいです"
             }
         ]
     },
     {
         "bookId": "2OnYzQEACAAJ",
         "title": "CircleCI実践入門",
-        "reviewInfo": [
+        "reviews": [
             {
                 "reviewId": "rv00011",
                 "userId": "n10000",
+                "userName": "日鉄太郎",
+                "avatar": "https://cdn.vuetifyjs.com/images/lists/4.jpg",
                 "occupation": "営業",
                 "joinedYear": "2020",
                 "reviewDate": "2023/2/10",
-                "stars": "5",
-                "title": "アジャイル開発におすすめの１冊",
-                "commnet": "スクラムという仕事の進め方のフレームワークについて書かれた本。"
+                "rating": "5",
+                "reviewTitle": "これからはじめるVue.js",
+                "commnet": "JavaScript や　jQuery はかじったことがある人が Vue.js の世界に入っていくにはちょうど良い入門書だと思います。"
             },
             {
                 "reviewId": "rv00012",
                 "userId": "n10001",
+                "userName": "日鉄次郎",
+                "avatar": "https://cdn.vuetifyjs.com/images/lists/5.jpg",
                 "occupation": "SE",
                 "joinedYear": "2018",
                 "reviewDate": "2023/2/11",
-                "stars": "3",
-                "title": "アジャイル開発におすすめの１冊",
-                "commnet": "スクラムという仕事の進め方のフレームワークについて書かれた本。"
+                "rating": "3",
+                "reviewTitle": "中級者向けで現場で役立つトピックあり",
+                "commnet": "冒頭説明にある通り、対象は、既にVue.jsにて初級成果物を作れる中級者で、現場で使える新たなトピックを探すのに適しています。"
             },
             {
                 "reviewId": "rv000013",
                 "userId": "n10002",
+                "userName": "日鉄花子",
+                "avatar": "https://cdn.vuetifyjs.com/images/lists/6.jpg",
                 "occupation": "アーキテクト",
                 "joinedYear": "2019",
                 "reviewDate": "2023/2/12",
-                "stars": "4",
-                "title": "アジャイル開発におすすめの１冊",
-                "commnet": "スクラムという仕事の進め方のフレームワークについて書かれた本。"
+                "rating": "4",
+                "reviewTitle": "プロが本当に欲しい情報",
+                "commnet": "前半は、Vue.js 3について、後半は、Nuxt.jsついて解説し、最終的にJamstackでの実装を目指しており、開発現場のエンジニアにとって本当に欲しい情報が適切に纏まってると思います。具体例もあってプロ向けに読みやすいです。"
             }
         ]
     }

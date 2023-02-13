@@ -130,19 +130,7 @@ const closeReserveDialog = () => {
         </v-timeline-item>
       </v-timeline>
       <v-divider></v-divider>
-      <v-list class="my-3" min-height="300">
-        <template v-for="(item, index) in items">
-          <v-divider
-            v-if="item.divider"
-            :key="index"
-            :inset="item.inset"
-          ></v-divider>
-
-          <v-list-item v-else :key="item.title">
-            <BookReviewRecord></BookReviewRecord>
-          </v-list-item>
-        </template>
-      </v-list>
+      <BookReviewRecord :bookId="book.id"></BookReviewRecord>
     </v-card>
     <v-divider></v-divider>
     <v-card min-height="80px">
