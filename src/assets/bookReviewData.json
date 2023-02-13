@@ -1,0 +1,74 @@
+[
+    {
+        "bookId": "rD4QAQAAMAAJ",
+        "title": "和英医学用語大辞典",
+        "reviewInfo": [
+            {
+                "reviewId": "rv00001",
+                "userId": "n10000",
+                "occupation": "営業",
+                "joinedYear": "2020",
+                "reviewDate": "2023/2/10",
+                "stars": "5",
+                "title": "アジャイル開発におすすめの１冊",
+                "commnet": "スクラムという仕事の進め方のフレームワークについて書かれた本。"
+            },
+            {
+                "reviewId": "rv00002",
+                "userId": "n10001",
+                "occupation": "SE",
+                "joinedYear": "2018",
+                "reviewDate": "2023/2/11",
+                "stars": "3",
+                "title": "アジャイル開発におすすめの１冊",
+                "commnet": "スクラムという仕事の進め方のフレームワークについて書かれた本。"
+            },
+            {
+                "reviewId": "rv00003",
+                "userId": "n10002",
+                "reviewDate": "2023/2/12",
+                "occupation": "アーキテクト",
+                "joinedYear": "2019",
+                "stars": "4",
+                "title": "アジャイル開発におすすめの１冊",
+                "commnet": "スクラムという仕事の進め方のフレームワークについて書かれた本。"
+            }
+        ]
+    },
+    {
+        "bookId": "2OnYzQEACAAJ",
+        "title": "CircleCI実践入門",
+        "reviewInfo": [
+            {
+                "reviewId": "rv00011",
+                "userId": "n10000",
+                "occupation": "営業",
+                "joinedYear": "2020",
+                "reviewDate": "2023/2/10",
+                "stars": "5",
+                "title": "アジャイル開発におすすめの１冊",
+                "commnet": "スクラムという仕事の進め方のフレームワークについて書かれた本。"
+            },
+            {
+                "reviewId": "rv00012",
+                "userId": "n10001",
+                "occupation": "SE",
+                "joinedYear": "2018",
+                "reviewDate": "2023/2/11",
+                "stars": "3",
+                "title": "アジャイル開発におすすめの１冊",
+                "commnet": "スクラムという仕事の進め方のフレームワークについて書かれた本。"
+            },
+            {
+                "reviewId": "rv000013",
+                "userId": "n10002",
+                "occupation": "アーキテクト",
+                "joinedYear": "2019",
+                "reviewDate": "2023/2/12",
+                "stars": "4",
+                "title": "アジャイル開発におすすめの１冊",
+                "commnet": "スクラムという仕事の進め方のフレームワークについて書かれた本。"
+            }
+        ]
+    }
+]
