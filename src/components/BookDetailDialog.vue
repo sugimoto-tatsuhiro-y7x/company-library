@@ -109,15 +109,8 @@ const closeReserveDialog = () => {
         </v-col>
       </v-row>
 
-      <v-list class="my-3" max-height="200">
-        <template v-for="(item, index) in items">
-          <v-divider v-if="item.divider" :key="index" :inset="item.inset"></v-divider>
-
-          <v-list-item v-else :key="item.title">
-            <BookReviewRecord></BookReviewRecord>
-          </v-list-item>
-        </template>
-      </v-list>
+      <v-divider></v-divider>
+      <BookReviewRecord :bookId="book.id"></BookReviewRecord>
 
       <v-divider></v-divider>
       <v-card-actions color="primary">
