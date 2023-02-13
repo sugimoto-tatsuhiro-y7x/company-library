@@ -5,6 +5,7 @@ import Header from "@/components/Header.vue";
 import RoadMapListItem from "@/components/RoadMapListItem.vue";
 // import useSWRV from "swrv";
 import BookSlideGroups from "@/components/BookSlideGroups.vue";
+import SearchForm from "@/components/SearchForm.vue";
 
 // const searchString = ref("");
 const searching = ref(false);
@@ -44,31 +45,22 @@ const fetcher = (search) => {
     <Header></Header>
 
     <!-- 検索フォーム -->
-    <v-row no-gutters>
-      <v-col cols="1" v-show="searching">
-        <v-btn @click="cancelSearching" height="55">
-          <v-icon>mdi-arrow-left</v-icon>
-        </v-btn>
-      </v-col>
-      <v-col :cols="searching ? 10 : 11">
-        <v-form>
-          <v-text-field
-            prepend-inner-icon="mdi-magnify"
-            label="ロードマップ検索"
-            placeholder="ロードマップ名等を入力してください"
-            clear-icon="mdi-close-circle"
-            clearable
-          ></v-text-field>
-        </v-form>
-      </v-col>
-      <v-col cols="1">
-        <v-btn @click="Search" height="55">Search</v-btn>
-      </v-col>
-    </v-row>
+    <SearchForm
+      :Search="Search"
+      :cancelSearching="cancelSearching"
+      :searching="searching"
+    ></SearchForm>
 
     <!-- ロードマップ一覧 -->
     <div v-if="searching">
       <h2>検索結果</h2>
+      <div v-for="book in books" :key="book">
+        <RoadMapListItem :book="book" />
+      </div>
+    </div>
+
+    <div v-else>
+      <h2>ロードマップ一覧</h2>
       <div v-for="book in books" :key="book">
         <RoadMapListItem :book="book" />
       </div>
