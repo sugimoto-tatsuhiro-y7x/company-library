@@ -63,8 +63,6 @@ const closeDialog = () => {
                     </v-list>
                   </v-card-text>
                 </v-col>
-                <v-col cols="4" align-self="center">
-                </v-col>
               </v-row>
             </v-col>
             <div v-if="status === '貸出中'">

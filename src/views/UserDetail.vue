@@ -35,21 +35,21 @@
         </v-card-text>
       </v-card>
     </div>
-  </v-container>
 
-  <!--貸出中/履歴表示部-->
-  <v-tabs v-model="tab" bg-color="transparent" color="basil" grow>
-    <v-tab v-for="item in items" :key="item" :value="item">
-      {{ item }}
-    </v-tab>
-  </v-tabs>
-  <v-window v-model="tab">
-    <v-window-item v-for="item in items" :key="item" :value="item">
-      <div v-for="book in onLoan" :key="book">
-        <BorrowedBookListItem :book="book" :status="item" />
-      </div>
-    </v-window-item>
-  </v-window>
+    <!--貸出中/履歴表示部-->
+    <v-tabs v-model="tab" bg-color="transparent" color="basil" grow>
+      <v-tab v-for="item in items" :key="item" :value="item">
+        {{ item }}
+      </v-tab>
+    </v-tabs>
+    <v-window v-model="tab">
+      <v-window-item v-for="item in items" :key="item" :value="item">
+        <div v-for="book in onLoan" :key="book">
+          <BorrowedBookListItem :book="book" :status="item" />
+        </div>
+      </v-window-item>
+    </v-window>
+  </v-container>
 </template>
 
 <script setup>
