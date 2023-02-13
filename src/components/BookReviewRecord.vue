@@ -1,14 +1,13 @@
 <script setup>
 import { ref } from "vue";
-import reviewBooks from "../assets/bookReviewData"
+import reviewBooks from "../assets/bookReviewData";
 
 defineProps({
   bookId: String,
-  reviewBooks: Object
-})
+  reviewBooks: Object,
+});
 
 // const reviews = reviewBooks.filter((review) => review.bookId === bookId)
-
 </script>
 
 <template>
