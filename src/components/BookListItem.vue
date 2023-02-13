@@ -24,7 +24,7 @@ const closeDialog = () => {
 
 <template>
   <div>
-    <v-card class="mx-auto mt-2" elevation="2" @click="openDialog(book)">
+    <v-card class="mx-auto mt-2" elevation="2" @click="openDialog()">
       <v-card-actions>
         <v-container class="grey lighten-5">
           <v-row :align="align">
