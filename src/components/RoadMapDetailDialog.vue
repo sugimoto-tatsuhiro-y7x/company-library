@@ -130,7 +130,12 @@ const closeReserveDialog = () => {
         </v-timeline-item>
       </v-timeline>
       <v-divider></v-divider>
-      <BookReviewRecord :bookId="book.id"></BookReviewRecord>
+      <!-- レビュー一覧 -->
+      <BookReviewRecord
+        :bookId="book.id"
+        min-height="300"
+        class="ml-3"
+      ></BookReviewRecord>
     </v-card>
 
     <v-card min-height="80px">
