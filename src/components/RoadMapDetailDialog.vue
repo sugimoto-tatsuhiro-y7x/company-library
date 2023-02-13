@@ -92,7 +92,7 @@ const closeReserveDialog = () => {
         <strong>CI/CDマスターへの道</strong>
       </v-card-title>
 
-      <v-timeline side="end" density="comfortable">
+      <v-timeline side="end" density="comfortable" class="mb-3">
         <v-timeline-item
           dot-color="teal-lighten-3"
           size="small"
@@ -132,7 +132,7 @@ const closeReserveDialog = () => {
       <v-divider></v-divider>
       <BookReviewRecord :bookId="book.id"></BookReviewRecord>
     </v-card>
-    <v-divider></v-divider>
+
     <v-card min-height="80px">
       <v-card-actions color="primary">
         <v-container>

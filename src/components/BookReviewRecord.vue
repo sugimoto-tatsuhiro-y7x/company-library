@@ -11,7 +11,7 @@ defineProps({
 </script>
 
 <template>
-  <v-list>
+  <v-list min-height="400px">
     <v-list-item
       v-for="(item, n) in reviewBooks.filter(
         (review) => review.bookId === bookId
