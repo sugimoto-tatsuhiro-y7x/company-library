@@ -104,7 +104,11 @@ const closeReserveDialog = () => {
             ステータス： {{ book.status ? "貸出可能" : "貸出不可" }}
             <v-icon x-small :color="book.status ? 'green' : 'red' + ' darken-2'">
               mdi-moon-full </v-icon><br />
-            在庫数： 2 冊
+            在庫数： 2 冊<br />
+            平均評価：<v-rating v-model="book.avarageRating" color="yellow darken-3" background-color="grey darken-1"
+              size="20" readonly="true" large>
+            </v-rating><br />
+            レビュー件数：{{ book.reviews }}件<br />
           </v-card-text>
         </v-col>
       </v-row>
