@@ -59,6 +59,34 @@ const routes = [
     ],
   },
   {
+    path: '/Books',
+    // component: () => import('@/layouts/default/Default.vue'),
+    children: [
+      {
+        path: '',
+        name: 'Books',
+        // route level code-splitting
+        // this generates a separate chunk (about.[hash].js) for this route
+        // which is lazy-loaded when the route is visited.
+        component: () => import(/* webpackChunkName: "home" */ '@/views/Books.vue'),
+      },
+    ],
+  },
+  {
+    path: '/RoadMaps',
+    // component: () => import('@/layouts/default/Default.vue'),
+    children: [
+      {
+        path: '',
+        name: 'RoadMaps',
+        // route level code-splitting
+        // this generates a separate chunk (about.[hash].js) for this route
+        // which is lazy-loaded when the route is visited.
+        component: () => import(/* webpackChunkName: "home" */ '@/views/RoadMaps.vue'),
+      },
+    ],
+  },
+  {
     path: '/UserDetail',
     // component: () => import('@/layouts/default/Default.vue'),
     children: [
