@@ -4,7 +4,7 @@ import books from "../assets/bookData";
 import Header from "@/components/Header.vue";
 import BookListItem from "@/components/BookListItem.vue";
 // import useSWRV from "swrv";
-import BookSlideGroups from "@/components/BookSlideGroups.vue";
+import SearchForm from "@/components/SearchForm.vue";
 
 // const searchString = ref("");
 const searching = ref(false);
@@ -44,13 +44,21 @@ const fetcher = (search) => {
     <Header></Header>
 
     <!-- 検索フォーム -->
-    <div>
-      <h2>New</h2>
-      <BookSlideGroups :books="books"></BookSlideGroups>
-      <br />
-      <h2>おすすめ</h2>
-      <BookSlideGroups :books="books"></BookSlideGroups>
-      <v-divider class="mx-auto my-2"></v-divider>
+    <SearchForm :Search="Search" :cancelSearching="cancelSearching" :searching="searching"></SearchForm>
+
+    <!-- 本一覧 -->
+    <div v-if="searching">
+      <h2>検索結果</h2>
+      <div v-for="book in books" :key="book">
+        <BookListItem :book="book" />
+      </div>
+      <!-- <div v-if="error">failed to load</div>
+        <div v-if="!data">loading...</div>
+        <div v-else>
+            <div v-for="book in data.items" :key="book">
+                <BookListItem :book=book />
+            </div>
+        </div> -->
     </div>
   </v-container>
 </template>
