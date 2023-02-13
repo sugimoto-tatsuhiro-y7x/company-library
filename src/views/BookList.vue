@@ -3,12 +3,11 @@ import { ref } from "vue";
 import books from "../assets/bookData";
 import Header from "@/components/Header.vue";
 import BookListItem from "@/components/BookListItem.vue";
-import BookCarousel from "@/components/BookCarousel.vue";
-import useSWRV from "swrv";
+// import useSWRV from "swrv";
 import BookSlideGroups from "@/components/BookSlideGroups.vue";
 
-const searchString = ref("");
-const searching = ref(true);
+// const searchString = ref("");
+const searching = ref(false);
 
 // 検索実行用の関数
 const Search = () => {
@@ -36,7 +35,7 @@ const fetcher = (search) => {
     });
 };
 
-const { data, error } = useSWRV("cicd", fetcher);
+// const { data, error } = useSWRV("cicd", fetcher);
 </script>
 
 <template>
@@ -69,23 +68,25 @@ const { data, error } = useSWRV("cicd", fetcher);
     <div v-if="!searching">
       <h2>New</h2>
       <BookSlideGroups :books="books"></BookSlideGroups>
+      <br />
       <h2>おすすめ</h2>
       <BookSlideGroups :books="books"></BookSlideGroups>
       <v-divider class="mx-auto my-2"></v-divider>
     </div>
 
     <!-- 本一覧 -->
-
-    <h2>検索結果</h2>
-    <div v-for="book in books" :key="book">
-      <BookListItem :book="book" />
-    </div>
-    <!-- <div v-if="error">failed to load</div>
+    <div v-if="searching">
+      <h2>検索結果</h2>
+      <div v-for="book in books" :key="book">
+        <BookListItem :book="book" />
+      </div>
+      <!-- <div v-if="error">failed to load</div>
         <div v-if="!data">loading...</div>
         <div v-else>
             <div v-for="book in data.items" :key="book">
                 <BookListItem :book=book />
             </div>
         </div> -->
+    </div>
   </v-container>
 </template>
