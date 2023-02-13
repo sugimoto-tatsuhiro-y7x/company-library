@@ -14,7 +14,7 @@ defineProps({
   <v-list>
     <v-list-item v-for="(item, n) in reviewBooks.filter((review) => review.bookId === bookId)[0].reviews" :key="n">
 
-      <v-card style="margin: 0 20px 0 0; width: 500px;">
+      <v-card style="margin: 10 20px 0 0; width: 400px;">
         <v-row>
           <v-col cols="2">
             <v-list-item-avatar>
@@ -32,7 +32,7 @@ defineProps({
         </div>
         <v-list-item-title class="font-weight-bold" v-html="item.reviewTitle"></v-list-item-title>
         <v-list-item-subtitle v-html="item.reviewDate"></v-list-item-subtitle>
-        <v-list-item-content v-html="item.comment"></v-list-item-content>
+        <v-list-item-content class="wrap-text" v-html="item.comment"></v-list-item-content>
       </v-card>
 
       <v-divider></v-divider>
@@ -40,3 +40,14 @@ defineProps({
     </v-list-item>
   </v-list>
 </template>
+
+<style lang="scss" scoped>
+.wrap-text {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 9;
+  white-space: normal;
+
+}
+</style>
+
