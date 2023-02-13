@@ -1,7 +1,8 @@
 <script setup>
+
 import BookReviewRecord from "@/components/BookReviewRecord.vue";
 
-import { ref, computed } from "vue";
+import { ref, computed } from "vue"
 
 const rentalDialog = ref(false);
 const reserveDialog = ref(false);
@@ -11,17 +12,17 @@ const props = defineProps({
   // 書籍オブジェクト
   book: Object,
   // ダイアログのOpen/Closeフラグ
-  dialog: Boolean,
-});
+  dialog: Boolean
+})
 
 // 親コンポーネントに投げるEmitを定義
 const emit = defineEmits(
   // ダイアログを閉じるためのイベント
   ["emitCloseDialog"]
-);
+)
 
 // Propsそのものを更新することはできないので、Computedに代入(propsをv-modelに指定するとエラーになる)
-const dialogComputed = computed(() => props.dialog);
+const dialogComputed = computed(() => props.dialog)
 
 const items = [
   {
@@ -62,7 +63,7 @@ const items = [
 const openRentalDialog = () => {
   rentalDialog.value = true;
   // 親に渡すイベント発火
-  emit("emitCloseDialog");
+  emit("emitCloseDialog")
 };
 
 // 貸出確認画面ダイアログclose関数
@@ -73,13 +74,14 @@ const closeRentalDialog = () => {
 // 予約確認画面ダイアログオープン関数
 const openReserveDialog = () => {
   reserveDialog.value = true;
-  emit("emitCloseDialog");
+  emit("emitCloseDialog")
 };
 
 // 予約確認画面ダイアログclose関数
 const closeReserveDialog = () => {
   reserveDialog.value = false;
 };
+
 </script>
 
 <template>
@@ -92,35 +94,20 @@ const closeReserveDialog = () => {
 
       <v-row>
         <v-col>
-          <v-img
-            class="ml-auto my-auto"
-            max-height="200"
-            max-width="200"
-            :src="book.volumeInfo.imageLinks.smallThumbnail"
-          >
+          <v-img class="ml-auto my-auto" max-height="200" max-width="200"
+            :src="book.volumeInfo.imageLinks.smallThumbnail">
           </v-img>
         </v-col>
         <v-col class="my-auto">
           <v-card-text>
             名前： {{ book.volumeInfo.title }}<br />
             ステータス： {{ book.status ? "貸出可能" : "貸出不可" }}
-            <v-icon
-              x-small
-              :color="book.status ? 'green' : 'red' + ' darken-2'"
-            >
-              mdi-moon-full </v-icon
-            ><br />
+            <v-icon x-small :color="book.status ? 'green' : 'red' + ' darken-2'">
+              mdi-moon-full </v-icon><br />
             在庫数： 2 冊<br />
-            平均評価：<v-rating
-              v-model="book.avarageRating"
-              color="yellow darken-3"
-              background-color="grey darken-1"
-              size="20"
-              readonly="true"
-              large
-            >
-            </v-rating
-            ><br />
+            平均評価：<v-rating v-model="book.avarageRating" color="yellow darken-3" background-color="grey darken-1"
+              size="20" readonly="true" large>
+            </v-rating><br />
             レビュー件数：{{ book.reviews }}件<br />
           </v-card-text>
         </v-col>
@@ -136,22 +123,13 @@ const closeReserveDialog = () => {
             <v-col cols="3"></v-col>
             <v-col cols="3">
               <!-- 親に渡すイベント発火 -->
-              <v-btn
-                @click="$emit('emitCloseDialog')"
-                variant="flat"
-                color="red"
-                >CLOSE</v-btn
-              >
+              <v-btn @click="$emit('emitCloseDialog')" variant="flat" color="red">CLOSE</v-btn>
             </v-col>
             <v-col cols="3" v-if="book.status">
-              <v-btn @click="openRentalDialog" variant="flat" color="success"
-                >借りる</v-btn
-              >
+              <v-btn @click="openRentalDialog" variant="flat" color="success">借りる</v-btn>
             </v-col>
             <v-col cols="3" v-else>
-              <v-btn @click="openReserveDialog" variant="flat" color="primary"
-                >予約する</v-btn
-              >
+              <v-btn @click="openReserveDialog" variant="flat" color="primary">予約する</v-btn>
             </v-col>
             <v-col cols="3"></v-col>
           </v-row>
@@ -177,24 +155,15 @@ const closeReserveDialog = () => {
 
       <v-row>
         <v-col>
-          <v-img
-            max-height="300"
-            max-width="200"
-            class="ml-auto mb-3"
-            :src="book.volumeInfo.imageLinks.smallThumbnail"
-          >
+          <v-img max-height="300" max-width="200" class="ml-auto mb-3" :src="book.volumeInfo.imageLinks.smallThumbnail">
           </v-img>
         </v-col>
         <v-col>
           <v-card-text>
             名前： {{ book.volumeInfo.title }}<br />
             ステータス： {{ book.status ? "貸出可能" : "貸出不可" }}
-            <v-icon
-              x-small
-              :color="book.status ? 'green' : 'red' + ' darken-2'"
-            >
-              mdi-moon-full </v-icon
-            ><br />
+            <v-icon x-small :color="book.status ? 'green' : 'red' + ' darken-2'">
+              mdi-moon-full </v-icon><br />
             在庫数： 2 冊
           </v-card-text>
         </v-col>
@@ -206,14 +175,10 @@ const closeReserveDialog = () => {
           <v-row>
             <v-col cols="3"></v-col>
             <v-col cols="3">
-              <v-btn @click="closeRentalDialog" variant="flat" color="red"
-                >CLOSE</v-btn
-              >
+              <v-btn @click="closeRentalDialog" variant="flat" color="red">CLOSE</v-btn>
             </v-col>
             <v-col cols="3">
-              <v-btn @click="closeRentalDialog" variant="flat" color="primary"
-                >確定</v-btn
-              >
+              <v-btn @click="closeRentalDialog" variant="flat" color="primary">確定</v-btn>
             </v-col>
             <v-col cols="3"></v-col>
           </v-row>
@@ -239,21 +204,15 @@ const closeReserveDialog = () => {
 
       <v-row>
         <v-col>
-          <v-img
-            max-height="300"
-            max-width="200"
-            class="ml-auto mb-3"
-            :src="book.volumeInfo.imageLinks.smallThumbnail"
-          >
+          <v-img max-height="300" max-width="200" class="ml-auto mb-3" :src="book.volumeInfo.imageLinks.smallThumbnail">
           </v-img>
         </v-col>
         <v-col>
           <v-card-text>
             名前： {{ book.volumeInfo.title }}<br /><br />
             貸出待ち人数： 5人 <br />
-            <v-icon>mdi-human-child</v-icon><v-icon>mdi-human-child</v-icon
-            ><v-icon>mdi-human-child</v-icon><v-icon>mdi-human-child</v-icon
-            ><v-icon>mdi-human-child</v-icon> <br /><br />
+            <v-icon>mdi-human-child</v-icon><v-icon>mdi-human-child</v-icon><v-icon>mdi-human-child</v-icon><v-icon>mdi-human-child</v-icon><v-icon>mdi-human-child</v-icon>
+            <br /><br />
             貸出可能日：2023/03/14(火)
           </v-card-text>
         </v-col>
@@ -265,14 +224,10 @@ const closeReserveDialog = () => {
           <v-row>
             <v-col cols="3"></v-col>
             <v-col cols="3">
-              <v-btn @click="closeReserveDialog" variant="flat" color="red"
-                >CLOSE</v-btn
-              >
+              <v-btn @click="closeReserveDialog" variant="flat" color="red">CLOSE</v-btn>
             </v-col>
             <v-col cols="3">
-              <v-btn @click="closeReserveDialog" variant="flat" color="primary"
-                >確定</v-btn
-              >
+              <v-btn @click="closeReserveDialog" variant="flat" color="primary">確定</v-btn>
             </v-col>
             <v-col cols="3"></v-col>
           </v-row>
@@ -280,4 +235,5 @@ const closeReserveDialog = () => {
       </v-card-actions>
     </v-card>
   </v-dialog>
+
 </template>

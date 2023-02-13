@@ -11,15 +11,10 @@ defineProps({
 </script>
 
 <template>
-  <v-list min-height="400px">
-    <v-list-item
-      v-for="(item, n) in reviewBooks.filter(
-        (review) => review.bookId === bookId
-      )[0].reviews"
-      :key="n"
-    >
-      <!-- <v-divider></v-divider> -->
-      <v-card>
+  <v-list>
+    <v-list-item v-for="(item, n) in reviewBooks.filter((review) => review.bookId === bookId)[0].reviews" :key="n">
+
+      <v-card style="margin: 0 20px 0 0; width: 500px;">
         <v-row>
           <v-col cols="2">
             <v-list-item-avatar>
@@ -31,25 +26,17 @@ defineProps({
             <div>{{ item.joinedYear }}入社</div>
           </v-col>
         </v-row>
-
         <div class="text-left mt-32">
-          <v-rating
-            v-model="item.rating"
-            color="yellow darken-3"
-            background-color="grey darken-1"
-            size="24"
-            readonly="true"
-            large
-          ></v-rating>
-          <v-list-item-title
-            class="font-weight-bold"
-            v-html="item.reviewTitle"
-          ></v-list-item-title>
-          <v-list-item-subtitle v-html="item.reviewDate"></v-list-item-subtitle>
+          <v-rating v-model="item.rating" color="yellow darken-3" background-color="grey darken-1" size="24"
+            readonly="true" large></v-rating>
         </div>
-
+        <v-list-item-title class="font-weight-bold" v-html="item.reviewTitle"></v-list-item-title>
+        <v-list-item-subtitle v-html="item.reviewDate"></v-list-item-subtitle>
         <v-list-item-content v-html="item.comment"></v-list-item-content>
       </v-card>
+
+      <v-divider></v-divider>
+
     </v-list-item>
   </v-list>
 </template>
