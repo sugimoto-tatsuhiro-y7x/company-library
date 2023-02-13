@@ -20,6 +20,14 @@
       </v-col>
     </v-row>
   </v-container>
+  <v-card color="basil">
+    <v-tabs v-model="tab" bg-color="transparent" color="basil" grow>
+      <v-tab to="/">ホーム</v-tab>
+      <v-tab to="/Books">書籍一覧</v-tab>
+      <v-tab to="/RoadMaps">ロードマップ一覧</v-tab>
+      <v-tab to="/UserDetail">マイページ</v-tab>
+    </v-tabs>
+  </v-card>
 </template>
 
 <script setup></script>
