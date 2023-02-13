@@ -9,16 +9,13 @@
 
     <div class="text-center mt-5">
 
-      <v-badge avatar overlap offset-x="10" offset-y="10" color="rgba(0,0,0,0)">
+      <v-badge avatar overlap offset-x="20" offset-y="20" color="rgba(0,0,0,0)">
         <template v-slot:badge>
           <v-avatar>
             <v-img src="https://cdn.vuetifyjs.com/images/logos/v.png"></v-img>
           </v-avatar>
         </template>
-
-        <v-avatar size="250">
-          <img src="../assets/userIcon.png" alt="icon" />
-        </v-avatar>
+        <UserAvatar :size="250"></UserAvatar>
       </v-badge>
 
       <v-card>
@@ -58,6 +55,9 @@
 <script setup>
 import Header from "@/components/Header.vue";
 import { computed } from "vue"
+
+import UserAvatar from "@/components/UserAvatar.vue";
+
 import BorrowedBookListItem from "@/components/BorrowedBookListItem.vue";
 import books from "../assets/bookData";
 
