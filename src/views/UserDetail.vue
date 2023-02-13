@@ -38,18 +38,31 @@
 
     <!--貸出中/履歴表示部-->
     <v-tabs v-model="tab" bg-color="transparent" color="basil" grow>
-      <v-tab v-for="item in items" :key="item" :value="item">
+      <v-tab v-for="item in userStatus" :key="item" :value="item">
         {{ item }}
       </v-tab>
     </v-tabs>
-    <v-window v-model="tab">
-      <v-window-item v-for="item in items" :key="item" :value="item">
-        <div v-for="book in onLoan" :key="book">
-          <BorrowedBookListItem :book="book" :status="item" />
-        </div>
-      </v-window-item>
-    </v-window>
   </v-container>
+  <v-window v-model="tab">
+    <v-window-item v-for="item in userStatus" :key="item" :value="item">
+      <div v-if="item === '予約中'">
+        <div v-for="book in reserved" :key="book">
+          <BorrowedBookListItem :book="book" :userStatus="item" />
+        </div>
+      </div>
+      <div v-if="item === '貸出中'">
+        <div v-for="book in onLoan" :key="book">
+          <BorrowedBookListItem :book="book" :userStatus="item" />
+        </div>
+      </div>
+      <div v-if="item === '返却済'">
+        <div v-for="book in returned" :key="book">
+          <BorrowedBookListItem :book="book" :userStatus="item" />
+        </div>
+      </div>
+    </v-window-item>
+  </v-window>
+
 </template>
 
 <script setup>
@@ -97,7 +110,7 @@ export default {
   data() {
     return {
       tab: "貸出中",
-      items: ["予約中", "貸出中", "返却済"],
+      userStatus: ["予約中", "貸出中", "返却済"],
       text: "aaa",
       name: "KANA",
       affiliation: "SD部",

@@ -1,24 +1,28 @@
 <script setup>
 
 import BookReviewRecord from "@/components/BookReviewRecord.vue";
+import ReturnConfirmationDialog from '@/components/ReturnConfirmationDialog.vue';
 
 import { ref, computed } from "vue"
 
 const rentalDialog = ref(false);
 const reserveDialog = ref(false);
+const returnDialog = ref(false);
 
 // 親コンポーネントから受け取るProps定義
 const props = defineProps({
   // 書籍オブジェクト
   book: Object,
   // ダイアログのOpen/Closeフラグ
-  dialog: Boolean
+  dialog: Boolean,
+  //ユーザーの貸出中、予約中、返却済ステータス
+  userStatus: String
 })
 
 // 親コンポーネントに投げるEmitを定義
 const emit = defineEmits(
   // ダイアログを閉じるためのイベント
-  ["emitCloseDialog"]
+  ["emitCloseDialog", "emitCloseReturnDialog"]
 )
 
 // Propsそのものを更新することはできないので、Computedに代入(propsをv-modelに指定するとエラーになる)
@@ -82,6 +86,18 @@ const closeReserveDialog = () => {
   reserveDialog.value = false;
 };
 
+// 返却確認画面ダイアログオープン関数
+const openReturnDialog = () => {
+  returnDialog.value = true;
+  // 親に渡すイベント発火
+  emit("emitCloseDialog")
+};
+
+// 返却確認画面ダイアログclose関数
+const closeReturnDialog = () => {
+  returnDialog.value = false;
+};
+
 </script>
 
 <template>
@@ -132,7 +148,13 @@ const closeReserveDialog = () => {
               <!-- 親に渡すイベント発火 -->
               <v-btn @click="$emit('emitCloseDialog')" variant="flat" color="red">CLOSE</v-btn>
             </v-col>
-            <v-col cols="3" v-if="book.status">
+            <v-col cols="3" v-if="userStatus === '貸出中'">
+              <v-btn @click="openReturnDialog" variant="flat" color="success">返す</v-btn>
+            </v-col>
+            <v-col cols="3" v-else-if="userStatus === '予約中'">
+              <v-btn @click="openReturnDialog" variant="flat" color="success">キャンセル</v-btn>
+            </v-col>
+            <v-col cols="3" v-else-if="book.status">
               <v-btn @click="openRentalDialog" variant="flat" color="success">借りる</v-btn>
             </v-col>
             <v-col cols="3" v-else>
@@ -144,7 +166,9 @@ const closeReserveDialog = () => {
       </v-card-actions>
     </v-card>
   </v-dialog>
-
+  <!--返却確認ダイアログ-->
+  <ReturnConfirmationDialog :book=book :returnDialog=returnDialog v-on:emitCloseReturnDialog="closeReturnDialog">
+  </ReturnConfirmationDialog>
   <!-- 貸出確認dialog -->
   <v-dialog v-model="rentalDialog" max-width="500">
     <v-card>
