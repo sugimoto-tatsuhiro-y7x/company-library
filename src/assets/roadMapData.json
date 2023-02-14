@@ -3,6 +3,12 @@
         "id": "YXJHEAAAQBAJ",
         "title": "CI/CDマスターへの道",
         "imageLink":"https://1.bp.blogspot.com/-c0LuECn02rk/XLQhgS2Js4I/AAAAAAABSc4/IHKSCT5hjo8OMhA0YVOODb-GNZUDI61ngCLcBGAs/s330/pdca_cycle_circle.png",
+        "user": {
+            "occupation": "アーキテクト",
+            "joinedYear": "1998"
+        },
+        "review_num": 53,
+        "avarageRating": 4.5,
         "reviews": [
             {
                 "reviewId": "rv00001",
@@ -46,6 +52,12 @@
         "id": "2OnYzQEACAAJ",
         "title": "絶対CircleCIを使いこなせるようになるロードマップ",
         "imageLink":"https://4.bp.blogspot.com/-wQOYizaEo2E/XLQhf68v_DI/AAAAAAABScw/E67gg7X1zk4UIPw6eLpto7hbfMpZVlnMwCLcBGAs/s300/pdca_cycle_icon_circle.png",
+        "user": {
+            "occupation": "SE",
+            "joinedYear": "2010"
+        },
+        "review_num": 9,
+        "avarageRating": 5.0,
         "reviews": [
             {
                 "reviewId": "rv00011",
@@ -89,6 +101,12 @@
         "id": "YXJHEAAAQBA3",
         "title": "CI/CDチュートリアル",
         "imageLink":"https://2.bp.blogspot.com/-HbHmOjDv-BY/XLAIihMO1tI/AAAAAAABSR8/CUc9bfCmrn097l3-_Gpux_cGGwKs9i6GACLcBGAs/s800/car_syoshinsya_mark.png",
+        "user": {
+            "occupation": "SE",
+            "joinedYear": "2019"
+        },
+        "review_num": 6,
+        "avarageRating": 3.2,
         "reviews": [
             {
                 "reviewId": "rv00001",
@@ -132,6 +150,12 @@
         "id": "YXJHEAAAQBA4",
         "title": "3日で極めるCI/CD",
         "imageLink":"https://1.bp.blogspot.com/-7fuvPR6TAzA/XhQCeVoNbpI/AAAAAAABW2I/rrHZ308iwlgFuBz7_gLKhvl-CcLFtXuMACNcBGAsYHQ/s400/setsubun_oni_kowai.png",
+        "user": {
+            "occupation": "営業",
+            "joinedYear": "2020"
+        },
+        "review_num": 5,
+        "avarageRating": 3.5,
         "reviews": [
             {
                 "reviewId": "rv00001",
