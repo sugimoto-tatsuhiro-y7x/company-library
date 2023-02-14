@@ -1,6 +1,7 @@
 <script setup>
 import { ref } from "vue";
 import reviewBooks from "../assets/bookReviewData";
+import UserAvatar from "./UserAvatar.vue";
 
 defineProps({
   bookId: String,
@@ -21,7 +22,7 @@ defineProps({
         <v-row>
           <v-col cols="2">
             <v-list-item-avatar>
-              <v-img :src="item.avatar" max-height="50" max-width="50"></v-img>
+              <UserAvatar :userId="n + 1"></UserAvatar>
             </v-list-item-avatar>
           </v-col>
           <v-col>
