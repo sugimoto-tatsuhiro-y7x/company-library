@@ -11,17 +11,17 @@ const props = defineProps({
   // 書籍オブジェクト
   book: Object,
   // ダイアログのOpen/Closeフラグ
-  dialog: Boolean
+  returnDialog: Boolean
 })
 
 // 親コンポーネントに投げるEmitを定義
 const emit = defineEmits(
   // ダイアログを閉じるためのイベント
-  ["emitCloseDialog"]
+  ["emitCloseReturnDialog"]
 )
 
 // Propsそのものを更新することはできないので、Computedに代入(propsをv-modelに指定するとエラーになる)
-const dialogComputed = computed(() => props.dialog)
+const dialogComputed = computed(() => props.returnDialog)
 
 </script>
 
@@ -58,10 +58,10 @@ const dialogComputed = computed(() => props.dialog)
           <v-row>
             <v-col cols="3"></v-col>
             <v-col cols="3">
-              <v-btn @click="$emit('emitCloseDialog')" variant="flat" color="red">CLOSE</v-btn>
+              <v-btn @click="$emit('emitCloseReturnDialog')" variant="flat" color="red">CLOSE</v-btn>
             </v-col>
             <v-col cols="3">
-              <v-btn @click="$emit('emitCloseDialog')" variant="flat" color="primary">確定</v-btn>
+              <v-btn @click="$emit('emitCloseReturnDialog')" variant="flat" color="primary">確定</v-btn>
             </v-col>
             <v-col cols="3"></v-col>
           </v-row>
