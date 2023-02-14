@@ -100,6 +100,7 @@ const routes = [
       },
     ],
   },
+  { path: '/BookDetail/:id', component: () => import('@/views/BookDetail.vue') },
 ]
 
 const router = createRouter({
