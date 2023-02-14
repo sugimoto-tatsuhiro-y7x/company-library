@@ -4,6 +4,8 @@ import RoadMapDetailDialog from "./RoadMapDetailDialog.vue";
 
 defineProps({
   roadMap: Object,
+  width: Number,
+  height: Number
 });
 
 // ダイアログOpen/Closeのフラグ
@@ -22,7 +24,7 @@ const closeRoadMapDialog = () => {
 
 <template>
   <div>
-    <v-card class="mx-auto mt-2" elevation="2" @click="openRoadMapDialog">
+    <v-card class="mx-auto mt-2" :width="width" :height="height" elevation="2" @click="openRoadMapDialog">
       <v-card-actions>
         <v-container class="grey lighten-5">
           <v-row :align="align">
@@ -58,10 +60,7 @@ const closeRoadMapDialog = () => {
     </v-card>
 
     <!-- 本詳細dialog -->
-    <RoadMapDetailDialog
-      :roadMap="roadMap"
-      :dialog="dialog"
-      v-on:emitCloseDialog="closeRoadMapDialog"
-    ></RoadMapDetailDialog>
+    <RoadMapDetailDialog :roadMap="roadMap" :dialog="dialog" v-on:emitCloseDialog="closeRoadMapDialog">
+    </RoadMapDetailDialog>
   </div>
 </template>
