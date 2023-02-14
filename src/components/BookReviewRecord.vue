@@ -11,7 +11,7 @@ defineProps({
 </script>
 
 <template>
-  <v-list>
+  <v-list v-if="reviewBooks.filter((review) => review.bookId === bookId).length">
     <v-list-item v-for="(item, n) in reviewBooks.filter(
       (review) => review.bookId === bookId
     )[0].reviews" :key="n">
@@ -39,6 +39,10 @@ defineProps({
       </v-card>
     </v-list-item>
   </v-list>
+  <v-card v-else style="margin: 10 20px 0 0; width: 400px;">
+    <v-list-item-content>まだカスタマーレビューはありません</v-list-item-content>
+    <!-- <p>まだカスタマーレビューはありません</p> -->
+  </v-card>
 </template>
 
 <style lang="scss" scoped>
