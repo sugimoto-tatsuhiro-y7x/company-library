@@ -58,6 +58,7 @@ const closeDialog = () => {
                   <v-rating v-model="book.avarageRating" color="yellow darken-3" background-color="grey darken-1"
                     size="24" readonly="true" large>
                   </v-rating>
+                  <br />
                   {{ book.reviews }}件のレビュー
                 </v-col>
                 <!-- <v-col cols="4" align-self="center">
