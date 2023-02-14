@@ -4,6 +4,8 @@ import BookDetailDialog from "./BookDetailDialog.vue";
 
 defineProps({
   book: Object,
+  width: Number,
+  height: Number
 });
 
 // ダイアログOpen/Closeのフラグ
@@ -24,7 +26,7 @@ const closeDialog = () => {
 
 <template>
   <div>
-    <v-card class="mx-auto mt-2" elevation="2" @click="openDialog()">
+    <v-card class="mx-auto mt-2" :max-width="width" :height="height" elevation="2" @click="openDialog()">
       <v-card-actions>
         <v-container class="grey lighten-5">
           <v-row :align="align">
