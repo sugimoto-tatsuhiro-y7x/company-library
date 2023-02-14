@@ -3,7 +3,7 @@ import { ref } from "vue";
 import RoadMapDetailDialog from "./RoadMapDetailDialog.vue";
 
 defineProps({
-  book: Object,
+  roadMap: Object,
 });
 
 // ダイアログOpen/Closeのフラグ
@@ -22,21 +22,18 @@ const closeRoadMapDialog = () => {
 
 <template>
   <div>
-    <v-card class="mx-auto mt-2" elevation="2" @click="openRoadMapDialog(book)">
+    <v-card class="mx-auto mt-2" elevation="2" @click="openRoadMapDialog">
       <v-card-actions>
         <v-container class="grey lighten-5">
           <v-row :align="align">
             <v-col cols="2">
-              <v-img
-                width="100"
-                v-bind:src="book.volumeInfo.imageLinks.smallThumbnail"
-              ></v-img>
+              <v-img width="100" v-bind:src="roadMap.imageLink"></v-img>
             </v-col>
             <v-col cols="10">
               <v-row>
                 <v-card-title class="text-h6">
-                  <!-- {{ book.volumeInfo.title }} -->
-                  CI/CDマスターへの道
+                  {{ roadMap.title }}
+                  <!-- CI/CDマスターへの道 -->
                 </v-card-title>
               </v-row>
               <v-row class="mt-0">
@@ -62,7 +59,7 @@ const closeRoadMapDialog = () => {
 
     <!-- 本詳細dialog -->
     <RoadMapDetailDialog
-      :book="book"
+      :roadMap="roadMap"
       :dialog="dialog"
       v-on:emitCloseDialog="closeRoadMapDialog"
     ></RoadMapDetailDialog>
