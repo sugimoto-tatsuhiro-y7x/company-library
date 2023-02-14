@@ -6,7 +6,7 @@ defineProps({
   books: Object
 })
 const width = 530;
-const height = 240;
+const height = 180;
 
 </script>
 
