@@ -42,7 +42,7 @@ defineProps({
             <p class="text-caption">→ 2人のユーザーがこれが役に立ったと考えています。</p>
           </v-col>
           <v-col>
-            <v-btn icon="mdi-thumb-up" height="30" width="30" color="success"></v-btn>
+            <v-btn icon="mdi-thumb-up" height="30" width="30" color="amber-darken-4"></v-btn>
           </v-col>
         </v-row>
 
