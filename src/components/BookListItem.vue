@@ -35,20 +35,14 @@ const closeDialog = () => {
             </v-col>
             <v-col cols="10">
               <v-row>
-                <v-col cols="8">
+                <v-col cols="12">
                   <v-card-title class="text-h6">
                     {{ book.volumeInfo.title }}
                   </v-card-title>
                 </v-col>
-                <v-col cols="4">
-                  <v-rating v-model="book.avarageRating" color="yellow darken-3" background-color="grey darken-1"
-                    size="24" readonly="true" large>
-                  </v-rating>
-                  {{ book.reviews }}件のレビュー
-                </v-col>
               </v-row>
               <v-row class="mt-0">
-                <v-col cols="8" class="py-0">
+                <v-col cols="6" class="py-0">
                   <v-card-text class="py-0">
                     <v-list lines="one">
                       <v-list-item title="貸出ステータス">
@@ -60,8 +54,14 @@ const closeDialog = () => {
                     </v-list>
                   </v-card-text>
                 </v-col>
-                <v-col cols="4" align-self="center">
+                <v-col cols="4">
+                  <v-rating v-model="book.avarageRating" color="yellow darken-3" background-color="grey darken-1"
+                    size="24" readonly="true" large>
+                  </v-rating>
+                  {{ book.reviews }}件のレビュー
                 </v-col>
+                <!-- <v-col cols="4" align-self="center">
+                </v-col> -->
               </v-row>
             </v-col>
           </v-row>
