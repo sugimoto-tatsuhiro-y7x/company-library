@@ -7,8 +7,8 @@ const props = defineProps({
   avatarSize: Number,
 })
 
-const userImageUrl = computed(() => `src/assets/userIcon-${props.userId || 1}.png`)
-const userBackUrl = computed(() => `src/assets/avatar-back-${props.userId || 1}.jpg`)
+const userImageUrl = computed(() => `src/assets/userIcon-${props.userId || 0}.png`)
+const userBackUrl = computed(() => `src/assets/avatar-back-${props.userId || 0}.png`)
 
 </script>
 

@@ -77,6 +77,7 @@ const closeDialog = () => {
                     large
                   >
                   </v-rating>
+                  <br />
                   {{ book.reviews }}件のレビュー
                 </v-col>
                 <!-- <v-col cols="4" align-self="center">
