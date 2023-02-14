@@ -1,6 +1,7 @@
 <script setup>
 import { ref } from "vue";
 import books from "../assets/bookData";
+import roadMaps from "../assets/roadMapData";
 import Header from "@/components/Header.vue";
 import RoadMapListItem from "@/components/RoadMapListItem.vue";
 // import useSWRV from "swrv";
@@ -54,15 +55,15 @@ const fetcher = (search) => {
     <!-- ロードマップ一覧 -->
     <div v-if="searching">
       <h2>検索結果</h2>
-      <div v-for="book in books" :key="book">
-        <RoadMapListItem :book="book" />
+      <div v-for="roadMap in roadMaps" :key="roadMap">
+        <RoadMapListItem :roadMap="roadMap" />
       </div>
     </div>
 
     <div v-else>
       <h2>ロードマップ一覧</h2>
-      <div v-for="book in books" :key="book">
-        <RoadMapListItem :book="book" />
+      <div v-for="roadMap in roadMaps" :key="roadMap">
+        <RoadMapListItem :roadMap="roadMap" />
       </div>
     </div>
   </v-container>
