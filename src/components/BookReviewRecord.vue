@@ -36,9 +36,17 @@ defineProps({
         <v-list-item-title class="font-weight-bold" v-html="item.reviewTitle"></v-list-item-title>
         <v-list-item-subtitle v-html="item.reviewDate"></v-list-item-subtitle>
         <v-list-item-content class="wrap-text" v-html="item.comment"></v-list-item-content>
-        <p class="text-caption">2人のユーザーがこれが役に立ったと考えています。</p>
-        <v-spacer />
-        <v-btn icon="mdi-thumb-up" color="success"></v-btn>
+
+        <v-row>
+          <v-col cols="10">
+            <p class="text-caption">→ 2人のユーザーがこれが役に立ったと考えています。</p>
+          </v-col>
+          <v-col>
+            <v-btn icon="mdi-thumb-up" height="30" width="30" color="success"></v-btn>
+          </v-col>
+        </v-row>
+
+
         <!-- <v-card-actions>
           <v-btn v-for="button in buttons" :key="button.icon" :href="button.url" :color="button.color" icon>
             <v-icon>{{ button.icon }}</v-icon>
