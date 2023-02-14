@@ -5,12 +5,11 @@ import BookDetailDialog from "./BookDetailDialog.vue";
 defineProps({
   book: Object,
   width: Number,
-  height: Number
+  height: Number,
 });
 
 // ダイアログOpen/Closeのフラグ
 const dialog = ref(false);
-
 
 // 本詳細ダイアログオープン関数
 const openDialog = () => {
@@ -21,17 +20,25 @@ const openDialog = () => {
 const closeDialog = () => {
   dialog.value = false;
 };
-
 </script>
 
 <template>
   <div>
-    <v-card class="mx-auto mt-2" :max-width="width" :height="height" elevation="2" @click="openDialog()">
+    <v-card
+      class="mx-auto mt-2"
+      :max-width="width"
+      :height="height"
+      elevation="2"
+      @click="openDialog()"
+    >
       <v-card-actions>
         <v-container class="grey lighten-5">
           <v-row :align="align">
             <v-col cols="2">
-              <v-img width="100" v-bind:src="book.volumeInfo.imageLinks.smallThumbnail"></v-img>
+              <v-img
+                width="100"
+                v-bind:src="book.volumeInfo.imageLinks.smallThumbnail"
+              ></v-img>
             </v-col>
             <v-col cols="10">
               <v-row>
@@ -46,17 +53,29 @@ const closeDialog = () => {
                   <v-card-text class="py-0">
                     <v-list lines="one">
                       <v-list-item title="貸出ステータス">
-                        <v-icon x-small :color="book.status ? 'green' : 'red' + ' darken-2'">
+                        <v-icon
+                          x-small
+                          :color="book.status ? 'green' : 'red' + ' darken-2'"
+                        >
                           mdi-moon-full
                         </v-icon>
                       </v-list-item>
-                      <v-list-item title="場所" :subtitle="book.location"></v-list-item>
+                      <v-list-item
+                        title="場所"
+                        :subtitle="book.location"
+                      ></v-list-item>
                     </v-list>
                   </v-card-text>
                 </v-col>
                 <v-col cols="4">
-                  <v-rating v-model="book.avarageRating" color="yellow darken-3" background-color="grey darken-1"
-                    size="24" readonly="true" large>
+                  <v-rating
+                    v-model="book.avarageRating"
+                    color="yellow darken-3"
+                    background-color="grey darken-1"
+                    size="24"
+                    readonly="true"
+                    large
+                  >
                   </v-rating>
                   <br />
                   {{ book.reviews }}件のレビュー
@@ -71,7 +90,10 @@ const closeDialog = () => {
     </v-card>
 
     <!-- 本詳細dialog -->
-    <BookDetailDialog :book=book :dialog=dialog v-on:emitCloseDialog="closeDialog"></BookDetailDialog>
-
+    <BookDetailDialog
+      :book="book"
+      :dialog="dialog"
+      v-on:emitCloseDialog="closeDialog"
+    ></BookDetailDialog>
   </div>
 </template>

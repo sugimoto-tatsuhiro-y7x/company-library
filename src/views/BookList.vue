@@ -50,7 +50,7 @@ const fetcher = (search) => {
       <h2>New</h2>
       <BookSlideGroups :books="books"></BookSlideGroups>
       <br />
-      <h2>おすすめ</h2>
+      <h2>おすすめ書籍</h2>
       <BookSlideGroups :books="books"></BookSlideGroups>
       <br />
       <h2>おすすめロードマップ</h2>
