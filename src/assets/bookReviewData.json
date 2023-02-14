@@ -55,7 +55,7 @@
                 "reviewDate": "2023/2/10",
                 "rating": "5",
                 "reviewTitle": "これからはじめるVue.js",
-                "comment": "JavaScript や　jQuery はかじったことがある人が Vue.js の世界に入っていくにはちょうど良い入門書だと思います。"
+                "comment": "JavaScript や jQuery はかじったことがある人が Vue.js の世界に入っていくにはちょうど良い入門書だと思います。"
             },
             {
                 "reviewId": "rv00012",
@@ -80,6 +80,48 @@
                 "rating": "4",
                 "reviewTitle": "プロが本当に欲しい情報",
                 "comment": "前半は、Vue.js 3について、後半は、Nuxt.jsついて解説し、最終的にJamstackでの実装を目指しており、開発現場のエンジニアにとって本当に欲しい情報が適切に纏まってると思います。具体例もあってプロ向けに読みやすいです。"
+            }
+        ]
+    },
+    {
+        "bookId": "wLhTEAAAQBAJ",
+        "title": "Drupal 9 おいしいレシピ集",
+        "reviews": [
+            {
+                "reviewId": "rv00011",
+                "userId": "n10000",
+                "userName": "日鉄太郎",
+                "avatar": "https://cdn.vuetifyjs.com/images/lists/4.jpg",
+                "occupation": "営業",
+                "joinedYear": "2020",
+                "reviewDate": "2023/2/10",
+                "rating": "5",
+                "reviewTitle": "VPSサービス上でDrupalの設定ができる",
+                "comment": "すべての入力コマンドをその背景（こうやると動く，だけではなくて，どうしてこうするのかの説明。例えば，ファイルの権利の設定）の説明とともに解説されています。詳しい説明がたいへん助かりました。"
+            },
+            {
+                "reviewId": "rv00012",
+                "userId": "n10001",
+                "userName": "日鉄次郎",
+                "avatar": "https://cdn.vuetifyjs.com/images/lists/5.jpg",
+                "occupation": "SE",
+                "joinedYear": "2018",
+                "reviewDate": "2023/2/11",
+                "rating": "3",
+                "reviewTitle": "web連載の書籍版という内容",
+                "comment": "解説の筋道がとらえにくくなる面がありました。よく読むとしっかり解説されていることに気づくのですが，内容が詳しく，よく書かれているだけに，節，項の割り振りや題名など少し工夫していただけたらと思いました。"
+            },
+            {
+                "reviewId": "rv000013",
+                "userId": "n10002",
+                "userName": "日鉄花子",
+                "avatar": "https://cdn.vuetifyjs.com/images/lists/1.jpg",
+                "occupation": "アーキテクト",
+                "joinedYear": "2019",
+                "reviewDate": "2023/2/12",
+                "rating": "4",
+                "reviewTitle": "プロが本当に欲しい情報Drupal 9の使い方を豊富な画像とともに解説した一冊",
+                "comment": "私のように一人でDrupal９を立ち上げようとしている人には本当に役立つと思います。"
             }
         ]
     }
