@@ -12,6 +12,7 @@ defineProps({
 </script>
 
 <template>
+  <v-text> カスタマーレビュー</v-text>
   <v-list v-if="reviewBooks.filter((review) => review.bookId === bookId).length">
     <v-list-item v-for="(item, n) in reviewBooks.filter(
       (review) => review.bookId === bookId

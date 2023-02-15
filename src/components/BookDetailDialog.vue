@@ -270,7 +270,7 @@ const closeReturnDialog = () => {
 .wrap-text {
   display: -webkit-box;
   -webkit-box-orient: vertical;
-  -webkit-line-clamp: 5;
+  -webkit-line-clamp: 20;
   white-space: normal;
 
 }
