@@ -12,7 +12,7 @@ defineProps({
 </script>
 
 <template>
-  <v-text> カスタマーレビュー</v-text>
+  <v-text> ユーザーレビュー</v-text>
   <v-list v-if="reviewBooks.filter((review) => review.bookId === bookId).length">
     <v-list-item v-for="(item, n) in reviewBooks.filter(
       (review) => review.bookId === bookId
@@ -60,8 +60,8 @@ defineProps({
     </v-list-item>
   </v-list>
   <v-card v-else style="margin: 10 20px 0 0; width: 400px;">
-    <v-list-item-content>まだカスタマーレビューはありません</v-list-item-content>
-    <!-- <p>まだカスタマーレビューはありません</p> -->
+    <v-list-item-content>まだユーザーレビューはありません</v-list-item-content>
+    <!-- <p>まだユーザーレビューはありません</p> -->
   </v-card>
 </template>
 
@@ -69,7 +69,7 @@ defineProps({
 .wrap-text {
   display: -webkit-box;
   -webkit-box-orient: vertical;
-  -webkit-line-clamp: 9;
+  -webkit-line-clamp: 2;
   white-space: normal;
 
 }
