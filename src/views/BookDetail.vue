@@ -75,7 +75,7 @@ const closeReserveDialog = () => {
     <v-row class="my-auto">
       <v-col cols="4">
         <v-img
-          max-height="400"
+          max-height="300"
           :src="book.volumeInfo.imageLinks.smallThumbnail"
         >
         </v-img>
