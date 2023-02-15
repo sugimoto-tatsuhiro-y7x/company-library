@@ -2,7 +2,7 @@
 import BookReviewRecord from "@/components/BookReviewRecord.vue";
 
 import { ref } from "vue"
-import { useRoute, useRouter } from "vue-router";
+import { useRoute } from "vue-router";
 
 import books from '../assets/bookData'
 
@@ -67,61 +67,49 @@ const closeReserveDialog = () => {
   reserveDialog.value = false;
 };
 
-
-
 </script>
 
 <template>
 
-  <v-card class="mx-auto">
-    <v-card-title>
-      <span>書籍詳細</span>
-    </v-card-title>
+  <span>書籍詳細</span>
 
+  <v-row>
+    <v-col>
+      <v-img class="ml-auto my-auto" max-height="200" max-width="200" :src="book.volumeInfo.imageLinks.smallThumbnail">
+      </v-img>
+    </v-col>
+    <v-col class="my-auto">
+      名前： {{ book.volumeInfo.title }}<br />
+      ステータス： {{ book.status ? "貸出可能" : "貸出不可" }}
+      <v-icon x-small :color="book.status ? 'green' : 'red' + ' darken-2'">
+        mdi-moon-full </v-icon><br />
+      在庫数： 2 冊<br />
+      平均評価：<v-rating v-model="book.avarageRating" color="yellow darken-3" background-color="grey darken-1" size="20"
+        readonly="true" large>
+      </v-rating><br />
+      レビュー件数：{{ book.reviews }}件<br />
+    </v-col>
+  </v-row>
+
+  <v-container>
     <v-row>
-      <v-col>
-        <v-img class="ml-auto my-auto" max-height="200" max-width="200"
-          :src="book.volumeInfo.imageLinks.smallThumbnail">
-        </v-img>
+      <v-col cols="3"></v-col>
+      <!-- <v-col cols="3">
+      <v-btn @click="$emit('emitCloseDialog')" variant="flat" color="red">CLOSE</v-btn>
+      </v-col> -->
+      <v-col cols="3" v-if="book.status">
+        <v-btn @click="openRentalDialog" variant="flat" color="success">借りる</v-btn>
       </v-col>
-      <v-col class="my-auto">
-        <v-card-text>
-          名前： {{ book.volumeInfo.title }}<br />
-          ステータス： {{ book.status ? "貸出可能" : "貸出不可" }}
-          <v-icon x-small :color="book.status ? 'green' : 'red' + ' darken-2'">
-            mdi-moon-full </v-icon><br />
-          在庫数： 2 冊<br />
-          平均評価：<v-rating v-model="book.avarageRating" color="yellow darken-3" background-color="grey darken-1" size="20"
-            readonly="true" large>
-          </v-rating><br />
-          レビュー件数：{{ book.reviews }}件<br />
-        </v-card-text>
+      <v-col cols="3" v-else>
+        <v-btn @click="openReserveDialog" variant="flat" color="primary">予約する</v-btn>
       </v-col>
+      <v-col cols="3"></v-col>
     </v-row>
+  </v-container>
 
-    <v-divider></v-divider>
-    <BookReviewRecord :bookId="book.id"></BookReviewRecord>
 
-    <v-divider></v-divider>
-    <v-card-actions color="primary">
-      <v-container>
-        <v-row>
-          <v-col cols="3"></v-col>
-          <v-col cols="3">
-            <!-- 親に渡すイベント発火 -->
-            <v-btn @click="$emit('emitCloseDialog')" variant="flat" color="red">CLOSE</v-btn>
-          </v-col>
-          <v-col cols="3" v-if="book.status">
-            <v-btn @click="openRentalDialog" variant="flat" color="success">借りる</v-btn>
-          </v-col>
-          <v-col cols="3" v-else>
-            <v-btn @click="openReserveDialog" variant="flat" color="primary">予約する</v-btn>
-          </v-col>
-          <v-col cols="3"></v-col>
-        </v-row>
-      </v-container>
-    </v-card-actions>
-  </v-card>
+  <v-divider></v-divider>
+  <BookReviewRecord :bookId="book.id"></BookReviewRecord>
 
   <!-- 貸出確認dialog -->
   <v-dialog v-model="rentalDialog" max-width="500">
