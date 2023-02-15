@@ -1,0 +1,170 @@
+[
+    {
+        "roadMapId": "YXJHEAAAQBAJ",
+        "title": "CI/CDマスターへの道",
+        "reviews": [
+            {
+                "reviewId": "rv00001",
+                "userId": "n10000",
+                "userName": "日鉄太郎",
+                "avatar": "https://cdn.vuetifyjs.com/images/lists/1.jpg",
+                "occupation": "営業",
+                "joinedYear": "2020",
+                "reviewDate": "2023/2/10",
+                "rating": "5",
+                "reviewTitle": "k8sのアプリ運用について特化したロードマップ",
+                "comment": "k8sのアプリケーションライフサイクルを考える上で必要な運用（CI/CD）について網羅的に学べます。"
+            },
+            {
+                "reviewId": "rv00002",
+                "userId": "n10001",
+                "userName": "日鉄次郎",
+                "avatar": "https://cdn.vuetifyjs.com/images/lists/2.jpg",
+                "occupation": "SE",
+                "joinedYear": "2018",
+                "reviewDate": "2023/2/11",
+                "rating": "3",
+                "reviewTitle": "全体的にレベルの高いロードマップです",
+                "comment": "基本の入門ではなく、実践レベルのロードマップなのでJavaScriptのことは基本分かってるところからスタートします。"
+            },
+            {
+                "reviewId": "rv00003",
+                "userId": "n10002",
+                "userName": "日鉄花子",
+                "avatar": "https://cdn.vuetifyjs.com/images/lists/3.jpg",
+                "reviewDate": "2023/2/12",
+                "occupation": "アーキテクト",
+                "joinedYear": "2019",
+                "rating": "4",
+                "reviewTitle": "アジャイル開発におすすめのロードマップ",
+                "comment": "良書のピックアップがされています。"
+            }
+        ]
+    },
+    {
+        "roadMapId": "2OnYzQEACAAJ",
+        "title": "CircleCI絶対攻略ロードマップ",
+        "reviews": [
+            {
+                "reviewId": "rv00011",
+                "userId": "n10000",
+                "userName": "日鉄太郎",
+                "avatar": "https://cdn.vuetifyjs.com/images/lists/4.jpg",
+                "occupation": "営業",
+                "joinedYear": "2020",
+                "reviewDate": "2023/2/10",
+                "rating": "5",
+                "reviewTitle": "これからはじめるVue.js",
+                "comment": "JavaScript や　jQuery はかじったことがある人が Vue.js の世界に入っていくにはちょうど良いと思います。"
+            },
+            {
+                "reviewId": "rv00012",
+                "userId": "n10001",
+                "userName": "日鉄次郎",
+                "avatar": "https://cdn.vuetifyjs.com/images/lists/5.jpg",
+                "occupation": "SE",
+                "joinedYear": "2018",
+                "reviewDate": "2023/2/11",
+                "rating": "3",
+                "reviewTitle": "中級者向けで現場で役立つトピックあり",
+                "comment": "冒頭説明にある通り、対象は、既にVue.jsにて初級成果物を作れる中級者で、現場で使える新たなトピックを探すのに適しています。"
+            },
+            {
+                "reviewId": "rv000013",
+                "userId": "n10002",
+                "userName": "日鉄花子",
+                "avatar": "https://cdn.vuetifyjs.com/images/lists/1.jpg",
+                "occupation": "アーキテクト",
+                "joinedYear": "2019",
+                "reviewDate": "2023/2/12",
+                "rating": "4",
+                "reviewTitle": "プロが本当に欲しい情報",
+                "comment": "前半は、Vue.js 3について、後半は、Nuxt.jsついて解説し、最終的にJamstackでの実装を目指しており、開発現場のエンジニアにとって本当に欲しい情報が適切に纏まってると思います。"
+            }
+        ]
+    },
+    {
+        "roadMapId": "YXJHEAAAQBA3",
+        "title": "CI/CDチュートリアル",
+        "reviews": [
+            {
+                "reviewId": "rv00001",
+                "userId": "n10000",
+                "userName": "日鉄太郎",
+                "avatar": "https://cdn.vuetifyjs.com/images/lists/1.jpg",
+                "occupation": "営業",
+                "joinedYear": "2020",
+                "reviewDate": "2023/2/10",
+                "rating": "5",
+                "reviewTitle": "k8sのアプリ運用について特化したロードマップ",
+                "comment": "k8sのアプリケーションライフサイクルを考える上で必要な運用（CI/CD）について網羅的に学べます。"
+            },
+            {
+                "reviewId": "rv00002",
+                "userId": "n10001",
+                "userName": "日鉄次郎",
+                "avatar": "https://cdn.vuetifyjs.com/images/lists/2.jpg",
+                "occupation": "SE",
+                "joinedYear": "2018",
+                "reviewDate": "2023/2/11",
+                "rating": "3",
+                "reviewTitle": "全体的にレベルの高いロードマップです",
+                "comment": "基本の入門ではなく、実践レベルのロードマップなのでJavaScriptのことは基本分かってるところからスタートします。"
+            },
+            {
+                "reviewId": "rv00003",
+                "userId": "n10002",
+                "userName": "日鉄花子",
+                "avatar": "https://cdn.vuetifyjs.com/images/lists/3.jpg",
+                "reviewDate": "2023/2/12",
+                "occupation": "アーキテクト",
+                "joinedYear": "2019",
+                "rating": "4",
+                "reviewTitle": "アジャイル開発におすすめのロードマップ",
+                "comment": "良書のピックアップがされています。"
+            }
+        ]
+    },
+    {
+        "roadMapId": "YXJHEAAAQBA4",
+        "title": "3日で極めるCI/C",
+        "reviews": [
+            {
+                "reviewId": "rv00001",
+                "userId": "n10000",
+                "userName": "日鉄太郎",
+                "avatar": "https://cdn.vuetifyjs.com/images/lists/1.jpg",
+                "occupation": "営業",
+                "joinedYear": "2020",
+                "reviewDate": "2023/2/10",
+                "rating": "5",
+                "reviewTitle": "k8sのアプリ運用について特化したロードマップ",
+                "comment": "k8sのアプリケーションライフサイクルを考える上で必要な運用（CI/CD）について網羅的に学べます。"
+            },
+            {
+                "reviewId": "rv00002",
+                "userId": "n10001",
+                "userName": "日鉄次郎",
+                "avatar": "https://cdn.vuetifyjs.com/images/lists/2.jpg",
+                "occupation": "SE",
+                "joinedYear": "2018",
+                "reviewDate": "2023/2/11",
+                "rating": "3",
+                "reviewTitle": "全体的にレベルの高いロードマップです",
+                "comment": "基本の入門ではなく、実践レベルのロードマップなのでJavaScriptのことは基本分かってるところからスタートします。"
+            },
+            {
+                "reviewId": "rv00003",
+                "userId": "n10002",
+                "userName": "日鉄花子",
+                "avatar": "https://cdn.vuetifyjs.com/images/lists/3.jpg",
+                "reviewDate": "2023/2/12",
+                "occupation": "アーキテクト",
+                "joinedYear": "2019",
+                "rating": "4",
+                "reviewTitle": "アジャイル開発におすすめのロードマップ",
+                "comment": "良書のピックアップがされています。"
+            }
+        ]
+    }
+]

@@ -1,6 +1,7 @@
 <script setup>
-import BookReviewRecord from "@/components/BookReviewRecord.vue";
+import RoadMapReviewRecord from "@/components/RoadMapReviewRecord.vue";
 import books from "../assets/bookData";
+import roadMaps from "../assets/roadMapData";
 
 import { ref, computed } from "vue";
 
@@ -9,8 +10,8 @@ const reserveDialog = ref(false);
 
 // 親コンポーネントから受け取るProps定義
 const props = defineProps({
-  // 書籍オブジェクト
-  book: Object,
+  // ロードマップオブジェクト
+  roadMap: Object,
   // ダイアログのOpen/Closeフラグ
   dialog: Boolean,
 });
@@ -85,11 +86,11 @@ const closeReserveDialog = () => {
 
 <template>
   <!-- ロードマップ詳細dialog -->
-  <v-dialog v-model="dialogComputed" max-width="50%" max-height="700px">
+  <v-dialog v-model="dialogComputed" max-width="50%">
     <v-card>
       <v-card-title>
         ロードマップ詳細<br />
-        <strong>CI/CDマスターへの道</strong>
+        <strong>{{ roadMap.title }}</strong>
       </v-card-title>
 
       <v-timeline side="end" density="comfortable" class="mb-3">
@@ -131,19 +132,19 @@ const closeReserveDialog = () => {
       </v-timeline>
       <v-divider></v-divider>
       <!-- レビュー一覧 -->
-      <BookReviewRecord
-        :bookId="book.id"
+      <RoadMapReviewRecord
+        :roadMapId="roadMap.id"
         min-height="300"
         class="ml-3"
-      ></BookReviewRecord>
+      ></RoadMapReviewRecord>
     </v-card>
 
     <v-card min-height="60px">
       <v-card-actions color="primary">
         <v-container class="pa-1">
           <v-row>
-            <v-col cols="3"></v-col>
-            <v-col cols="3">
+            <v-col cols="2"></v-col>
+            <v-col cols="4">
               <!-- 親に渡すイベント発火 -->
               <v-btn
                 @click="$emit('emitCloseDialog')"
@@ -152,17 +153,15 @@ const closeReserveDialog = () => {
                 >CLOSE</v-btn
               >
             </v-col>
-            <v-col cols="3" v-if="book.status">
-              <v-btn @click="openRentalDialog" variant="flat" color="success"
-                >借りる</v-btn
+            <v-col cols="4">
+              <v-btn
+                @click="$emit('emitCloseDialog')"
+                variant="flat"
+                color="primary"
+                >お気に入り</v-btn
               >
             </v-col>
-            <v-col cols="3" v-else>
-              <v-btn @click="openReserveDialog" variant="flat" color="primary"
-                >予約する</v-btn
-              >
-            </v-col>
-            <v-col cols="3"></v-col>
+            <v-col cols="2"></v-col>
           </v-row>
         </v-container>
       </v-card-actions>
@@ -170,7 +169,7 @@ const closeReserveDialog = () => {
   </v-dialog>
 
   <!-- 貸出確認dialog -->
-  <v-dialog v-model="rentalDialog" max-width="500">
+  <!-- <v-dialog v-model="rentalDialog" max-width="500">
     <v-card>
       <v-card-title>
         <span>貸出確認</span>
@@ -229,10 +228,10 @@ const closeReserveDialog = () => {
         </v-container>
       </v-card-actions>
     </v-card>
-  </v-dialog>
+  </v-dialog> -->
 
   <!-- 予約確認dialog -->
-  <v-dialog v-model="reserveDialog" max-width="500">
+  <!-- <v-dialog v-model="reserveDialog" max-width="500">
     <v-card>
       <v-card-title>
         <span>予約確認</span>
@@ -288,5 +287,5 @@ const closeReserveDialog = () => {
         </v-container>
       </v-card-actions>
     </v-card>
-  </v-dialog>
+  </v-dialog> -->
 </template>

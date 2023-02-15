@@ -5,6 +5,8 @@ import Header from "@/components/Header.vue";
 import BookListItem from "@/components/BookListItem.vue";
 // import useSWRV from "swrv";
 import BookSlideGroups from "@/components/BookSlideGroups.vue";
+import RoadMapSlideGroups from "@/components/RoadMapSlideGroups.vue";
+import roadMaps from "../assets/roadMapData";
 
 // const searchString = ref("");
 const searching = ref(false);
@@ -48,8 +50,11 @@ const fetcher = (search) => {
       <h2>New</h2>
       <BookSlideGroups :books="books"></BookSlideGroups>
       <br />
-      <h2>おすすめ</h2>
+      <h2>おすすめ書籍</h2>
       <BookSlideGroups :books="books"></BookSlideGroups>
+      <br />
+      <h2>おすすめロードマップ</h2>
+      <RoadMapSlideGroups :roadMap="roadMap"></RoadMapSlideGroups>
       <v-divider class="mx-auto my-2"></v-divider>
     </div>
   </v-container>
