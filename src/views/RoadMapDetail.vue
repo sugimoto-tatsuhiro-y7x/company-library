@@ -4,6 +4,8 @@ import { useRoute, useRouter } from "vue-router";
 import Header from "@/components/Header.vue";
 
 import RoadMapReviewRecord from "@/components/RoadMapReviewRecord.vue";
+import BookListItem from "@/components/BookListItem.vue";
+
 import books from "../assets/bookData";
 import roadMaps from "../assets/roadMapData";
 
@@ -32,9 +34,8 @@ const openBookDetailPage = (bookId) => {
       <v-timeline-item :dot-color="book.status ? 'teal-lighten-3' : 'blue-grey-lighten-4'"
         :size="book.status ? 'default' : 'small'" min-width="90%" v-for="book in books" :key="book"
         @click="openBookDetailPage(book.id)">
-        <v-container>
-          <v-row>
-            <v-col cols="5">
+        <BookListItem :book="book" :width="1000" :elevation="0"></BookListItem>
+        <!-- <v-col cols="5">
               <v-img class="ml-auto my-auto" max-height="150" max-width="150"
                 :src="book.volumeInfo.imageLinks.smallThumbnail">
               </v-img>
@@ -48,9 +49,7 @@ const openBookDetailPage = (bookId) => {
                     mdi-moon-full </v-icon><br />
                 </div>
               </div>
-            </v-col>
-          </v-row>
-        </v-container>
+            </v-col> -->
       </v-timeline-item>
     </v-timeline>
     <v-divider></v-divider>
@@ -59,9 +58,6 @@ const openBookDetailPage = (bookId) => {
       <v-container class="pa-1">
         <v-row>
           <v-col cols="2"></v-col>
-          <!-- <v-col cols="4">
-          <v-btn @click="$emit('emitCloseDialog')" variant="flat" color="red">CLOSE</v-btn>
-        </v-col> -->
           <v-col cols="4">
             <v-btn @click="$emit('emitCloseDialog')" variant="flat" color="primary">お気に入り</v-btn>
           </v-col>
