@@ -1,32 +1,27 @@
 <template>
   <v-container>
     <v-row>
-      <v-col cols="1" align-self="center">
-        <div>
+      <!-- <v-col cols="1" align-self="center"> -->
+      <!-- <div>
           <router-link to="/" class="home-button">
             <v-btn large><v-icon>mdi-home-outline</v-icon></v-btn>
           </router-link>
-        </div>
-      </v-col>
+        </div> -->
+      <!-- </v-col> -->
       <v-col cols="10" align-self="center">
         <h1 align="center">社内図書システム</h1>
       </v-col>
       <v-col cols="1">
         <router-link to="/UserDetail">
           <UserAvatar :size="56"></UserAvatar>
-          <!-- <v-avatar size="56">
-          <v-img src="../assets/userIcon.png"></v-img>
-          </v-avatar> -->
         </router-link>
       </v-col>
     </v-row>
   </v-container>
   <v-card color="basil">
     <v-tabs v-model="tab" bg-color="transparent" color="basil" grow>
-      <v-tab to="/">ホーム</v-tab>
-      <v-tab to="/Books">書籍一覧</v-tab>
+      <v-tab to="/">書籍一覧</v-tab>
       <v-tab to="/RoadMaps">ロードマップ一覧</v-tab>
-      <v-tab to="/UserDetail">マイページ</v-tab>
     </v-tabs>
   </v-card>
 </template>
@@ -35,8 +30,3 @@
 import UserAvatar from './UserAvatar.vue';
 </script>
 
-<style>
-.home-button {
-  text-decoration: none;
-}
-</style>
