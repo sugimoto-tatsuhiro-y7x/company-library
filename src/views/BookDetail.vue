@@ -69,9 +69,9 @@ const closeReserveDialog = () => {
 </script>
 
 <template>
-  <Header></Header>
-
   <v-container>
+    <Header></Header>
+
     <v-row class="my-auto">
       <v-col cols="4">
         <v-img
