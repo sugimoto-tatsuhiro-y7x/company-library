@@ -32,9 +32,8 @@ const openBookDetailPage = (bookId) => {
 
     <v-timeline side="end" density="comfortable" class="mb-3">
       <v-timeline-item :dot-color="book.status ? 'teal-lighten-3' : 'blue-grey-lighten-4'"
-        :size="book.status ? 'default' : 'small'" min-width="90%" v-for="book in books" :key="book"
-        @click="openBookDetailPage(book.id)">
-        <BookListItem :book="book" :width="1000" :elevation="0"></BookListItem>
+        :size="book.status ? 'default' : 'small'" min-width="90%" v-for="book in books" :key="book">
+        <BookListItem :book="book" :width="1000" :elevation="0" @click="openBookDetailPage(book.id)"></BookListItem>
         <!-- <v-col cols="5">
               <v-img class="ml-auto my-auto" max-height="150" max-width="150"
                 :src="book.volumeInfo.imageLinks.smallThumbnail">
