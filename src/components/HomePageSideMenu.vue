@@ -11,7 +11,7 @@ import UserAvatar from './UserAvatar.vue';
 
       <v-divider></v-divider>
 
-      <v-list>
+      <v-list nav>
         <v-list-item :prepend-icon="UserAvatar" to="/UserDetail">KANA </v-list-item>
       </v-list>
 
@@ -25,11 +25,10 @@ import UserAvatar from './UserAvatar.vue';
 
         <v-list-group value="book-genre-group">
           <template v-slot:activator="{ props }">
-            <v-list-item prepend-icon="mdi-filter-variant" v-bind="props" title="ジャンル別"
-              value="book-genre"></v-list-item>
+            <v-list-item prepend-icon="mdi-filter-variant" v-bind="props" title="ジャンル別"></v-list-item>
           </template>
-          <v-list-item prepend-icon="mdi-office-building" title="インフラ" value="book-infra" to="/"></v-list-item>
-          <v-list-item prepend-icon="mdi-apps" title="アプリ" value="book-app" to="/"></v-list-item>
+          <v-list-item prepend-icon="mdi-office-building" title="インフラ" value="book-infra"></v-list-item>
+          <v-list-item prepend-icon="mdi-apps" title="アプリ" value="book-app"></v-list-item>
         </v-list-group>
 
       </v-list>
@@ -43,11 +42,10 @@ import UserAvatar from './UserAvatar.vue';
 
         <v-list-group value="roadmap-genre-group">
           <template v-slot:activator="{ props }">
-            <v-list-item prepend-icon="mdi-filter-variant" v-bind="props" title="ジャンル別"
-              value="roadmap-genre"></v-list-item>
+            <v-list-item prepend-icon="mdi-filter-variant" v-bind="props" title="ジャンル別"></v-list-item>
           </template>
-          <v-list-item prepend-icon="mdi-office-building" title="インフラ" value="roadmap-infra" to="/"></v-list-item>
-          <v-list-item prepend-icon="mdi-apps" title="アプリ" value="roadmap-app" to="/"></v-list-item>
+          <v-list-item prepend-icon="mdi-office-building" title="インフラ" value="roadmap-infra"></v-list-item>
+          <v-list-item prepend-icon="mdi-apps" title="アプリ" value="roadmap-app"></v-list-item>
         </v-list-group>
 
       </v-list>
