@@ -2,7 +2,9 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import UserDetail from '@/views/UserDetail.vue'
 import RoadMaps from '@/views/RoadMaps.vue'
+import RoadMapDetail from '@/views/RoadMapDetail.vue'
 import Books from '@/views/Books.vue'
+import BookDetail from '@/views/BookDetail.vue'
 
 const routes = [
   {
@@ -25,10 +27,17 @@ const routes = [
     component: RoadMaps,
   },
   {
+    path: '/RoadMapDetail/:id',
+    component: RoadMapDetail
+  },
+  {
     path: '/UserDetail',
     component: UserDetail,
   },
-  { path: '/BookDetail/:id', component: () => import('@/views/BookDetail.vue') },
+  {
+    path: '/BookDetail/:id',
+    component: BookDetail
+  },
 ]
 
 const router = createRouter({
