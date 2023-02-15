@@ -11,12 +11,12 @@
       </v-col>
     </v-row>
   </v-container>
-  <v-card color="basil">
+  <!-- <v-card color="basil">
     <v-tabs v-model="tab" bg-color="transparent" color="basil" grow>
       <v-tab to="/">書籍一覧</v-tab>
       <v-tab to="/RoadMaps">ロードマップ一覧</v-tab>
     </v-tabs>
-  </v-card>
+  </v-card> -->
 </template>
 
 <script setup>
