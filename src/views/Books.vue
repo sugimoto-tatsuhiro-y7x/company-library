@@ -5,6 +5,7 @@ import Header from "@/components/Header.vue";
 import BookListItem from "@/components/BookListItem.vue";
 // import useSWRV from "swrv";
 import SearchForm from "@/components/SearchForm.vue";
+import BookSlideGroups from "@/components/BookSlideGroups.vue";
 
 // const searchString = ref("");
 const searching = ref(false);
@@ -44,20 +45,22 @@ const fetcher = (search) => {
     <Header></Header>
 
     <!-- 検索フォーム -->
-    <SearchForm
-      :Search="Search"
-      :cancelSearching="cancelSearching"
-      :searching="searching"
-    ></SearchForm>
+    <SearchForm :Search="Search" :cancelSearching="cancelSearching" :searching="searching"></SearchForm>
 
     <!-- 本一覧 -->
     <div v-if="searching">
+
       <h2>検索結果</h2>
       <div v-for="book in books" :key="book">
         <BookListItem :book="book" />
       </div>
     </div>
     <div v-else>
+
+      <h2>おすすめ書籍</h2>
+      <BookSlideGroups :books="books"></BookSlideGroups>
+      <v-divider class="mx-auto my-2"></v-divider>
+
       <h2>書籍一覧</h2>
       <div v-for="book in books" :key="book">
         <BookListItem :book="book" />
