@@ -7,38 +7,12 @@
 
       <v-col cols="10">
         <!-- ヘッダー -->
-        <!-- <Header></Header> -->
         <h1 align="center">プロフィール</h1>
         <v-divider></v-divider>
 
         <!--ユーザープロフィール表示部-->
-        <div class="text-center mt-5">
-          <v-badge avatar overlap offset-x="20" offset-y="20" color="rgba(0,0,0,0)">
-            <template v-slot:badge>
-              <v-avatar>
-                <v-img src="https://cdn.vuetifyjs.com/images/logos/v.png"></v-img>
-              </v-avatar>
-            </template>
-            <UserAvatar :size="250"></UserAvatar>
-          </v-badge>
+        <UserProfile></UserProfile>
 
-          <v-card>
-            <v-card-title>
-              <h1 class="display-1">{{ name }}</h1>
-            </v-card-title>
-            <v-card-text>
-              <p>{{ affiliation }}</p>
-              <p>{{ years }}</p>
-              <p>{{ occupation }}</p>
-              <span v-for="label in labels" :key="label">
-                <v-chip class="ma-2" color="success" outlined>
-                  <v-icon left> mdi-tag </v-icon>
-                  {{ label }}
-                </v-chip>
-              </span>
-            </v-card-text>
-          </v-card>
-        </div>
       </v-col>
       <!--貸出中/履歴表示部-->
       <!-- <v-window v-model="tab">
@@ -62,26 +36,14 @@
       </v-window> -->
     </v-row>
   </v-container>
-
 </template>
 
 <script setup>
-import Header from "@/components/Header.vue";
 import { computed } from "vue"
-import UserAvatar from "@/components/UserAvatar.vue";
 import BorrowedBookListItem from "@/components/BorrowedBookListItem.vue";
 import books from "../assets/bookData";
 import UserDetailSideBar from "@/components/UserDetailSideBar.vue";
-
-// //変数定義
-// var tab = "貸出中";
-// const parentTab = [];
-// const userStatus = ["予約中", "貸出中", "返却済"];
-// const name = "KANA";
-// const affiliation = "SD部";
-// const years = "2年目";
-// const occupation = "インフラSE";
-// const labels = ["インフラ", "2年目", "アプリ開発"];
+import UserProfile from "@/components/UserProfile.vue";
 
 // 予約中書籍
 const reserved = computed(
@@ -109,26 +71,4 @@ const returned = computed(
     });
   }
 )
-</script>
-
-<script>
-
-
-//一旦べた書き
-export default {
-  data() {
-    return {
-      tab: "貸出中",
-      parentTab: [],
-      userStatus: ["予約中", "貸出中", "返却済"],
-      text: "aaa",
-      name: "KANA",
-      affiliation: "SD部",
-      years: "2年目",
-      occupation: "インフラSE",
-      labels: ["インフラ", "2年目", "アプリ開発"],
-      books,
-    };
-  },
-};
 </script>
