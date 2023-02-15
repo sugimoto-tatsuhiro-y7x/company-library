@@ -1,15 +1,21 @@
 <script setup>
 
-import { useRoute } from "vue-router";
+import { useRoute, useRouter } from "vue-router";
 import Header from "@/components/Header.vue";
 
 import RoadMapReviewRecord from "@/components/RoadMapReviewRecord.vue";
 import books from "../assets/bookData";
 import roadMaps from "../assets/roadMapData";
 
+const router = useRouter()
+
 const [roadMap] = roadMaps.filter(
   (data) => data.id === useRoute().params.id
 )
+
+const openBookDetailPage = (bookId) => {
+  router.push(`/BookDetail/${bookId}`)
+}
 
 </script>
 
@@ -24,7 +30,8 @@ const [roadMap] = roadMaps.filter(
 
     <v-timeline side="end" density="comfortable" class="mb-3">
       <v-timeline-item :dot-color="book.status ? 'teal-lighten-3' : 'blue-grey-lighten-4'"
-        :size="book.status ? 'default' : 'small'" min-width="90%" v-for="book in books" :key="book">
+        :size="book.status ? 'default' : 'small'" min-width="90%" v-for="book in books" :key="book"
+        @click="openBookDetailPage(book.id)">
         <v-container>
           <v-row>
             <v-col cols="5">
