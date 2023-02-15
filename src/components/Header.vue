@@ -5,9 +5,9 @@
         <h1 align="center">社内図書システム</h1>
       </v-col>
       <v-col cols="1">
-        <router-link to="/UserDetail">
+        <!-- <router-link to="/UserDetail">
           <UserAvatar :size="56"></UserAvatar>
-        </router-link>
+        </router-link> -->
       </v-col>
     </v-row>
   </v-container>
