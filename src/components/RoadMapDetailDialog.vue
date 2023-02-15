@@ -95,8 +95,8 @@ const closeReserveDialog = () => {
 
       <v-timeline side="end" density="comfortable" class="mb-3">
         <v-timeline-item
-          dot-color="teal-lighten-3"
-          size="small"
+          :dot-color="book.status ? 'teal-lighten-3' : 'blue-grey-lighten-4'"
+          :size="book.status ? 'default' : 'small'"
           min-width="90%"
           v-for="book in books"
           :key="book"
@@ -167,125 +167,11 @@ const closeReserveDialog = () => {
       </v-card-actions>
     </v-card>
   </v-dialog>
-
-  <!-- 貸出確認dialog -->
-  <!-- <v-dialog v-model="rentalDialog" max-width="500">
-    <v-card>
-      <v-card-title>
-        <span>貸出確認</span>
-      </v-card-title>
-
-      <v-row>
-        <v-col cols="2"></v-col>
-        <v-col cols="8">
-          <h4>以下の書籍で正しいかご確認ください。</h4>
-        </v-col>
-        <v-col cols="2"></v-col>
-      </v-row>
-
-      <v-row>
-        <v-col>
-          <v-img
-            max-height="300"
-            max-width="200"
-            class="ml-auto mb-3"
-            :src="book.volumeInfo.imageLinks.smallThumbnail"
-          >
-          </v-img>
-        </v-col>
-        <v-col>
-          <v-card-text>
-            名前： {{ book.volumeInfo.title }}<br />
-            ステータス： {{ book.status ? "貸出可能" : "貸出不可" }}
-            <v-icon
-              x-small
-              :color="book.status ? 'green' : 'red' + ' darken-2'"
-            >
-              mdi-moon-full </v-icon
-            ><br />
-            在庫数： 2 冊
-          </v-card-text>
-        </v-col>
-      </v-row>
-
-      <v-divider></v-divider>
-      <v-card-actions color="primary">
-        <v-container>
-          <v-row>
-            <v-col cols="3"></v-col>
-            <v-col cols="3">
-              <v-btn @click="closeRentalDialog" variant="flat" color="red"
-                >CLOSE</v-btn
-              >
-            </v-col>
-            <v-col cols="3">
-              <v-btn @click="closeRentalDialog" variant="flat" color="primary"
-                >確定</v-btn
-              >
-            </v-col>
-            <v-col cols="3"></v-col>
-          </v-row>
-        </v-container>
-      </v-card-actions>
-    </v-card>
-  </v-dialog> -->
-
-  <!-- 予約確認dialog -->
-  <!-- <v-dialog v-model="reserveDialog" max-width="500">
-    <v-card>
-      <v-card-title>
-        <span>予約確認</span>
-      </v-card-title>
-
-      <v-row>
-        <v-col cols="2"></v-col>
-        <v-col cols="8">
-          <h4>以下の貸出可能予定になります。問題ないかご確認ください。</h4>
-        </v-col>
-        <v-col cols="2"></v-col>
-      </v-row>
-
-      <v-row>
-        <v-col>
-          <v-img
-            max-height="300"
-            max-width="200"
-            class="ml-auto mb-3"
-            :src="book.volumeInfo.imageLinks.smallThumbnail"
-          >
-          </v-img>
-        </v-col>
-        <v-col>
-          <v-card-text>
-            名前： {{ book.volumeInfo.title }}<br /><br />
-            貸出待ち人数： 5人 <br />
-            <v-icon>mdi-human-child</v-icon><v-icon>mdi-human-child</v-icon
-            ><v-icon>mdi-human-child</v-icon><v-icon>mdi-human-child</v-icon
-            ><v-icon>mdi-human-child</v-icon> <br /><br />
-            貸出可能日：2023/03/14(火)
-          </v-card-text>
-        </v-col>
-      </v-row>
-
-      <v-divider></v-divider>
-      <v-card-actions color="primary">
-        <v-container>
-          <v-row>
-            <v-col cols="3"></v-col>
-            <v-col cols="3">
-              <v-btn @click="closeReserveDialog" variant="flat" color="red"
-                >CLOSE</v-btn
-              >
-            </v-col>
-            <v-col cols="3">
-              <v-btn @click="closeReserveDialog" variant="flat" color="primary"
-                >確定</v-btn
-              >
-            </v-col>
-            <v-col cols="3"></v-col>
-          </v-row>
-        </v-container>
-      </v-card-actions>
-    </v-card>
-  </v-dialog> -->
 </template>
+
+<style>
+.v-timeline::before {
+  top: 55px;
+  height: calc(100% - 110px);
+}
+</style>
