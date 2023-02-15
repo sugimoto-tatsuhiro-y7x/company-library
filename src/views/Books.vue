@@ -63,7 +63,7 @@ const fetcher = (search) => {
 
       <h2>書籍一覧</h2>
       <div v-for="book in books" :key="book">
-        <BookListItem :book="book" />
+        <BookListItem :book="book" :elevation="2" />
       </div>
     </div>
   </v-container>
