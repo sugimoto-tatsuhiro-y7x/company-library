@@ -28,6 +28,7 @@ const routes = [
     path: '/UserDetail',
     component: UserDetail,
   },
+  { path: '/BookDetail/:id', component: () => import('@/views/BookDetail.vue') },
 ]
 
 const router = createRouter({

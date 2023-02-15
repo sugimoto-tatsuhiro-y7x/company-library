@@ -1,12 +1,15 @@
 <script setup>
 import { ref } from "vue";
 import BookDetailDialog from "./BookDetailDialog.vue";
+import { useRouter } from "vue-router";
 
-defineProps({
+const props = defineProps({
   book: Object,
   width: Number,
   height: Number,
 });
+
+const router = useRouter()
 
 // ダイアログOpen/Closeのフラグ
 const dialog = ref(false);
@@ -16,6 +19,10 @@ const openDialog = () => {
   dialog.value = true;
 };
 
+const openBookDetailPage = () => {
+  router.push(`/BookDetail/${props.book.id}`)
+}
+
 // 本詳細ダイアログclose関数
 const closeDialog = () => {
   dialog.value = false;
@@ -24,13 +31,8 @@ const closeDialog = () => {
 
 <template>
   <div>
-    <v-card
-      class="mx-auto mt-2"
-      :max-width="width"
-      :height="height"
-      elevation="2"
-      @click="openDialog()"
-    >
+    <v-card class="mx-auto mt-2" elevation="2" @click="openBookDetailPage">
+      <!-- <v-card class="mx-auto mt-2" elevation="2" @click="openDialog()"> -->
       <v-card-actions>
         <v-container class="grey lighten-5">
           <v-row :align="align">

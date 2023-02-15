@@ -18,7 +18,7 @@ defineProps({
     )[0].reviews" :key="n">
       <v-divider v-if="n != 0" class="my-1"></v-divider>
 
-      <v-card style="margin: 10 20px 0 0; width: 400px;">
+      <v-card mx-auto>
         <v-row>
           <v-col cols="2">
             <v-list-item-avatar>
