@@ -37,7 +37,7 @@ defineProps({
         </div>
         <v-list-item-title class="font-weight-bold" v-html="item.reviewTitle"></v-list-item-title>
         <v-list-item-subtitle v-html="item.reviewDate"></v-list-item-subtitle>
-        <v-list-item-content class="wrap-text" v-html="item.comment"></v-list-item-content>
+        <v-list-item-title class="wrap-text text--darken-1" v-html="item.comment"></v-list-item-title>
 
         <v-row>
           <v-col cols="10">
