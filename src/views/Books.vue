@@ -6,6 +6,7 @@ import BookListItem from "@/components/BookListItem.vue";
 // import useSWRV from "swrv";
 import SearchForm from "@/components/SearchForm.vue";
 import BookSlideGroups from "@/components/BookSlideGroups.vue";
+import HomePageSideMenu from "@/components/HomePageSideMenu.vue";
 
 // const searchString = ref("");
 const searching = ref(false);
@@ -41,30 +42,40 @@ const fetcher = (search) => {
 
 <template>
   <v-container>
-    <!-- Header -->
-    <Header></Header>
+    <v-row>
+      <v-col cols="2">
+        <HomePageSideMenu></HomePageSideMenu>
+      </v-col>
 
-    <!-- 検索フォーム -->
-    <SearchForm :Search="Search" :cancelSearching="cancelSearching" :searching="searching"></SearchForm>
+      <v-col cols="10">
 
-    <!-- 本一覧 -->
-    <div v-if="searching">
+        <!-- Header -->
+        <Header></Header>
 
-      <h2>検索結果</h2>
-      <div v-for="book in books" :key="book">
-        <BookListItem :book="book" />
-      </div>
-    </div>
-    <div v-else>
+        <!-- 検索フォーム -->
+        <SearchForm :Search="Search" :cancelSearching="cancelSearching" :searching="searching"></SearchForm>
 
-      <h2>おすすめ書籍</h2>
-      <BookSlideGroups :books="books"></BookSlideGroups>
-      <v-divider class="mx-auto my-2"></v-divider>
+        <!-- 本一覧 -->
+        <div v-if="searching">
 
-      <h2>書籍一覧</h2>
-      <div v-for="book in books" :key="book">
-        <BookListItem :book="book" :elevation="2" />
-      </div>
-    </div>
+          <h2>検索結果</h2>
+          <div v-for="book in books" :key="book">
+            <BookListItem :book="book" />
+          </div>
+        </div>
+        <div v-else>
+
+          <h2>おすすめ書籍</h2>
+          <BookSlideGroups :books="books"></BookSlideGroups>
+          <v-divider class="mx-auto my-2"></v-divider>
+
+          <h2>書籍一覧</h2>
+          <div v-for="book in books" :key="book">
+            <BookListItem :book="book" :elevation="2" />
+          </div>
+        </div>
+
+      </v-col>
+    </v-row>
   </v-container>
 </template>

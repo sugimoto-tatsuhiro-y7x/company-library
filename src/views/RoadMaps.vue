@@ -5,6 +5,7 @@ import Header from "@/components/Header.vue";
 import RoadMapListItem from "@/components/RoadMapListItem.vue";
 import SearchForm from "@/components/SearchForm.vue";
 import RoadMapSlideGroups from "@/components/RoadMapSlideGroups.vue";
+import HomePageSideMenu from "@/components/HomePageSideMenu.vue";
 
 const searching = ref(false);
 
@@ -21,31 +22,41 @@ const cancelSearching = () => {
 
 <template>
   <v-container>
-    <!-- Header -->
-    <Header></Header>
+    <v-row>
+      <v-col cols="2">
+        <HomePageSideMenu></HomePageSideMenu>
+      </v-col>
 
-    <!-- 検索フォーム -->
-    <SearchForm :Search="Search" :cancelSearching="cancelSearching" :searching="searching"></SearchForm>
+      <v-col cols="10">
 
 
-    <!-- ロードマップ一覧 -->
-    <div v-if="searching">
-      <h2>検索結果</h2>
-      <div v-for="roadMap in roadMaps" :key="roadMap">
-        <RoadMapListItem :roadMap="roadMap" />
-      </div>
-    </div>
+        <!-- Header -->
+        <Header></Header>
 
-    <div v-else>
+        <!-- 検索フォーム -->
+        <SearchForm :Search="Search" :cancelSearching="cancelSearching" :searching="searching"></SearchForm>
 
-      <h2>おすすめロードマップ</h2>
-      <RoadMapSlideGroups :roadMap="roadMap"></RoadMapSlideGroups>
-      <v-divider class="mx-auto my-2"></v-divider>
 
-      <h2>ロードマップ一覧</h2>
-      <div v-for="roadMap in roadMaps" :key="roadMap">
-        <RoadMapListItem :roadMap="roadMap" />
-      </div>
-    </div>
+        <!-- ロードマップ一覧 -->
+        <div v-if="searching">
+          <h2>検索結果</h2>
+          <div v-for="roadMap in roadMaps" :key="roadMap">
+            <RoadMapListItem :roadMap="roadMap" />
+          </div>
+        </div>
+
+        <div v-else>
+
+          <h2>おすすめロードマップ</h2>
+          <RoadMapSlideGroups :roadMap="roadMap"></RoadMapSlideGroups>
+          <v-divider class="mx-auto my-2"></v-divider>
+
+          <h2>ロードマップ一覧</h2>
+          <div v-for="roadMap in roadMaps" :key="roadMap">
+            <RoadMapListItem :roadMap="roadMap" />
+          </div>
+        </div>
+      </v-col>
+    </v-row>
   </v-container>
 </template>
