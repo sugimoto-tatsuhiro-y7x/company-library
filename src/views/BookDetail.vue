@@ -131,10 +131,10 @@ const closeReserveDialog = () => {
         </v-row>
       </v-col>
     </v-row>
-  </v-container>
 
-  <v-divider></v-divider>
-  <BookReviewRecord :bookId="book.id"></BookReviewRecord>
+    <v-divider></v-divider>
+    <BookReviewRecord :bookId="book.id"></BookReviewRecord>
+  </v-container>
 
   <!-- 貸出確認dialog -->
   <v-dialog v-model="rentalDialog" max-width="500">
