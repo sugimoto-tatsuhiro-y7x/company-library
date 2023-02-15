@@ -100,7 +100,7 @@ const closeReturnDialog = () => {
 
 <template>
   <!-- 本詳細dialog -->
-  <v-dialog v-model="dialogComputed" max-width="500px" max-height="550px">
+  <v-dialog v-model="dialogComputed" max-width="600px" max-height="800px">
     <v-card class="mx-auto">
       <v-card-title>
         <span>書籍詳細</span>
@@ -108,49 +108,33 @@ const closeReturnDialog = () => {
 
       <v-row>
         <v-col>
-          <v-img
-            class="ml-auto my-2"
-            max-height="220"
-            max-width="220"
-            :src="book.volumeInfo.imageLinks.smallThumbnail"
-          >
+          <v-img class="ml-auto my-2" max-height="220" max-width="220" :src="book.volumeInfo.imageLinks.smallThumbnail">
           </v-img>
         </v-col>
         <v-col class="my-auto">
           <v-card-text>
             名前： {{ book.volumeInfo.title }}<br />
             ステータス： {{ book.status ? "貸出可能" : "貸出不可" }}
-            <v-icon
-              x-small
-              :color="book.status ? 'green' : 'red' + ' darken-2'"
-            >
-              mdi-moon-full </v-icon
-            ><br />
+            <v-icon x-small :color="book.status ? 'green' : 'red' + ' darken-2'">
+              mdi-moon-full </v-icon><br />
             在庫数： 2 冊<br />
-            平均評価：<v-rating
-              v-model="book.avarageRating"
-              color="yellow darken-3"
-              background-color="grey darken-1"
-              size="20"
-              readonly="true"
-              large
-            >
-            </v-rating
-            ><br />
+            平均評価：<v-rating v-model="book.avarageRating" color="yellow darken-3" background-color="grey darken-1"
+              size="20" readonly="true" large>
+            </v-rating><br />
             レビュー件数：{{ book.reviews }}件<br /><br />
 
             <div v-if="!book.status">
               貸出待ち人数： 5人 <br />
-              <v-icon>mdi-human-child</v-icon><v-icon>mdi-human-child</v-icon
-              ><v-icon>mdi-human-child</v-icon><v-icon>mdi-human-child</v-icon
-              ><v-icon>mdi-human-child</v-icon> <br />
+              <v-icon>mdi-human-child</v-icon><v-icon>mdi-human-child</v-icon><v-icon>mdi-human-child</v-icon><v-icon>mdi-human-child</v-icon><v-icon>mdi-human-child</v-icon>
+              <br />
               貸出可能日：2023/03/14(火)
             </div>
           </v-card-text>
         </v-col>
       </v-row>
 
-      <v-divider></v-divider>
+      <v-card-text class="wrap-text"> {{ book.volumeInfo.description }}</v-card-text>
+
       <BookReviewRecord :bookId="book.id"></BookReviewRecord>
 
       <v-divider></v-divider>
@@ -160,32 +144,19 @@ const closeReturnDialog = () => {
             <v-col cols="3"></v-col>
             <v-col cols="3">
               <!-- 親に渡すイベント発火 -->
-              <v-btn
-                @click="$emit('emitCloseDialog')"
-                variant="flat"
-                color="red"
-                >CLOSE</v-btn
-              >
+              <v-btn @click="$emit('emitCloseDialog')" variant="flat" color="red">CLOSE</v-btn>
             </v-col>
             <v-col cols="3" v-if="userStatus === '貸出中'">
-              <v-btn @click="openReturnDialog" variant="flat" color="success"
-                >返す</v-btn
-              >
+              <v-btn @click="openReturnDialog" variant="flat" color="success">返す</v-btn>
             </v-col>
             <v-col cols="3" v-else-if="userStatus === '予約中'">
-              <v-btn @click="openReturnDialog" variant="flat" color="success"
-                >キャンセル</v-btn
-              >
+              <v-btn @click="openReturnDialog" variant="flat" color="success">キャンセル</v-btn>
             </v-col>
             <v-col cols="3" v-else-if="book.status">
-              <v-btn @click="openRentalDialog" variant="flat" color="success"
-                >借りる</v-btn
-              >
+              <v-btn @click="openRentalDialog" variant="flat" color="success">借りる</v-btn>
             </v-col>
             <v-col cols="3" v-else>
-              <v-btn @click="openReserveDialog" variant="flat" color="primary"
-                >予約する</v-btn
-              >
+              <v-btn @click="openReserveDialog" variant="flat" color="primary">予約する</v-btn>
             </v-col>
             <v-col cols="3"></v-col>
           </v-row>
@@ -194,11 +165,7 @@ const closeReturnDialog = () => {
     </v-card>
   </v-dialog>
   <!--返却確認ダイアログ-->
-  <ReturnConfirmationDialog
-    :book="book"
-    :returnDialog="returnDialog"
-    v-on:emitCloseReturnDialog="closeReturnDialog"
-  >
+  <ReturnConfirmationDialog :book="book" :returnDialog="returnDialog" v-on:emitCloseReturnDialog="closeReturnDialog">
   </ReturnConfirmationDialog>
   <!-- 貸出確認dialog -->
   <v-dialog v-model="rentalDialog" max-width="500">
@@ -217,24 +184,15 @@ const closeReturnDialog = () => {
 
       <v-row>
         <v-col>
-          <v-img
-            max-height="300"
-            max-width="200"
-            class="ml-auto mb-3"
-            :src="book.volumeInfo.imageLinks.smallThumbnail"
-          >
+          <v-img max-height="300" max-width="200" class="ml-auto mb-3" :src="book.volumeInfo.imageLinks.smallThumbnail">
           </v-img>
         </v-col>
         <v-col>
           <v-card-text>
             名前： {{ book.volumeInfo.title }}<br />
             ステータス： {{ book.status ? "貸出可能" : "貸出不可" }}
-            <v-icon
-              x-small
-              :color="book.status ? 'green' : 'red' + ' darken-2'"
-            >
-              mdi-moon-full </v-icon
-            ><br />
+            <v-icon x-small :color="book.status ? 'green' : 'red' + ' darken-2'">
+              mdi-moon-full </v-icon><br />
             在庫数： 2 冊
           </v-card-text>
         </v-col>
@@ -246,14 +204,10 @@ const closeReturnDialog = () => {
           <v-row>
             <v-col cols="3"></v-col>
             <v-col cols="3">
-              <v-btn @click="closeRentalDialog" variant="flat" color="red"
-                >CLOSE</v-btn
-              >
+              <v-btn @click="closeRentalDialog" variant="flat" color="red">CLOSE</v-btn>
             </v-col>
             <v-col cols="3">
-              <v-btn @click="closeRentalDialog" variant="flat" color="primary"
-                >確定</v-btn
-              >
+              <v-btn @click="closeRentalDialog" variant="flat" color="primary">確定</v-btn>
             </v-col>
             <v-col cols="3"></v-col>
           </v-row>
@@ -279,21 +233,15 @@ const closeReturnDialog = () => {
 
       <v-row>
         <v-col>
-          <v-img
-            max-height="300"
-            max-width="200"
-            class="ml-auto mb-3"
-            :src="book.volumeInfo.imageLinks.smallThumbnail"
-          >
+          <v-img max-height="300" max-width="200" class="ml-auto mb-3" :src="book.volumeInfo.imageLinks.smallThumbnail">
           </v-img>
         </v-col>
         <v-col>
           <v-card-text>
             名前： {{ book.volumeInfo.title }}<br /><br />
             貸出待ち人数： 5人 <br />
-            <v-icon>mdi-human-child</v-icon><v-icon>mdi-human-child</v-icon
-            ><v-icon>mdi-human-child</v-icon><v-icon>mdi-human-child</v-icon
-            ><v-icon>mdi-human-child</v-icon> <br /><br />
+            <v-icon>mdi-human-child</v-icon><v-icon>mdi-human-child</v-icon><v-icon>mdi-human-child</v-icon><v-icon>mdi-human-child</v-icon><v-icon>mdi-human-child</v-icon>
+            <br /><br />
             貸出可能日：2023/03/14(火)
           </v-card-text>
         </v-col>
@@ -305,14 +253,10 @@ const closeReturnDialog = () => {
           <v-row>
             <v-col cols="3"></v-col>
             <v-col cols="3">
-              <v-btn @click="closeReserveDialog" variant="flat" color="red"
-                >CLOSE</v-btn
-              >
+              <v-btn @click="closeReserveDialog" variant="flat" color="red">CLOSE</v-btn>
             </v-col>
             <v-col cols="3">
-              <v-btn @click="closeReserveDialog" variant="flat" color="primary"
-                >確定</v-btn
-              >
+              <v-btn @click="closeReserveDialog" variant="flat" color="primary">確定</v-btn>
             </v-col>
             <v-col cols="3"></v-col>
           </v-row>
@@ -321,3 +265,14 @@ const closeReturnDialog = () => {
     </v-card>
   </v-dialog>
 </template>
+
+<style lang="scss" scoped>
+.wrap-text {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 5;
+  white-space: normal;
+
+}
+</style>
+
