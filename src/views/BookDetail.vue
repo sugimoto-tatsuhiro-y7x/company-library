@@ -108,6 +108,11 @@ const closeReserveDialog = () => {
                   size="20" readonly="true" large>
                 </v-rating><br />
                 レビュー件数：{{ book.reviews }}件<br /><br /><br />
+                <v-chip-group>
+                  <v-chip>クラウド技術</v-chip>
+                  <v-chip>インフラ</v-chip>
+                  <v-chip>IT</v-chip>
+                </v-chip-group>
                 <v-btn @click="openRentalDialog" variant="flat" color="success" v-if="book.status">借りる</v-btn>
                 <v-btn @click="openReserveDialog" variant="flat" color="primary" v-else>予約する</v-btn></v-col>
             </v-row>
