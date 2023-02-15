@@ -1,42 +1,14 @@
 <template>
-
-
   <v-container>
     <v-row>
       <v-col cols="2">
-        <v-card>
-          <v-layout>
-            <v-navigation-drawer theme="dark">
-              <v-list nav>
-                <v-list-item title="TOPに戻る" value="top"></v-list-item>
-                <v-list-item title="プロフィール" value="profile"></v-list-item>
-
-                <v-list-group value="book">
-                  <template v-slot:activator="{ props }">
-                    <v-list-item v-bind="props" title="書籍"></v-list-item>
-                  </template>
-                  <v-list-item title="予約中" value="inbox"></v-list-item>
-                  <v-list-item title="貸出中" value="inbox"></v-list-item>
-                  <v-list-item title="返却済" value="inbox"></v-list-item>
-                </v-list-group>
-                <v-list-group value="roadMap">
-                  <template v-slot:activator="{ props }">
-                    <v-list-item v-bind="props" title="ロードマップ"></v-list-item>
-                  </template>
-                  <v-list-item title="お気に入り" value="inbox"></v-list-item>
-                  <v-list-item title="マイロードマップ" value="inbox"></v-list-item>
-                  <v-list-item title="完了済" value="inbox"></v-list-item>
-                </v-list-group>
-              </v-list>
-            </v-navigation-drawer>
-
-          </v-layout>
-        </v-card>
+        <UserDetailSideBar></UserDetailSideBar>
       </v-col>
 
       <v-col cols="10">
         <!-- ヘッダー -->
-        <Header></Header>
+        <!-- <Header></Header> -->
+        <h1 align="center">プロフィール</h1>
         <v-divider></v-divider>
 
         <!--ユーザープロフィール表示部-->
@@ -99,6 +71,7 @@ import { computed } from "vue"
 import UserAvatar from "@/components/UserAvatar.vue";
 import BorrowedBookListItem from "@/components/BorrowedBookListItem.vue";
 import books from "../assets/bookData";
+import UserDetailSideBar from "@/components/UserDetailSideBar.vue";
 
 // //変数定義
 // var tab = "貸出中";
