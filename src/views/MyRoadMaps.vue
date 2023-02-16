@@ -22,7 +22,7 @@ const onLoan = computed(
         <UserDetailSideBar></UserDetailSideBar>
       </v-col>
       <v-col cols="10">
-        <Header>お気に入り</Header>
+        <Header>マイロードマップ</Header>
         <div v-for="(roadMap, i) in roadMaps" :key="i">
           <RoadMapListItem :roadMap="roadMap"></RoadMapListItem>
         </div>

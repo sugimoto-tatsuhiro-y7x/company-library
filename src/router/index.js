@@ -10,6 +10,8 @@ import LendingBooks from "@/views/LendingBooks.vue";
 import ReturnedBooks from "@/views/ReturnedBooks.vue";
 import MyBooks from "@/components/MyBooks";
 import FavoriteRoadMaps from "@/views/FavoriteRoadMaps.vue"
+import MyRoadMaps from "@/views/MyRoadMaps.vue"
+import CompletedRoadMaps from "@/views/CompletedRoadMaps.vue"
 
 const routes = [
   {
@@ -65,11 +67,11 @@ const routes = [
   },
   {
     path: '/MyRoadMaps',
-    component: FavoriteRoadMaps,
+    component: MyRoadMaps,
   },
   {
     path: '/CompletedMaps',
-    component: FavoriteRoadMaps,
+    component: CompletedRoadMaps,
   },
 ]
 
