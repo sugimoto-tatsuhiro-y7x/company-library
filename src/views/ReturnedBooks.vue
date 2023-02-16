@@ -3,6 +3,7 @@ import { computed } from "vue"
 import BorrowedBookListItem from "@/components/BorrowedBookListItem.vue";
 import books from "../assets/bookData";
 import UserDetailSideBar from "@/components/UserDetailSideBar.vue";
+import Header from "@/components/Header.vue";
 
 // 返却済み書籍
 const returned = computed(
@@ -22,8 +23,7 @@ const returned = computed(
       </v-col>
       <v-col cols="10">
         <!-- ヘッダー -->
-        <h1 align="center">返却済書籍</h1>
-        <v-divider></v-divider>
+        <Header>返却済書籍</Header>
         <div v-for="book in returned" :key="book">
           <BorrowedBookListItem :book="book" userStatus="returned" />
         </div>
