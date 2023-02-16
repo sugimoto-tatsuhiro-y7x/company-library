@@ -23,7 +23,7 @@ const onLoan = computed(
       </v-col>
       <v-col cols="10">
         <!-- ヘッダー -->
-        <Header>貸出中書籍</Header>
+        <Header>貸出中</Header>
         <div v-for="book in onLoan" :key="book">
           <BorrowedBookListItem :book="book" userStatus="lending" />
         </div>

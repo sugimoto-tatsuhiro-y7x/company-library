@@ -23,7 +23,7 @@ const returned = computed(
       </v-col>
       <v-col cols="10">
         <!-- ヘッダー -->
-        <Header>返却済書籍</Header>
+        <Header>返却済</Header>
         <div v-for="book in returned" :key="book">
           <BorrowedBookListItem :book="book" userStatus="returned" />
         </div>

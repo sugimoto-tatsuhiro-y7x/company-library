@@ -23,7 +23,7 @@ const reserved = computed(
       </v-col>
       <v-col cols="10">
         <!-- ヘッダー -->
-        <Header>予約中書籍</Header>
+        <Header>予約中</Header>
         <div v-for="book in reserved" :key="book">
           <BorrowedBookListItem :book="book" userStatus="reserved" />
         </div>
