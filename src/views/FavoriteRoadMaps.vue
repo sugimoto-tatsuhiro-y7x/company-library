@@ -3,6 +3,7 @@ import { computed } from "vue"
 import roadMaps from "../assets/roadMapData";
 import UserDetailSideBar from "@/components/UserDetailSideBar.vue";
 import RoadMapListItem from "@/components/RoadMapListItem.vue";
+import Header from "@/components/Header.vue";
 
 // 借りている書籍
 const onLoan = computed(
@@ -21,6 +22,7 @@ const onLoan = computed(
         <UserDetailSideBar></UserDetailSideBar>
       </v-col>
       <v-col cols="10">
+        <Header>お気に入りロードマップ</Header>
         <div v-for="(roadMap, i) in roadMaps" :key="i">
           <RoadMapListItem :roadMap="roadMap"></RoadMapListItem>
         </div>
