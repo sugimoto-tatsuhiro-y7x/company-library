@@ -1,13 +1,12 @@
 <script setup>
-import BookSlideItem from './BookSlideItem.vue';
+import BookSlideItem from "./BookSlideItem.vue";
 import BookListItem from "@/components/BookListItem.vue";
 
 defineProps({
-  books: Object
-})
+  books: Object,
+});
 const width = 530;
 const height = 180;
-
 </script>
 
 <template>
