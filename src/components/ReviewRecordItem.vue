@@ -1,10 +1,11 @@
 <script setup>
+import internal from "stream";
 import { ref } from "vue";
-import reviewBooks from "../assets/bookReviewData";
 import UserAvatar from "./UserAvatar.vue";
 
 const props = defineProps({
   review: Object,
+  n: Number,
 });
 
 let goodFlg = ref(props.review.goodFlg);
@@ -26,8 +27,6 @@ const clickGood = () => {
 </script>
 
 <template>
-  <v-divider v-if="n != 0" class="my-1"></v-divider>
-
   <v-card mx-auto>
     <v-row>
       <v-col cols="1">
@@ -68,6 +67,7 @@ const clickGood = () => {
       v-html="review.comment"
     ></v-list-item-title>
   </v-card>
+  <v-divider v-if="n != 0"></v-divider>
 </template>
 
 <style lang="scss" scoped>
