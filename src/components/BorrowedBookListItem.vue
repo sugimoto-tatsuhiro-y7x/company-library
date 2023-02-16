@@ -1,14 +1,21 @@
 <script setup>
 import { ref } from "vue";
+import { useRouter } from "vue-router";
 import BookDetailDialog from "./BookDetailDialog.vue";
 import ReturnConfirmationDialog from '@/components/ReturnConfirmationDialog.vue';
 
-defineProps({
+const props = defineProps({
   // 書籍オブジェクト
   book: Object,
   //ユーザーの貸出中、予約中、返却済ステータス
   userStatus: String
 });
+
+const router = useRouter();
+const openBookDetailPage = () => {
+  router.push(`/BookDetail/${props.book.id}`)
+};
+
 
 //貸出日、返却日
 const borrowedBook = {
@@ -47,7 +54,7 @@ const closeDialog = () => {
     <v-container class="grey lighten-5">
       <v-row>
         <v-col>
-          <v-card class="mx-auto mt-2" elevation="2" @click="openDialog()">
+          <v-card class="mx-auto mt-2" elevation="2" @click="openBookDetailPage">
             <v-card-actions>
               <v-row :align="align">
                 <v-col cols="2">
@@ -85,7 +92,7 @@ const closeDialog = () => {
           </v-card>
         </v-col>
         <v-col cols="1">
-          <div v-if="userStatus === '貸出中'">
+          <div v-if="userStatus === 'lending'">
             <v-col cols="1">
               <v-card-actions>
                 <v-btn elevation="2" @click="openReturnDialog(book)">返す</v-btn>

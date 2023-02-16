@@ -21,6 +21,9 @@ const onLoan = computed(
         <UserDetailSideBar></UserDetailSideBar>
       </v-col>
       <v-col cols="10">
+        <!-- ヘッダー -->
+        <h1 align="center">貸出中書籍</h1>
+        <v-divider></v-divider>
         <div v-for="book in onLoan" :key="book">
           <BorrowedBookListItem :book="book" userStatus="lending" />
         </div>

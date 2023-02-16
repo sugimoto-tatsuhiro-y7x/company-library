@@ -21,6 +21,9 @@ const reserved = computed(
         <UserDetailSideBar></UserDetailSideBar>
       </v-col>
       <v-col cols="10">
+        <!-- ヘッダー -->
+        <h1 align="center">予約中書籍</h1>
+        <v-divider></v-divider>
         <div v-for="book in reserved" :key="book">
           <BorrowedBookListItem :book="book" userStatus="reserved" />
         </div>
