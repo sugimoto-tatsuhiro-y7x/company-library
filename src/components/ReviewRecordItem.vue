@@ -27,7 +27,7 @@ const clickGood = () => {
 </script>
 
 <template>
-  <v-card class="pa-1 my-1">
+  <v-card class="pa-1 my-1" elevation="0">
     <v-row>
       <v-col cols="1">
         <v-list-item-avatar>
@@ -67,7 +67,7 @@ const clickGood = () => {
       v-html="review.comment"
     ></v-list-item-title>
   </v-card>
-  <!-- <v-divider></v-divider> -->
+  <v-divider></v-divider>
 </template>
 
 <style lang="scss" scoped>
