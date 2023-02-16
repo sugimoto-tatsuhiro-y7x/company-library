@@ -9,6 +9,7 @@ import ReservedBooks from "@/views/ReservedBooks.vue";
 import LendingBooks from "@/views/LendingBooks.vue";
 import ReturnedBooks from "@/views/ReturnedBooks.vue";
 import MyBooks from "@/components/MyBooks";
+import FavoriteRoadMaps from "@/views/FavoriteRoadMaps.vue"
 
 const routes = [
   {
@@ -60,17 +61,16 @@ const routes = [
   },
   {
     path: '/FavoriteRoadMaps',
-    component: MyBooks
+    component: FavoriteRoadMaps,
   },
   {
     path: '/MyRoadMaps',
-    component: MyBooks
+    component: FavoriteRoadMaps,
   },
   {
     path: '/CompletedMaps',
-    component: MyBooks
+    component: FavoriteRoadMaps,
   },
-
 ]
 
 const router = createRouter({
