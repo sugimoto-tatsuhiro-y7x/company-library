@@ -12,7 +12,7 @@
           <template v-slot:activator="{ props }">
             <v-list-item v-bind="props" prepend-icon="mdi-book-open-variant" title="書籍"></v-list-item>
           </template>
-          <v-list-item title="予約中" value="reserve" to="/ReserveBooks "></v-list-item>
+          <v-list-item title="予約中" value="reserve" to="/ReservedBooks"></v-list-item>
           <v-list-item title="貸出中" value="lending" to="/LendingBooks"></v-list-item>
           <v-list-item title="返却済" value="returned" to="/ReturnedBooks"></v-list-item>
         </v-list-group>
