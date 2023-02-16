@@ -50,7 +50,11 @@ const openBookDetailPage = (bookId) => {
                 平均評価：<v-rating v-model="roadMap.avarageRating" color="yellow darken-3" background-color="grey darken-1"
                   size="20" readonly="true" large>
                 </v-rating><br />
-                レビュー件数：{{ roadMap.review_num }}件<br /><br /><br />
+                レビュー件数：{{ roadMap.review_num }}件<br /><br />
+                <v-chip-group>
+                  <v-chip size="small">クラウド技術</v-chip>
+                  <v-chip size="small">インフラ</v-chip>
+                  <v-chip size="small">IT</v-chip> </v-chip-group><br /><br />
                 <v-btn @click="$emit('emitCloseDialog')" variant="flat" color="primary">お気に入り</v-btn>
               </v-col>
             </v-row>
