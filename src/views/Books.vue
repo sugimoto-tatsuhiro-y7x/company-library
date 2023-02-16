@@ -1,5 +1,5 @@
 <script setup>
-import { computed } from "vue";
+import { ref, computed } from "vue";
 import books from "../assets/bookData";
 import Header from "@/components/Header.vue";
 import BookListItem from "@/components/BookListItem.vue";
@@ -12,17 +12,22 @@ import { useRoute, useRouter } from "vue-router";
 const route = useRoute()
 const router = useRouter()
 
+const queryParam = ref("")
+
 const searching = computed(() => route.query.q ? true : false)
 
 // 検索実行用の関数
 const applySearch = (query) => {
+  queryParam.value = query
   router.push(`/Books?q=${query}`)
 };
 
 // 検索解除用の関数
 const cancelSearching = () => {
+  queryParam.value = ""
   router.push(`/`)
 };
+
 
 </script>
 
