@@ -43,7 +43,7 @@ const openBookDetailPage = () => {
               <v-col cols="6" class="py-0">
                 <v-card-text class="py-0">
                   <v-list lines="one">
-                    <v-list-item title="貸出ステータス">
+                    <v-list-item title="貸出可否">
                       <v-icon
                         x-small
                         :color="book.status ? 'green' : 'red' + ' darken-2'"
