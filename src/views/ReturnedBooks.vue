@@ -21,6 +21,9 @@ const returned = computed(
         <UserDetailSideBar></UserDetailSideBar>
       </v-col>
       <v-col cols="10">
+        <!-- ヘッダー -->
+        <h1 align="center">返却済書籍</h1>
+        <v-divider></v-divider>
         <div v-for="book in returned" :key="book">
           <BorrowedBookListItem :book="book" userStatus="returned" />
         </div>
