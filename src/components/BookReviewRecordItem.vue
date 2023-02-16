@@ -4,8 +4,6 @@ import reviewBooks from "../assets/bookReviewData";
 import UserAvatar from "./UserAvatar.vue";
 
 const props = defineProps({
-  // bookId: String,
-  // reviewId: String,
   review: Object,
 });
 
@@ -28,16 +26,6 @@ const clickGood = () => {
 </script>
 
 <template>
-  <!-- <v-text> ユーザーレビュー</v-text>
-  <v-list
-    v-if="reviewBooks.filter((review) => review.bookId === bookId).length"
-  >
-    <v-list-item
-      v-for="(item, n) in reviewBooks.filter(
-        (review) => review.bookId === bookId
-      )[0].reviews"
-      :key="n"
-    > -->
   <v-divider v-if="n != 0" class="my-1"></v-divider>
 
   <v-card mx-auto>
@@ -52,12 +40,6 @@ const clickGood = () => {
         <div>{{ review.joinedYear }}入社</div>
       </v-col>
       <v-col cols="1">
-        <!-- <v-btn
-          size="x-small"
-          elevation="0"
-          :color="red"
-          @click="clickGood(review)"
-        > -->
         <v-btn size="x-small" elevation="0" :color="red" @click="clickGood()">
           <v-icon :color="goodFlg ? '#E53935' : '#ECEFF1'">
             {{ goodFlg ? "mdi-heart" : "mdi-heart-outline" }}</v-icon
@@ -86,11 +68,6 @@ const clickGood = () => {
       v-html="review.comment"
     ></v-list-item-title>
   </v-card>
-  <!-- </v-list-item>
-  </v-list> -->
-  <!-- <v-card v-else style="margin: 10 20px 0 0; width: 400px">
-    <v-list-item-content>まだユーザーレビューはありません</v-list-item-content>
-  </v-card> -->
 </template>
 
 <style lang="scss" scoped>
