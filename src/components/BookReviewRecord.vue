@@ -47,8 +47,6 @@ defineProps({
             <v-btn icon="mdi-thumb-up" height="30" width="30" color="amber-darken-4"></v-btn>
           </v-col>
         </v-row>
-
-
         <!-- <v-card-actions>
           <v-btn v-for="button in buttons" :key="button.icon" :href="button.url" :color="button.color" icon>
             <v-icon>{{ button.icon }}</v-icon>
@@ -67,6 +65,7 @@ defineProps({
 
 <style lang="scss" scoped>
 .wrap-text {
+  font-size: 14px;
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 2;
