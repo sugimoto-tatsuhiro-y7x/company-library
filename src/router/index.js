@@ -23,6 +23,10 @@ const routes = [
     // ],
   },
   {
+    path: '/Books',
+    component: Books
+  },
+  {
     path: '/RoadMaps',
     component: RoadMaps,
   },
