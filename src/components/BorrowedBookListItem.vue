@@ -63,15 +63,15 @@ const closeDialog = () => {
                     <v-col cols="5" class="py-0">
                       <v-card-text class="py-0">
                         <v-list lines="one">
-                          <div v-if="userStatus === '/ReserveBooks'">
+                          <div v-if="userStatus === 'reserved'">
                             <v-list-item title="貸出予定日" :subtitle="borrowedBook.to"></v-list-item>
                             <v-list-item title="返却予定日" :subtitle="borrowedBook.to"></v-list-item>
                           </div>
-                          <div v-if="userStatus === '/LendingBooks'">
+                          <div v-if="userStatus === 'lending'">
                             <v-list-item title="貸出日" :subtitle="borrowedBook.from"></v-list-item>
                             <v-list-item title="返却期限" :subtitle="borrowedBook.to"></v-list-item>
                           </div>
-                          <div v-if="userStatus === '/ReturnedBooks'">
+                          <div v-if="userStatus === 'returned'">
                             <v-list-item title="貸出日" :subtitle="borrowedBook.to"></v-list-item>
                             <v-list-item title="返却日" :subtitle="borrowedBook.to"></v-list-item>
                           </div>

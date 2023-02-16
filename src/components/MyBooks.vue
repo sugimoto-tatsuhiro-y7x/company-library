@@ -3,10 +3,6 @@ import { computed } from "vue"
 import BorrowedBookListItem from "@/components/BorrowedBookListItem.vue";
 import books from "../assets/bookData";
 import UserDetailSideBar from "@/components/UserDetailSideBar.vue";
-import router from "@/router/index";
-
-const path = router.currentRoute._rawValue.path
-console.dir(path)
 
 // 予約中書籍
 const reserved = computed(
@@ -40,10 +36,10 @@ const returned = computed(
   <v-container>
     <v-row>
       <v-col cols="2">
-        <UserDetailSideBar v-on:openView="view"></UserDetailSideBar>
+        <UserDetailSideBar></UserDetailSideBar>
       </v-col>
       <v-col cols="10">
-        <div v-if="path === '/ReserveBooks'">
+        <div v-if="path === '/ReservedBooks'">
           <div v-for="book in reserved" :key="book">
             <BorrowedBookListItem :book="book" :userStatus="path" />
           </div>

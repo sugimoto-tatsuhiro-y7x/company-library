@@ -5,7 +5,10 @@ import RoadMaps from '@/views/RoadMaps.vue'
 import RoadMapDetail from '@/views/RoadMapDetail.vue'
 import Books from '@/views/Books.vue'
 import BookDetail from '@/views/BookDetail.vue'
-import MyBooks from '@/components/MyBooks.vue';
+import ReservedBooks from "@/views/ReservedBooks.vue";
+import LendingBooks from "@/views/LendingBooks.vue";
+import ReturnedBooks from "@/views/ReturnedBooks.vue";
+import MyBooks from "@/components/MyBooks";
 
 const routes = [
   {
@@ -44,27 +47,27 @@ const routes = [
     component: BookDetail
   },
   {
-    path: '/ReserveBooks/',
+    path: '/ReservedBooks',
+    component: ReservedBooks
+  },
+  {
+    path: '/LendingBooks',
+    component: LendingBooks
+  },
+  {
+    path: '/ReturnedBooks',
+    component: ReturnedBooks
+  },
+  {
+    path: '/FavoriteRoadMaps',
     component: MyBooks
   },
   {
-    path: '/LendingBooks/',
+    path: '/MyRoadMaps',
     component: MyBooks
   },
   {
-    path: '/ReturnedBooks/',
-    component: MyBooks
-  },
-  {
-    path: '/FavoriteRoadMaps/',
-    component: MyBooks
-  },
-  {
-    path: '/MyRoadMaps/',
-    component: MyBooks
-  },
-  {
-    path: '/ReturnedCompletedMapsBooks/',
+    path: '/CompletedMaps',
     component: MyBooks
   },
 
