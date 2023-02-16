@@ -11,41 +11,6 @@ import books from "../assets/bookData";
 const rentalDialog = ref(false);
 const reserveDialog = ref(false);
 
-const items = [
-  {
-    avatar: "https://cdn.vuetifyjs.com/images/lists/1.jpg",
-    title: "Brunch this weekend?",
-    subtitle: `<span class="text--primary">Ali Connors</span> &mdash; I'll be in your neighborhood doing errands this weekend. Do you want to hang out?`,
-  },
-  { divider: true, inset: true },
-  {
-    avatar: "https://cdn.vuetifyjs.com/images/lists/2.jpg",
-    title: 'Summer BBQ <span class="grey--text text--lighten-1">4</span>',
-    subtitle: `<span class="text--primary">to Alex, Scott, Jennifer</span> &mdash; Wish I could come, but I'm out of town this weekend.`,
-  },
-  { divider: true, inset: true },
-  {
-    avatar: "https://cdn.vuetifyjs.com/images/lists/3.jpg",
-    title: "Oui oui",
-    subtitle:
-      '<span class="text--primary">Sandra Adams</span> &mdash; Do you have Paris recommendations? Have you ever been?',
-  },
-  { divider: true, inset: true },
-  {
-    avatar: "https://cdn.vuetifyjs.com/images/lists/4.jpg",
-    title: "Birthday gift",
-    subtitle:
-      '<span class="text--primary">Trevor Hansen</span> &mdash; Have any ideas about what we should get Heidi for her birthday?',
-  },
-  { divider: true, inset: true },
-  {
-    avatar: "https://cdn.vuetifyjs.com/images/lists/5.jpg",
-    title: "Recipe to try",
-    subtitle:
-      '<span class="text--primary">Britta Holt</span> &mdash; We should eat this: Grate, Squash, Corn, and tomatillo Tacos.',
-  },
-];
-
 const [book] = books.filter((data) => data.id === useRoute().params.id);
 
 // 貸出確認画面ダイアログオープン関数
@@ -79,7 +44,7 @@ const closeReserveDialog = () => {
 
       <v-col cols="10">
 
-        <Header></Header>
+        <Header>書籍詳細</Header>
 
         <v-row class="my-auto">
           <v-col cols="4">
@@ -222,7 +187,7 @@ const closeReserveDialog = () => {
         </v-container>
       </v-card-actions>
     </v-card>
-  </v-dialog>
+</v-dialog>
 </template>
 
 <style lang="scss" scoped>
