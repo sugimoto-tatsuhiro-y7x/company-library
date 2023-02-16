@@ -41,7 +41,7 @@ const cancelSearching = () => {
       <v-col cols="10">
 
         <!-- Header -->
-        <Header></Header>
+        <Header>書籍</Header>
 
         <!-- 検索フォーム -->
         <SearchForm :cancelSearching="cancelSearching" :searching="searching" @applySearchEmit="applySearch">
@@ -69,5 +69,5 @@ const cancelSearching = () => {
 
       </v-col>
     </v-row>
-  </v-container>
+</v-container>
 </template>
