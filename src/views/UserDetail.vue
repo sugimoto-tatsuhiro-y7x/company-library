@@ -1,7 +1,7 @@
 <script setup>
-import { ref, computed } from "vue";
 import UserDetailSideBar from "@/components/UserDetailSideBar.vue";
 import UserProfile from "@/components/UserProfile.vue";
+import Header from "@/components/Header.vue";
 </script>
 
 <template>
@@ -13,12 +13,11 @@ import UserProfile from "@/components/UserProfile.vue";
 
       <v-col cols="10">
         <!-- ヘッダー -->
-        <h1 align="center">プロフィール</h1>
-        <v-divider></v-divider>
+        <Header>プロフィール</Header>
 
         <!--ユーザープロフィール表示部-->
         <UserProfile></UserProfile>
       </v-col>
     </v-row>
-  </v-container>
+</v-container>
 </template>
