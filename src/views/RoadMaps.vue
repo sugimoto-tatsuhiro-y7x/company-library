@@ -31,7 +31,7 @@ const cancelSearching = () => {
 
 
         <!-- Header -->
-        <Header></Header>
+        <Header>ロードマップ</Header>
 
         <!-- 検索フォーム -->
         <SearchForm :Search="Search" :cancelSearching="cancelSearching" :searching="searching"></SearchForm>
@@ -58,5 +58,5 @@ const cancelSearching = () => {
         </div>
       </v-col>
     </v-row>
-  </v-container>
+</v-container>
 </template>

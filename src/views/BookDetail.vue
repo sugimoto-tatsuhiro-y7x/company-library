@@ -11,41 +11,6 @@ import books from "../assets/bookData";
 const rentalDialog = ref(false);
 const reserveDialog = ref(false);
 
-const items = [
-  {
-    avatar: "https://cdn.vuetifyjs.com/images/lists/1.jpg",
-    title: "Brunch this weekend?",
-    subtitle: `<span class="text--primary">Ali Connors</span> &mdash; I'll be in your neighborhood doing errands this weekend. Do you want to hang out?`,
-  },
-  { divider: true, inset: true },
-  {
-    avatar: "https://cdn.vuetifyjs.com/images/lists/2.jpg",
-    title: 'Summer BBQ <span class="grey--text text--lighten-1">4</span>',
-    subtitle: `<span class="text--primary">to Alex, Scott, Jennifer</span> &mdash; Wish I could come, but I'm out of town this weekend.`,
-  },
-  { divider: true, inset: true },
-  {
-    avatar: "https://cdn.vuetifyjs.com/images/lists/3.jpg",
-    title: "Oui oui",
-    subtitle:
-      '<span class="text--primary">Sandra Adams</span> &mdash; Do you have Paris recommendations? Have you ever been?',
-  },
-  { divider: true, inset: true },
-  {
-    avatar: "https://cdn.vuetifyjs.com/images/lists/4.jpg",
-    title: "Birthday gift",
-    subtitle:
-      '<span class="text--primary">Trevor Hansen</span> &mdash; Have any ideas about what we should get Heidi for her birthday?',
-  },
-  { divider: true, inset: true },
-  {
-    avatar: "https://cdn.vuetifyjs.com/images/lists/5.jpg",
-    title: "Recipe to try",
-    subtitle:
-      '<span class="text--primary">Britta Holt</span> &mdash; We should eat this: Grate, Squash, Corn, and tomatillo Tacos.',
-  },
-];
-
 const [book] = books.filter((data) => data.id === useRoute().params.id);
 
 // 貸出確認画面ダイアログオープン関数
@@ -79,7 +44,7 @@ const closeReserveDialog = () => {
 
       <v-col cols="10">
 
-        <Header></Header>
+        <Header>書籍詳細</Header>
 
         <v-row class="my-auto">
           <v-col cols="4">
@@ -91,15 +56,15 @@ const closeReserveDialog = () => {
               <strong style="font-size: 30px">{{ book.volumeInfo.title }}</strong>
             </v-row>
             <v-row>
-              <v-col cols="6" style="font-size: 50%">
+              <v-col cols="6" style="font-size: 11px;">
                 <div>
                   <div style="color: #b0bec5">概要:</div>
-
-                  {{ book.volumeInfo.description }}
+                  <v-list-item-title class="wrap-text" v-html="book.volumeInfo.description"></v-list-item-title>
+                  <!-- {{ book.volumeInfo.description }} -->
                 </div>
               </v-col>
               <v-col cols="1"></v-col>
-              <v-col class="my-auto" cols="5" style="font-size: 70%">
+              <v-col class="my-auto" cols="5" style="font-size: 13px">
                 状態： {{ book.status ? "貸出可能" : "貸出不可" }}
                 <v-icon x-small :color="book.status ? 'green' : 'red' + ' darken-2'">
                   mdi-moon-full </v-icon><br />
@@ -107,12 +72,12 @@ const closeReserveDialog = () => {
                 平均評価：<v-rating v-model="book.avarageRating" color="yellow darken-3" background-color="grey darken-1"
                   size="20" readonly="true" large>
                 </v-rating><br />
-                レビュー件数：{{ book.reviews }}件<br /><br /><br />
+                レビュー件数：{{ book.reviews }}件<br /><br />
                 <v-chip-group>
-                  <v-chip>クラウド技術</v-chip>
-                  <v-chip>インフラ</v-chip>
-                  <v-chip>IT</v-chip>
-                </v-chip-group>
+                  <v-chip size="small">クラウド技術</v-chip>
+                  <v-chip size="small">インフラ</v-chip>
+                  <v-chip size="small">IT</v-chip>
+                </v-chip-group><br /><br />
                 <v-btn @click="openRentalDialog" variant="flat" color="success" v-if="book.status">借りる</v-btn>
                 <v-btn @click="openReserveDialog" variant="flat" color="primary" v-else>予約する</v-btn></v-col>
             </v-row>
@@ -222,11 +187,17 @@ const closeReserveDialog = () => {
         </v-container>
       </v-card-actions>
     </v-card>
-  </v-dialog>
+</v-dialog>
 </template>
 
-<style>
+<style lang="scss" scoped>
 .wrap-text {
-  font-size: 50%;
+  font-size: 13px;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 10;
+  white-space: normal;
+
 }
 </style>
+

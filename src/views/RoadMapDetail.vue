@@ -26,7 +26,7 @@ const openBookDetailPage = (bookId) => {
       </v-col>
 
       <v-col cols="10">
-        <Header></Header>
+        <Header>ロードマップ詳細</Header>
 
         <v-row class="my-auto">
           <v-col cols="4">
@@ -47,57 +47,29 @@ const openBookDetailPage = (bookId) => {
               <v-col cols="1"></v-col>
               <v-col class="my-auto" cols="5" style="font-size: 70%">
                 在庫数： 2 冊<br />
-                平均評価：<v-rating
-                  v-model="roadMap.avarageRating"
-                  color="yellow darken-3"
-                  background-color="grey darken-1"
-                  size="20"
-                  readonly="true"
-                  large
-                >
-                </v-rating
-                ><br />
+                平均評価：<v-rating v-model="roadMap.avarageRating" color="yellow darken-3" background-color="grey darken-1"
+                  size="20" readonly="true" large>
+                </v-rating><br />
                 レビュー件数：{{ roadMap.review_num }}件<br /><br /><br />
-                <v-btn
-                  @click="$emit('emitCloseDialog')"
-                  variant="flat"
-                  color="primary"
-                  >お気に入り</v-btn
-                >
+                <v-btn @click="$emit('emitCloseDialog')" variant="flat" color="primary">お気に入り</v-btn>
               </v-col>
             </v-row>
           </v-col>
         </v-row>
         <v-divider></v-divider>
 
-        <v-col
-          ><v-timeline density="comfortable" truncate-line="both">
-            <v-timeline-item
-              :dot-color="
-                book.status ? 'teal-lighten-3' : 'blue-grey-lighten-4'
-              "
-              :size="book.status ? 'default' : 'small'"
-              v-for="book in books"
-              :key="book"
-            >
-              <BookListItem
-                :book="book"
-                :width="1000"
-                :elevation="0"
-                @click="openBookDetailPage(book.id)"
-              ></BookListItem>
-            </v-timeline-item> </v-timeline
-        ></v-col>
+        <v-col><v-timeline density="comfortable" truncate-line="both">
+            <v-timeline-item :dot-color="
+              book.status ? 'teal-lighten-3' : 'blue-grey-lighten-4'
+            " :size="book.status ? 'default' : 'small'" v-for="book in books" :key="book">
+              <BookListItem :book="book" :width="1000" :elevation="0" @click="openBookDetailPage(book.id)"></BookListItem>
+            </v-timeline-item> </v-timeline></v-col>
 
         <v-divider></v-divider>
 
         <!-- レビュー一覧 -->
-        <RoadMapReviewRecord
-          :roadMapId="roadMap.id"
-          min-height="300"
-          class="ml-3"
-        ></RoadMapReviewRecord>
+        <RoadMapReviewRecord :roadMapId="roadMap.id" min-height="300" class="ml-3"></RoadMapReviewRecord>
       </v-col>
     </v-row>
-  </v-container>
+</v-container>
 </template>
