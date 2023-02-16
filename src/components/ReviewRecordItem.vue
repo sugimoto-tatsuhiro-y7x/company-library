@@ -39,11 +39,11 @@ const clickGood = () => {
         <div>{{ review.joinedYear }}入社</div>
       </v-col>
       <v-col cols="1">
-        <v-btn size="x-small" elevation="0" :color="red" @click="clickGood()">
+        <v-btn elevation="0" :color="red" @click="clickGood()">
           <v-icon :color="goodFlg ? '#E53935' : '#ECEFF1'">
             {{ goodFlg ? "mdi-heart" : "mdi-heart-outline" }}</v-icon
           >
-          <div style="font-size: 50%">{{ goodNum }}</div>
+          <div style="font-size: 80%">{{ goodNum }}</div>
         </v-btn>
       </v-col>
     </v-row>
@@ -67,7 +67,7 @@ const clickGood = () => {
       v-html="review.comment"
     ></v-list-item-title>
   </v-card>
-  <v-divider v-if="n != 0"></v-divider>
+  <v-divider></v-divider>
 </template>
 
 <style lang="scss" scoped>
