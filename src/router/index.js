@@ -5,6 +5,7 @@ import RoadMaps from '@/views/RoadMaps.vue'
 import RoadMapDetail from '@/views/RoadMapDetail.vue'
 import Books from '@/views/Books.vue'
 import BookDetail from '@/views/BookDetail.vue'
+import MyBooks from '@/components/MyBooks.vue';
 
 const routes = [
   {
@@ -42,6 +43,31 @@ const routes = [
     path: '/BookDetail/:id',
     component: BookDetail
   },
+  {
+    path: '/ReserveBooks/',
+    component: MyBooks
+  },
+  {
+    path: '/LendingBooks/',
+    component: MyBooks
+  },
+  {
+    path: '/ReturnedBooks/',
+    component: MyBooks
+  },
+  {
+    path: '/FavoriteRoadMaps/',
+    component: MyBooks
+  },
+  {
+    path: '/MyRoadMaps/',
+    component: MyBooks
+  },
+  {
+    path: '/ReturnedCompletedMapsBooks/',
+    component: MyBooks
+  },
+
 ]
 
 const router = createRouter({

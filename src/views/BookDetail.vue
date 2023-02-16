@@ -91,15 +91,15 @@ const closeReserveDialog = () => {
               <strong style="font-size: 30px">{{ book.volumeInfo.title }}</strong>
             </v-row>
             <v-row>
-              <v-col cols="6" style="font-size: 50%">
+              <v-col cols="6" style="font-size: 11px;">
                 <div>
                   <div style="color: #b0bec5">概要:</div>
-
-                  {{ book.volumeInfo.description }}
+                  <v-list-item-title class="wrap-text" v-html="book.volumeInfo.description"></v-list-item-title>
+                  <!-- {{ book.volumeInfo.description }} -->
                 </div>
               </v-col>
               <v-col cols="1"></v-col>
-              <v-col class="my-auto" cols="5" style="font-size: 70%">
+              <v-col class="my-auto" cols="5" style="font-size: 13px">
                 状態： {{ book.status ? "貸出可能" : "貸出不可" }}
                 <v-icon x-small :color="book.status ? 'green' : 'red' + ' darken-2'">
                   mdi-moon-full </v-icon><br />
@@ -107,7 +107,12 @@ const closeReserveDialog = () => {
                 平均評価：<v-rating v-model="book.avarageRating" color="yellow darken-3" background-color="grey darken-1"
                   size="20" readonly="true" large>
                 </v-rating><br />
-                レビュー件数：{{ book.reviews }}件<br /><br /><br />
+                レビュー件数：{{ book.reviews }}件<br /><br />
+                <v-chip-group>
+                  <v-chip size="small">クラウド技術</v-chip>
+                  <v-chip size="small">インフラ</v-chip>
+                  <v-chip size="small">IT</v-chip>
+                </v-chip-group><br /><br />
                 <v-btn @click="openRentalDialog" variant="flat" color="success" v-if="book.status">借りる</v-btn>
                 <v-btn @click="openReserveDialog" variant="flat" color="primary" v-else>予約する</v-btn></v-col>
             </v-row>
@@ -220,8 +225,14 @@ const closeReserveDialog = () => {
   </v-dialog>
 </template>
 
-<style>
+<style lang="scss" scoped>
 .wrap-text {
-  font-size: 50%;
+  font-size: 13px;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 10;
+  white-space: normal;
+
 }
 </style>
+
