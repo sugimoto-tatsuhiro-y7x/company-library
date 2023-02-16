@@ -92,6 +92,7 @@ const clickGood = (item) => {
 
 <style lang="scss" scoped>
 .wrap-text {
+  font-size: 14px;
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 2;
